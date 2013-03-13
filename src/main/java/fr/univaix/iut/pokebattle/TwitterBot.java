@@ -31,6 +31,7 @@ public class TwitterBot {
                     String response = bot.ask(status.getText());
                     if (response != null)
                         twitter.updateStatus(response);
+
                 } catch (TwitterException e) {
                     e.printStackTrace();
                 }
