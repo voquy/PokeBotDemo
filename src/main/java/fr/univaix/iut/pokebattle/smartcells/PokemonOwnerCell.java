@@ -7,7 +7,7 @@ public class PokemonOwnerCell implements SmartCell{
 	
 	public String ask(Tweet question) {
 		if (question.getText().contains("Owner ?"))
-			return "No Owner";
+			return "@"+question.getScreenName()+" No Owner";
 		return null;
     }
 	
