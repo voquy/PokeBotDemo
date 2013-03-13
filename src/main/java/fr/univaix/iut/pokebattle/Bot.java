@@ -6,5 +6,5 @@ package fr.univaix.iut.pokebattle;
  * Time: 20:18
  */
 public interface Bot {
-    String ask(String question);
+    String ask(Tweet question);
 }
