@@ -9,4 +9,5 @@ public interface SmartCell {
      *         or null.
      */
     public abstract String ask(Tweet question);
+    
 }
