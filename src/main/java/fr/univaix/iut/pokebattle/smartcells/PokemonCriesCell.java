@@ -9,7 +9,7 @@ import fr.univaix.iut.pokebattle.Tweet;
 public class PokemonCriesCell implements SmartCell {
 
     public String ask(Tweet question) {
-        return "fannntooomiiinuuus";
+        return ("@" + question.getScreenName() + " fannntooomiiinuuus");
     }
 
 }
