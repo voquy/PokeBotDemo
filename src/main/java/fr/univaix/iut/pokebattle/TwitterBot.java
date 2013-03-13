@@ -28,7 +28,7 @@ public class TwitterBot {
                         return;
                     }
 
-                    String response = bot.ask(new Tweet(status.getText()));
+                    String response = bot.ask(new Tweet(status.getUser().getScreenName(), status.getText()));
                     if (response != null)
                         twitter.updateStatus(response);
 
