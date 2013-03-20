@@ -12,7 +12,7 @@ public class PokemonPokeballCell implements SmartCell {
 
 	public String ask(Tweet question) {
 
-		String Owner = PokeBot.owner;
+		//String Owner = PokeBot.owner;
 		
 		if (question.getText().contains("Pokeball !")) {
 			System.out.println(PokeBot.owner);
@@ -27,7 +27,7 @@ public class PokemonPokeballCell implements SmartCell {
 
 				try {
 					twitter.updateProfile(null, null, null,
-							"#pokebattle - #pokemon - Owner: " + Owner);
+							"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
 					
 				} catch (TwitterException e) {
 					e.printStackTrace();
