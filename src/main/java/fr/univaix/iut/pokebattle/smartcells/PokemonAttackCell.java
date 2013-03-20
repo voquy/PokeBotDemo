@@ -10,10 +10,12 @@ public class PokemonAttackCell implements SmartCell{
 		System.out.println("Attack"+question.getText());
 		if (question.getText().contains("#attack"))
 		{
+			String dresseuradverse = question.getText().split("/cc")[1].trim();
+					
 			//if (owner == null)
 				//return "@" + question.getScreenName() + " @" + owner + " is my owner";
 			//else
-				return "@JeremsBoot #attack #ténèbres! /cc " + "@" + question.getScreenName();
+				return "@pikachu #attack #ténèbres! /cc " + dresseuradverse + " @" + question.getScreenName();
 		}
 		return null;
     }
