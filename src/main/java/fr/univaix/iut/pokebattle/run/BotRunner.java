@@ -25,6 +25,6 @@ public class BotRunner {
     }
 
     static InputStream getResourceAsStream(String fileName) {
-        return PokemonMain.class.getResourceAsStream(fileName);
+        return PokemonMain.class.getClassLoader().getResourceAsStream(fileName);
     }
 }
