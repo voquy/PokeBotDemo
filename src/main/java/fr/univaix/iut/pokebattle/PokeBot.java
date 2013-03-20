@@ -10,7 +10,8 @@ public class PokeBot implements Bot {
      * List of SmartCells the questions go through to
      * find an answer.
      */
-    final SmartCell[] smartCells = new SmartCell[]{
+	public static String owner = null; 
+	final SmartCell[] smartCells = new SmartCell[]{
             new PokemonOwnerCell(),
             new PokemonPokeballCell(),
             new PokemonCriesCell()
@@ -32,5 +33,4 @@ public class PokeBot implements Bot {
         }
         return null;
     }
-
 }
