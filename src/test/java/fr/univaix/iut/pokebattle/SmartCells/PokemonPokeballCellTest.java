@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import fr.univaix.iut.pokebattle.PokeBot;
 import fr.univaix.iut.pokebattle.Tweet;
 import fr.univaix.iut.pokebattle.smartcells.PokemonPokeballCell;
 
@@ -13,7 +14,8 @@ public class PokemonPokeballCellTest {
 	
     @Test
     public void testPokeball() {
-    	assertEquals("@dresseur @Dono is My Owner", cell.ask(new Tweet("dresseur","Pokeball !")));    
+    	PokeBot.owner = "dresseur";
+    	assertEquals("@dresseur1 @dresseur is My Owner", cell.ask(new Tweet("dresseur1","Pokeball !")));    
     }
     
 
