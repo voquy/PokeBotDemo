@@ -1,24 +1,31 @@
-package fr.univaix.iut.pokebattle;
+package fr.univaix.iut.pokebattle.twitter;
 
 import com.twitter.hbc.httpclient.ControlStreamException;
+import fr.univaix.iut.pokebattle.bot.Bot;
 import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 import fr.univaix.iut.pokebattle.tuse.UserStreamAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import twitter4j.*;
+import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.IOException;
 
 public class TwitterBot {
     private final static Logger logger = LoggerFactory.getLogger(TwitterBot.class);
 
+    Credentials credentials;
     TwitterUserStreamEasy twitterUserStreamEasy;
-    Twitter twitter = TwitterFactory.getSingleton();
+    Twitter twitter;
 
-    public TwitterBot(final Bot bot) {
+    public TwitterBot(final Bot bot, Credentials credentials) {
+        this.credentials = credentials;
+        this.twitter = buildTwitter(credentials);
+        this.twitterUserStreamEasy = buildTwitterUserStreamEasy(bot);
+    }
+
+    private TwitterUserStreamEasy buildTwitterUserStreamEasy(final Bot bot) {
         UserStreamListener listener = new UserStreamAdapter() {
-
-
             @Override
             public void onStatus(Status status) {
                 try {
@@ -38,32 +45,31 @@ public class TwitterBot {
             }
         };
 
-        twitterUserStreamEasy = new TwitterUserStreamEasy(listener);
+        return new TwitterUserStreamEasy(listener);
+    }
+
+    private Twitter buildTwitter(Credentials credentials) {
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+
+        cb.setDebugEnabled(true)
+                .setOAuthConsumerKey(credentials.getConsumerKey())
+                .setOAuthConsumerSecret(credentials.getConsumerSecret())
+                .setOAuthAccessToken(credentials.getToken())
+                .setOAuthAccessTokenSecret(credentials.getTokenSecret());
+        TwitterFactory tf = new TwitterFactory(cb.build());
+        return tf.getInstance();
     }
 
     public void startBot() throws InterruptedException, ControlStreamException, IOException {
+        twitter = TwitterFactory.getSingleton();
         twitterUserStreamEasy.oauth();
     }
 
     private boolean isTweetForMe(Status status) throws TwitterException {
-        return status.getText().contains(twitter.getScreenName());
+        return status.getText().toLowerCase().contains(twitter.getScreenName().toLowerCase());
     }
 
     private boolean isTweetOfMe(Status status) throws TwitterException {
         return status.getUser().getId() == twitter.getId();
-    }
-
-    public static void main(String[] args) {
-
-        try {
-            TwitterBot twitterBot = new TwitterBot(new PokeBot());
-            twitterBot.startBot();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ControlStreamException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

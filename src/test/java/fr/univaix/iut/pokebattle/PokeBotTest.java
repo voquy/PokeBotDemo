@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle;
 
+import fr.univaix.iut.pokebattle.bot.PokeBot;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Integration tests checking the PokeBot
  * behavior. We just test some cases to make sure that the
- * PokeBot is using SmartCells properly.
+ * PokeBot is using smartcell properly.
  */
 public class PokeBotTest {
     PokeBot pokeBot = new PokeBot();

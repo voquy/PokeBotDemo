@@ -1,11 +1,13 @@
-package fr.univaix.iut.pokebattle;
+package fr.univaix.iut.pokebattle.bot;
 
-import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
+import fr.univaix.iut.pokebattle.smartcell.PokemonCriesCell;
+import fr.univaix.iut.pokebattle.smartcell.SmartCell;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 
 public class PokeBot implements Bot {
     /**
-     * List of SmartCells the questions go through to
+     * List of smartcell the questions go through to
      * find an answer.
      */
     final SmartCell[] smartCells = new SmartCell[]{
