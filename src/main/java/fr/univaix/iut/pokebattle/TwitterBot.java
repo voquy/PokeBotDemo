@@ -23,6 +23,7 @@ public class TwitterBot {
             public void onStatus(Status status) {
                 try {
                     logger.info("TwitterUserStreamEasyExample.onStatus()");
+                    System.out.println(status.getText());
                     if (isTweetOfMe(status) || !isTweetForMe(status)) {
                         logger.info("Ignored status change");
                         return;
@@ -45,8 +46,9 @@ public class TwitterBot {
         twitterUserStreamEasy.oauth();
     }
 
+    // Faire attention à la casse
     private boolean isTweetForMe(Status status) throws TwitterException {
-        return status.getText().contains(twitter.getScreenName());
+        return status.getText().toLowerCase().contains(twitter.getScreenName().toLowerCase());
     }
 
     private boolean isTweetOfMe(Status status) throws TwitterException {
