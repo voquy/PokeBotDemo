@@ -1,4 +1,4 @@
-Fantomiinus:
+#Fantomiinus:
 
 debug=true
 oauth.consumerKey=ysYDoyoxR3oJOE7NTT4STQ
@@ -7,10 +7,18 @@ oauth.accessToken=1264469936-sruVE2hYyWxMEUwjUdmi5swBcFCmaNiFTdr4L0e
 oauth.accessTokenSecret=Wt2hvbbYlWuiSyWDGrmpuZFo0SXh2NigUhPNWVv6uc
 
 
-JugeCordier
+#JugeCordier
 
 debug=true
 oauth.consumerKey=zkcw9mmtyVPbg8fQlV7r5w
 oauth.consumerSecret=IL7ci03IIHouUNMi0obMY8EKmHCOLpzGj2Aq6O0e20
 oauth.accessToken=1283208630-5NlHWRhOny0vgVbXKmhbC10ql6WlMNpetCVJ82Q
 oauth.accessTokenSecret=cwQKCmtIkmdx92g3bbraYi9H86Z4pZQc4gbtpapOg
+
+#PierreBPalette
+
+debug=true
+oauth.consumerKey=iahhYQoXpgdTm1SKggHvMA
+oauth.consumerSecret=FtfqRZx2hvu2CUExl0IJZ07jiFemR9hRu8wPDOIkbg
+oauth.accessToken=1283340398-5QNyDVJtRrwi1Kns2x7EkuN7aGlEZvozogjf9NY
+oauth.accessTokenSecret=1283340398-5QNyDVJtRrwi1Kns2x7EkuN7aGlEZvozogjf9NY
