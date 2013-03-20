@@ -10,6 +10,9 @@ public class PokemonAttackCell implements SmartCell{
 		System.out.println("Attack"+question.getText());
 		if (question.getText().contains("#attack"))
 		{
+			//if (owner == null)
+				//return "@" + question.getScreenName() + " @" + owner + " is my owner";
+			//else
 				return "@JeremsBoot #attack #ténèbres! /cc " + "@" + question.getScreenName();
 		}
 		return null;
