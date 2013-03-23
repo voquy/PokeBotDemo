@@ -15,7 +15,7 @@ public class PokeBot implements Bot {
     };
 
     /**
-     * Ask something to BoBot, it will respond to you.
+     * Ask something to Bot, it will respond to you.
      *
      * @param question The question you ask.
      * @return An answer... or null if it doesn't get it.
