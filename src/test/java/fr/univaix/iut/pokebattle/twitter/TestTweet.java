@@ -1,6 +1,5 @@
-package fr.univaix.iut.pokebattle;
+package fr.univaix.iut.pokebattle.twitter;
 
-import fr.univaix.iut.pokebattle.twitter.Tweet;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
