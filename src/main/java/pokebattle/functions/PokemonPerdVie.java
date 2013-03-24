@@ -13,6 +13,8 @@ public class PokemonPerdVie implements SmartCell {
 		
 		if (question.getScreenName().toLowerCase().equals("jugecordier")) {
 			PokeBot.setVie(PokeBot.getVie() - 10);
+			if (PokeBot.getVie() <= 0)
+				return "#KO /cc " + question.getScreenName() + " @dresseurAdv " + question.getText().split(" ")[3];
 			return "Ma vie : " + String.valueOf(PokeBot.getVie());
 		}
 		return null;
