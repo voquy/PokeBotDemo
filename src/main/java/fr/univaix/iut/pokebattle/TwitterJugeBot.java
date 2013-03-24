@@ -9,13 +9,13 @@ import twitter4j.*;
 
 import java.io.IOException;
 
-public class TwitterBot {
-    private final static Logger logger = LoggerFactory.getLogger(TwitterBot.class);
+public class TwitterJugeBot {
+    private final static Logger logger = LoggerFactory.getLogger(TwitterJugeBot.class);
 
     TwitterUserStreamEasy twitterUserStreamEasy;
     Twitter twitter = TwitterFactory.getSingleton();
 
-    public TwitterBot(final Bot bot) {
+    public TwitterJugeBot(final Bot bot) {
         UserStreamListener listener = new UserStreamAdapter() {
 
 
@@ -60,8 +60,8 @@ public class TwitterBot {
     public static void main(String[] args) {
 
         try {
-            TwitterBot twitterBot = new TwitterBot(new PokeBot());
-            twitterBot.startBot();
+            TwitterJugeBot twitterJugeBot = new TwitterJugeBot(new JugeBot());
+            twitterJugeBot.startBot();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ControlStreamException e) {

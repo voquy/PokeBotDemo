@@ -6,16 +6,39 @@ import fr.univaix.iut.pokebattle.tuse.UserStreamAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import twitter4j.*;
+import twitter4j.auth.AccessToken;
+import twitter4j.conf.Configuration;
+import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.IOException;
 
-public class TwitterBot {
-    private final static Logger logger = LoggerFactory.getLogger(TwitterBot.class);
+public class TwitTestBot {
+    private final static Logger logger = LoggerFactory.getLogger(TwitTestBot.class);
+    private final String CONSUMER_KEY = "Hyf6Ayk4bAh8kAw4vy7A";
+    private final String CONSUMER_SECRET = "KIr7NOtLfWSVFAxIwmqS7uBVe0P1th2hnTgvv1h1VE";
+    private final String TOKEN = "1283208630-OgqhM2B6i7QexEFEPC0XcAdbjckXe5oLOREsYP7";
+    private final String TOKENSECRET = "4BCEL3CwVTWWXpe0lL5gIXsmINFi9ev8NtkVwAE6eK8";
+    public AccessToken ACCESSTOKEN = new AccessToken(TOKEN, TOKENSECRET); 
 
     TwitterUserStreamEasy twitterUserStreamEasy;
-    Twitter twitter = TwitterFactory.getSingleton();
+    Twitter twitter = new TwitterFactory().getInstance();
 
-    public TwitterBot(final Bot bot) {
+    public TwitTestBot(final Bot bot) {
+    	twitter.setOAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET);
+    	twitter.setOAuthAccessToken(ACCESSTOKEN);
+    	
+    	
+    	/*
+    	 ConfigurationBuilder builder = new ConfigurationBuilder();
+        builder.setOAuthConsumerKey(CONSUMER_KEY);
+        builder.setOAuthConsumerSecret(CONSUMER_SECRET);
+        builder.setOAuthAccessToken(TOKEN);
+        builder.setOAuthAccessTokenSecret(TOKENSECRET);
+        Configuration configuration = builder.build();
+        TwitterFactory factory = new TwitterFactory(configuration);
+        final Twitter twitter = factory.getInstance();
+    	 */
+    	
         UserStreamListener listener = new UserStreamAdapter() {
 
 
@@ -60,8 +83,8 @@ public class TwitterBot {
     public static void main(String[] args) {
 
         try {
-            TwitterBot twitterBot = new TwitterBot(new PokeBot());
-            twitterBot.startBot();
+            TwitTestBot TwitTestBot = new TwitTestBot(new PokeBot());
+            TwitTestBot.startBot();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ControlStreamException e) {
