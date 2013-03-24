@@ -33,7 +33,9 @@ public class TwitterBot {
                     if (response != null)
                         twitter.updateStatus(response);
 
-                } catch (TwitterException e) {
+                }
+                
+                catch (TwitterException e) {
                     e.printStackTrace();
                 }
             }

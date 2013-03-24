@@ -22,3 +22,6 @@ oauth.consumerKey=iahhYQoXpgdTm1SKggHvMA
 oauth.consumerSecret=FtfqRZx2hvu2CUExl0IJZ07jiFemR9hRu8wPDOIkbg
 oauth.accessToken=1283340398-5QNyDVJtRrwi1Kns2x7EkuN7aGlEZvozogjf9NY
 oauth.accessTokenSecret=1283340398-5QNyDVJtRrwi1Kns2x7EkuN7aGlEZvozogjf9NY
+
+
+twitter4j.properties
