@@ -12,7 +12,8 @@ public class PokemonKoCell implements SmartCell{
 
 		if (PokeBot.vie <= 0)
 		{
-			return "#KO /cc " + question.getScreenName() + " @dresseurAdv " + question.getText().split(" ")[3];
+			return "#KO /cc " + "@" + question.getScreenName()
+					+ " @dresseurAdv " + question.getText().split(" ")[3];
 		}	
 		return null;
     }
