@@ -4,6 +4,7 @@ import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonPokeballCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonAttackCell;
+import pokebattle.functions.PokemonPerdVie;
 
 
 public class PokeBot implements Bot {
@@ -11,10 +12,13 @@ public class PokeBot implements Bot {
      * List of SmartCells the questions go through to
      * find an answer.
      */
-	public static String owner = null; 
+	public static String owner = null;
+	public static int vie = 100;
+	
 	final SmartCell[] smartCells = new SmartCell[]{
             new PokemonOwnerCell(),
             new PokemonPokeballCell(),
+            new PokemonPerdVie(),
             new PokemonAttackCell(),
             new PokemonCriesCell()
             
@@ -35,4 +39,13 @@ public class PokeBot implements Bot {
         }
         return null;
     }
+
+	public static int getVie() {
+		return vie;
+	}
+
+	
+	public static void setVie(int vie) {
+		PokeBot.vie = vie;
+	}
 }
