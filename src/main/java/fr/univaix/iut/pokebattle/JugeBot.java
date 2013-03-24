@@ -1,6 +1,7 @@
 package fr.univaix.iut.pokebattle;
 
 
+import pokebattle.functions.JugeInitialiseFight;
 import fr.univaix.iut.pokebattle.smartcells.JugeCombatCell;
 
 public class JugeBot implements Bot {
@@ -8,8 +9,27 @@ public class JugeBot implements Bot {
      * List of SmartCells the questions go through to
      * find an answer.
      */
+	public static String adversaire1;
+	public static String adversaire2;
+	
+	public static String getAdversaire1() {
+		return adversaire1;
+	}
+
+	public static void setAdversaire1(String adversaire1) {
+		JugeBot.adversaire1 = adversaire1;
+	}
+
+	public static String getAdversaire2() {
+		return adversaire2;
+	}
+
+	public static void setAdversaire2(String adversaire2) {
+		JugeBot.adversaire2 = adversaire2;
+	}
 
 	final SmartCell[] smartCells = new SmartCell[]{
+			new JugeInitialiseFight(),
             new JugeCombatCell() 
     };
 
