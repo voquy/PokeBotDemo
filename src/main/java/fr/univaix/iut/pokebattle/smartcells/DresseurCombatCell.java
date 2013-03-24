@@ -11,7 +11,17 @@ public class DresseurCombatCell implements SmartCell{
 		System.out.println("Tweet émis : " + question.getText());
 		System.out.println("Emetteur : " + emetteur);
 		
-		if(question.getText().contains("#fight") &&  question.getText().contains("with @")){
+		// Junit Test
+		/*
+		if(question.getText().contains("#fight with @")){
+			String juge = "@jugecordier";
+			String emetteurTweet = "dresseur";
+			
+			return "@" + emetteurTweet + " #fight #ok with " + "@monPokemon" + " /cc " + juge;
+		}
+		*/
+		
+		if(question.getText().contains("#fight with @")){
 			String juge = question.getText().split(" ")[5];
 			
 			return "@" + question.getScreenName() + " #fight #ok with " + "@monPokemon" + " /cc " + juge;
