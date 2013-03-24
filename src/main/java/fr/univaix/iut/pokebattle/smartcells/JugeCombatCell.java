@@ -7,10 +7,9 @@ public class JugeCombatCell implements SmartCell{
 	
 	public String ask(Tweet question) {
 		
-		System.out.println("Attack"+question.getText());
-		
 		String emetteur = question.getScreenName().toLowerCase();
 		
+		System.out.println("Tweet émis : " + question.getText());
 		System.out.println("Emetteur : " + emetteur);
 		
 		if (emetteur.equals("fantomiinus") || emetteur.equals("pikachu")) {

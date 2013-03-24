@@ -18,10 +18,10 @@ oauth.accessTokenSecret=4BCEL3CwVTWWXpe0lL5gIXsmINFi9ev8NtkVwAE6eK8
 #PierreBPalette
 
 debug=true
-oauth.consumerKey=iahhYQoXpgdTm1SKggHvMA
-oauth.consumerSecret=FtfqRZx2hvu2CUExl0IJZ07jiFemR9hRu8wPDOIkbg
-oauth.accessToken=1283340398-5QNyDVJtRrwi1Kns2x7EkuN7aGlEZvozogjf9NY
-oauth.accessTokenSecret=1283340398-5QNyDVJtRrwi1Kns2x7EkuN7aGlEZvozogjf9NY
+oauth.consumerKey=3AllOsuY8eEwoC9rSINMFA
+oauth.consumerSecret=2wIOmodDjm1cdUvYYM5IFnlM0rEXPWWIqW9Oj7nnU
+oauth.accessToken=1283340398-FNj8FCV82GdYwMjzEk8RBjri4jhdzbTPbJ8EgUT
+oauth.accessTokenSecret=SwdXrcx7rfYQyL6XOdWFfOaQH5iRaQutOFgPH6fWRYg
 
 
 twitter4j.properties

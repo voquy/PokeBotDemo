@@ -1,16 +1,16 @@
 package fr.univaix.iut.pokebattle;
 
 
-import fr.univaix.iut.pokebattle.smartcells.JugeCombatCell;
+import fr.univaix.iut.pokebattle.smartcells.DresseurCombatCell;
 
-public class JugeBot implements Bot {
+public class DresseurBot implements Bot {
     /**
      * List of SmartCells the questions go through to
      * find an answer.
      */
 
 	final SmartCell[] smartCells = new SmartCell[]{
-            new JugeCombatCell() 
+            new DresseurCombatCell() 
     };
 
     /**
