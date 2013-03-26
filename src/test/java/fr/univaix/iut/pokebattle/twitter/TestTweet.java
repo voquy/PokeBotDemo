@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class TestTweet {
     @Test
     public void testCreateTweet() {
-        Tweet tweet = new Tweet("nedseb", "coucou !");
+        Tweet tweet = new Tweet("nedseb", "coucou !", null);
         assertEquals("nedseb", tweet.getScreenName());
         assertEquals("coucou !", tweet.getText());
 

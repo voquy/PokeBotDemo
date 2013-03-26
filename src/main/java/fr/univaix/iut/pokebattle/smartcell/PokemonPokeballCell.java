@@ -11,15 +11,23 @@ import twitter4j.TwitterFactory;
 public class PokemonPokeballCell implements SmartCell {
 
 	public String ask(Tweet question) {
-
-		//String Owner = PokeBot.owner;
 		
-		if (question.getText().contains("Pokeball !")) {
-			System.out.println(PokeBot.owner);
+		if (question.getText().toLowerCase().contains("pokeball")) {
+			System.out.println(PokeBot.getOwner());
 			if (PokeBot.owner == null) {
-				PokeBot.owner = question.getScreenName();
-				System.out.println(PokeBot.owner);
-				return "@" + PokeBot.owner + " is My Owner";
+				PokeBot.setOwner(question.getScreenName());
+				System.out.println(PokeBot.getOwner());
+				
+				Twitter twitter = TwitterFactory.getSingleton();
+				try {
+					twitter.updateProfile(null, null, null,
+							"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
+					return "@" + PokeBot.owner + " is My Owner";
+					
+				} catch (TwitterException e) {
+					e.printStackTrace();
+				}
+
 			}
 			else
 			{
@@ -27,12 +35,11 @@ public class PokemonPokeballCell implements SmartCell {
 
 				try {
 					twitter.updateProfile(null, null, null,
-							"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
-					
+						"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
+					return "@"+question.getScreenName()+" @" + PokeBot.owner + " is My Owner";
 				} catch (TwitterException e) {
 					e.printStackTrace();
 				}
-				return "@"+question.getScreenName()+" @" + PokeBot.owner + " is My Owner";
 			}
 
 
