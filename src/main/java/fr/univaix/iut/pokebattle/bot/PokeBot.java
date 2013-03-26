@@ -24,8 +24,7 @@ public class PokeBot implements Bot {
             new PokemonKoCell(),
             new PokemonPerdVie(),
             new PokemonAttackCell(),
-            new PokemonCriesCell()
-            
+            new PokemonCriesCell()     
     };
 
     /**
@@ -43,6 +42,14 @@ public class PokeBot implements Bot {
         }
         return null;
     }
+    
+	public static String getOwner() {
+		return owner;
+	}
+
+	public static void setOwner(String owner) {
+		PokeBot.owner = owner;
+	}
 
 	public static int getVie() {
 		return vie;

@@ -13,11 +13,10 @@ public class PokemonOwnerCell implements SmartCell{
 
 		if (question.getText().contains("Owner ?"))
 		{
-		
-		if (PokeBot.owner == null)
-			return "@" + question.getScreenName() + " No Owner";
-		else
-			return "@" + question.getScreenName() + " " + "@" + PokeBot.owner + " is My Owner";
+			if (PokeBot.owner == null)
+				return "@" + question.getScreenName() + " No Owner";
+			else
+				return "@" + question.getScreenName() + " " + "@" + PokeBot.owner + " is My Owner";
 		}	
 		return null;
     }

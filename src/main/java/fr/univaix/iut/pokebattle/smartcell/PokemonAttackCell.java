@@ -12,9 +12,11 @@ public class PokemonAttackCell implements SmartCell{
 		System.out.println("Tweet émis : " + question.getText());
 		System.out.println("Emetteur : " + emetteur);
 		
-		if (emetteur.equals("quynhchee") || emetteur.equals("jeremsboot") || emetteur.equals("dounouw")
-				|| emetteur.equals("graiig1") || emetteur.equals("brownrock_")) {
-			if (question.getText().contains("#attack"))
+		if (emetteur.toLowerCase().equals("quynhchee")
+			|| emetteur.toLowerCase().equals("jeremsboot") || emetteur.toLowerCase().equals("dounouw")
+			|| emetteur.toLowerCase().equals("graiig1") || emetteur.toLowerCase().equals("brownrock_"))
+		{
+			if (question.getText().toLowerCase().contains("#attack"))
 			{
 				String dresseuradverse = question.getText().split(" ")[5];
 				String juge = question.getText().split(" ")[6];
