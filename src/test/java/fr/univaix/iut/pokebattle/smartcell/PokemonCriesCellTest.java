@@ -1,8 +1,9 @@
-package fr.univaix.iut.pokebattle.SmartCells;
+package fr.univaix.iut.pokebattle.smartcell;
 
-import fr.univaix.iut.pokebattle.Tweet;
-import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
+
 import org.junit.Test;
+
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 import static org.junit.Assert.assertEquals;
 
