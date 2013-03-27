@@ -1,5 +1,12 @@
 package fr.univaix.iut.pokebattle.bot;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import BD.java.fr.univaix.iut.progbd.DAOPokemonJPA;
+import BD.java.fr.univaix.iut.progbd.Pokemon;
+
 import pokebattle.functions.PokemonPerdVie;
 import fr.univaix.iut.pokebattle.smartcell.PokemonAttackCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonCriesCell;
@@ -15,8 +22,13 @@ public class PokeBot implements Bot {
      * List of smartcell the questions go through to
      * find an answer.
      */
-	public static String owner = null;
-	public static int vie = 20;
+    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
+    static EntityManager em = emf.createEntityManager();
+    static DAOPokemonJPA dao = new DAOPokemonJPA(em);
+   public static Pokemon Poke = dao.getById("Fantomiinus");
+    
+	public static String owner = Poke.getOwner();
+	public static int vie = Poke.getBaseHP();
 	
 	final SmartCell[] smartCells = new SmartCell[]{
             new PokemonOwnerCell(),
@@ -24,6 +36,7 @@ public class PokeBot implements Bot {
             new PokemonKoCell(),
             new PokemonPerdVie(),
             new PokemonAttackCell(),
+            
             new PokemonCriesCell()     
     };
 

@@ -1,50 +1,83 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import java.io.IOException;
+import java.io.InputStream;
 
-import fr.univaix.iut.pokebattle.bot.PokeBot;
-import fr.univaix.iut.pokebattle.twitter.Tweet;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
-
+import BD.java.fr.univaix.iut.progbd.DAOPokemonJPA;
+import BD.java.fr.univaix.iut.progbd.Pokemon;
+import fr.univaix.iut.pokebattle.bot.PokeBot;
+import fr.univaix.iut.pokebattle.run.PokemonMain;
+import fr.univaix.iut.pokebattle.twitter.Credentials;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
+import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
 public class PokemonPokeballCell implements SmartCell {
-
+	@Override
 	public String ask(Tweet question) {
-		
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
+		EntityManager em = emf.createEntityManager();
+
+		DAOPokemonJPA dao = new DAOPokemonJPA(em);
+		Pokemon Fantomiinus = new Pokemon("Fantomiinus");
 		if (question.getText().toLowerCase().contains("pokeball")) {
 			System.out.println(PokeBot.getOwner());
-			if (PokeBot.owner == null) {
-				PokeBot.setOwner(question.getScreenName());
+			System.out.println(question.getScreenName());
+
+			if (PokeBot.getOwner() == null) {
+
+
+				Fantomiinus.setOwner(question.getScreenName());
+				Fantomiinus.setLevel(1);
+				Fantomiinus.setBaseHP(60);
+				boolean update = dao.update(Fantomiinus);
+				System.out.println(update);
+
+				PokeBot.owner=Fantomiinus.getOwner();
 				System.out.println(PokeBot.getOwner());
-				
-				Twitter twitter = TwitterFactory.getSingleton();
+				System.out.println(Fantomiinus.getLevel());
+				InputStream inputStream = getResourceAsStream("PkmFantominus.properties");
+				Credentials credentials = new Credentials();
+
+				try {
+					credentials = Credentials.loadCredentials(inputStream);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				TwitterBuilder builder = new TwitterBuilder(credentials);
+				Twitter twitter = builder.build();
+
 				try {
 					twitter.updateProfile(null, null, null,
-							"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
-					return "@" + PokeBot.owner + " is My Owner";
-					
+							"#pokebattle - #pokemon - Level: "+Fantomiinus.getLevel() + " Owner: @" + Fantomiinus.getOwner());					
+					return "@" + Fantomiinus.getOwner() + " You Are My Owner";
+
 				} catch (TwitterException e) {
 					e.printStackTrace();
 				}
 
+
 			}
-			else
-			{
-				Twitter twitter = TwitterFactory.getSingleton();
-
-				try {
-					twitter.updateProfile(null, null, null,
-						"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
-					return "@"+question.getScreenName()+" @" + PokeBot.owner + " is My Owner";
-				} catch (TwitterException e) {
-					e.printStackTrace();
-				}
-			}
-
-
+			else if (PokeBot.getOwner().equals(question.getScreenName()))
+				return "@" + PokeBot.getOwner()
+						+ " You Are Already My Owner Bitch";
 		}
-		return null;
-	}
+		
+			return "@" + question.getScreenName() + " @" + PokeBot.getOwner()
+					+ " is My Owner";
+			
 
-}
+	}
+	
+    
+			static InputStream getResourceAsStream(String fileName) {
+				return PokemonMain.class.getClassLoader().getResourceAsStream(fileName);
+			}
+		}
