@@ -19,12 +19,12 @@ public class PokeBot implements Bot {
 	public static String vraiNom = "Bulbizarre";
 	public static String owner = null;
 	public static int vie = 20;
-	public static int Level= 1;
-	public static int XP = 0;
-	public static int PVRestant = 10;
-	public static int PVTotal = 100;
-	public static int PPRestant = 10;
-	public static int PPTotal = 35;
+	public static int level = 1;
+	public static int exp = 0;
+	public static int pvRestant = 10;
+	public static int pvTotal = 100;
+	public static int ppRestant = 10;
+	public static int ppTotal = 35;
 	
 	final SmartCell[] smartCells = new SmartCell[]{
             new PokemonOwnerCell(),
@@ -79,43 +79,43 @@ public class PokeBot implements Bot {
 	}
 	
 	public static int getLevel(){
-		return Level;
+		return level;
 	}
 	
 	public static void setLevel(int Level){
-		 PokeBot.Level = Level;
+		 PokeBot.level = Level;
 	}
 	
-	public static int getXP(){
-		return XP;
+	public static int getEXP(){
+		return exp;
 	}
 	
-	public static void setXP(int XP){
-		 PokeBot.XP = XP;
+	public static void setEXP(int exp){
+		 PokeBot.exp = exp;
 	}
 	
 	public static int getPVRestant(){
-		return PVRestant;
+		return pvRestant;
 	}
 	
 	public static void setPVRestant(int PVRestant){
-		 PokeBot.PVRestant= PVRestant;
+		 PokeBot.pvRestant= PVRestant;
 	}
 	
 	public static int gePVTotal(){
-		return PVTotal;
+		return pvTotal;
 	}
 	
 	public static void setPVTotal(int PVTotal){
-		 PokeBot.PVTotal = PVTotal;
+		 PokeBot.pvTotal = PVTotal;
 	}
 	
 	public static int getPPTotal(){
-		return PPTotal;
+		return ppTotal;
 	}
 	
 	public static void setPPTotal(int PPTotal){
-		 PokeBot.PPTotal = PPTotal;
+		 PokeBot.ppTotal = PPTotal;
 	}
 	
 	
