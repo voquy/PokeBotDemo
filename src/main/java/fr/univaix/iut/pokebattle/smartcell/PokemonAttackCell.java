@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import pokebattle.functions.PokemonAttackValide;
+import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 
@@ -18,15 +20,40 @@ public class PokemonAttackCell implements SmartCell{
 		{
 			if (question.getText().toLowerCase().contains("#attack"))
 			{
+				String text = question.getText().toLowerCase().split("#attack ")[1];
+				String ok = text.split("#")[1];
+				String nomAttaque = ok.split(" ")[0];
+		/*
 				String dresseuradverse = question.getText().split(" ")[5];
 				String juge = question.getText().split(" ")[6];
 				String attaque = question.getText().split(" ")[1]
 								+ " " + question.getText().split(" ")[2]
 								+ " " + question.getText().split(" ")[4];
 				String pokemonAttaqué = question.getText().split(" ")[3];
+		*/
 				
-				return pokemonAttaqué + " " + attaque + " " + dresseuradverse
-						+ " @" + question.getScreenName() + " " + juge;
+				String pokemonRecoitTweet = question.getText().split(" ")[0];
+				String rien = question.getText().split("@")[3];
+				text = "@" + rien;
+				String dresseurAdverse = text.split(" ")[0];
+				String juge = "@" + question.getText().split("@")[4];
+				rien = question.getText().split("@")[2];
+				text = "@" + rien;
+				String pokemonVise = text.split(" ")[0];
+				
+				if (PokemonAttackValide.run(PokeBot.getVraiNom(), nomAttaque, PokeBot.getLevel()))
+				{	/*				
+					return pokemonAttaqué + " " + attaque + " " + dresseuradverse
+							+ " @" + question.getScreenName() + " " + juge;
+					*/
+					
+					return pokemonVise + " #attack #" + nomAttaque + " /cc "
+							+ dresseurAdverse + " " + "@" + question.getScreenName()
+							+ " " + juge;
+				}
+				
+				return "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
+						+ " " + juge + " " + pokemonVise;
 			}
 		}
 		return null;
