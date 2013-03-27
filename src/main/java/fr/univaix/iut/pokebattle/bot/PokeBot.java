@@ -16,6 +16,7 @@ public class PokeBot implements Bot {
      * List of smartcell the questions go through to
      * find an answer.
      */
+	public static String vraiNom = "Bulbizarre";
 	public static String owner = null;
 	public static int vie = 20;
 	public static int Level= 1;
@@ -57,6 +58,15 @@ public class PokeBot implements Bot {
 
 	public static void setOwner(String owner) {
 		PokeBot.owner = owner;
+	}
+	
+	
+	public static String getVraiNom() {
+		return vraiNom;
+	}
+
+	public static void setVraiNom(String vraiNom) {
+		PokeBot.vraiNom = vraiNom;
 	}
 
 	public static int getVie() {

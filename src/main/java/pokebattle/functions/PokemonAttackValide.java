@@ -11,9 +11,9 @@ import com.google.gson.Gson;
 import fr.univaix.iut.pokebattle.bot.Test;
 
 public class PokemonAttackValide {
-	DataObjectAttack[] attaques;
+	static DataObjectAttack[] attaques;
 	
-	public DataObjectAttack[] recupererDonneesPokedex (String nomPkm) {
+	public static DataObjectAttack[] recupererDonneesPokedex (String nomPkm) {
 		Gson gson = new Gson();
 
 		BufferedReader br = new BufferedReader(
@@ -26,7 +26,6 @@ public class PokemonAttackValide {
 			if (objs[i].getNom().toLowerCase().equals(nomPkm.toLowerCase()))
 			{
 				System.out.println(objs[0].getEspece());
-				int z = 0;
 				for (int j = 0 ; j<objs[0].attaques.length ; j++)
 				{
 					attaques = objs[i].getAttaques();
@@ -39,13 +38,18 @@ public class PokemonAttackValide {
 	}
 	
 	
-	public boolean goodLevel (DataObjectAttack[] tabAttack, String monAttack, int lvl) {
+	public static boolean goodLevel (DataObjectAttack[] tabAttack, String monAttack, int lvl) {
 		for (int i = 0 ; i < tabAttack.length ; i++)
 		{
 			if (monAttack.toLowerCase().equals(tabAttack[i].getNom().toLowerCase()))
 			{
-				String recupLvl = tabAttack[i].getNom().split(".")[1];
+				String recupLvl1 = tabAttack[i].getNiveau();
+				if (recupLvl1.equals("Départ")) return true;
+				
+				String recupLvl = recupLvl1.split(".")[1];
+				
 				int lvlAttack = Integer.decode(recupLvl);
+				
 				if (lvl >= lvlAttack)
 					return true;
 				return false;
@@ -55,16 +59,24 @@ public class PokemonAttackValide {
 	}
 	
 	
-	public boolean run (String pkmFind) {
+	public static boolean run (String pkmFind, String pkmFindAttack, int pkmLvl) {
 		attaques = recupererDonneesPokedex(pkmFind);
-		return goodLevel(attaques, monAttack, lvl)
+		if (attaques == null) return false;
+		
+		return goodLevel(attaques, pkmFindAttack, pkmLvl);
 	}
 	
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		boolean result = run("carapuce", "charge", 5);
+		
+		if (result == true) {
+			System.out.println("Ok");
+		}
+		else {
+			System.out.println("Attaque non adéquat");
+		}
 	}
 
 }
