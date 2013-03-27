@@ -16,6 +16,10 @@ public class CredentialsTest {
         assertThat(credentials.getConsumerSecret()).isEqualTo("*******");
         assertThat(credentials.getToken()).isEqualTo("*******");
         assertThat(credentials.getTokenSecret()).isEqualTo("*******");
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         */
     }
 }
