@@ -7,7 +7,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-import pokebattle.json.DataObjectPokemon;
+import pokebattle.pokedex.json.DataObjectAttack;
+import pokebattle.pokedex.json.DataObjectPokemon;
 
 public class Test {
 
@@ -28,11 +29,25 @@ public class Test {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(Test.class.getClassLoader().getResourceAsStream("pokedex.json")));
 		//convert the json string back to object
-		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
+		DataObjectPokemon[] objs = gson.fromJson(br, DataObjectPokemon[].class);
 
-		System.out.println(Arrays.toString(obj));
+		//System.out.println(Arrays.toString(objs));
 		
+		System.out.println(objs[0].getNom());
 		
+		for (int i = 0 ; i<objs.length ; i++)
+		{
+			if (objs[i].getNom().toLowerCase().equals("otaria"))
+			{
+				System.out.println(objs[0].getEspece());
+				for (int j = 0 ; j<objs[0].attaques.length ; j++)
+				{
+					DataObjectAttack[] attaques = objs[i].getAttaques();
+					System.out.println(attaques[1].getNom());
+					System.out.println(attaques[1].getNiveau());
+				}
+			}
+		}
 	}
 
 }
