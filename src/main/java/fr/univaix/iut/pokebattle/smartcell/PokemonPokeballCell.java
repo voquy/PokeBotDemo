@@ -1,11 +1,16 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
 
-import fr.univaix.iut.pokebattle.bot.PokeBot;
-import fr.univaix.iut.pokebattle.twitter.Tweet;
+import java.io.IOException;
+import java.io.InputStream;
+
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
+import fr.univaix.iut.pokebattle.bot.PokeBot;
+import fr.univaix.iut.pokebattle.run.PokemonMain;
+import fr.univaix.iut.pokebattle.twitter.Credentials;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
+import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
 
 public class PokemonPokeballCell implements SmartCell {
@@ -14,37 +19,40 @@ public class PokemonPokeballCell implements SmartCell {
 		
 		if (question.getText().toLowerCase().contains("pokeball")) {
 			System.out.println(PokeBot.getOwner());
+
 			if (PokeBot.owner == null) {
 				PokeBot.setOwner(question.getScreenName());
 				System.out.println(PokeBot.getOwner());
 				
-				Twitter twitter = TwitterFactory.getSingleton();
+				InputStream inputStream = getResourceAsStream("PkmFantominus.properties");
+	            Credentials credentials = new Credentials();
+	            
+				try {
+					credentials = Credentials.loadCredentials(inputStream);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				TwitterBuilder builder = new TwitterBuilder(credentials);
+	            Twitter twitter = builder.build();
+	            
 				try {
 					twitter.updateProfile(null, null, null,
-							"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
-					return "@" + PokeBot.owner + " is My Owner";
+							"#pokebattle - #pokemon - Owner: @" + PokeBot.owner);
+					return "@" + PokeBot.owner + " You Are My Owner";
 					
 				} catch (TwitterException e) {
 					e.printStackTrace();
-				}
-
-			}
-			else
-			{
-				Twitter twitter = TwitterFactory.getSingleton();
-
-				try {
-					twitter.updateProfile(null, null, null,
-						"#pokebattle - #pokemon - Owner: " + PokeBot.owner);
-					return "@"+question.getScreenName()+" @" + PokeBot.owner + " is My Owner";
-				} catch (TwitterException e) {
-					e.printStackTrace();
-				}
-			}
-
-
+				  }
+			
 		}
-		return null;
+			return "@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner";
 	}
+return null;
 
+}
+	
+    static InputStream getResourceAsStream(String fileName) {
+        return PokemonMain.class.getClassLoader().getResourceAsStream(fileName);
+    }
 }
