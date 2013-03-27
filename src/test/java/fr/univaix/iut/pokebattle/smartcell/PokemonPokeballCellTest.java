@@ -19,6 +19,7 @@ public class PokemonPokeballCellTest {
     	assertEquals("@dresseur1 @dresseur is My Owner",
     			cell.ask(new Tweet("dresseur1 @dresseur","Pokeball !", null)));
     	*/ 
+
     }
     
 
