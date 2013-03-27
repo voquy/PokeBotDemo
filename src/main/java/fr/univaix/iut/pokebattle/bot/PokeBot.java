@@ -23,7 +23,7 @@ public class PokeBot implements Bot {
 	public static int exp = 0;
 	public static int pvRestant = 10;
 	public static int pvTotal = 100;
-	public static int ppTestant = 10;
+	public static int ppRestant = 10;
 	public static int ppTotal = 35;
 	
 	final SmartCell[] smartCells = new SmartCell[]{
