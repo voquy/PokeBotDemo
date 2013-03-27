@@ -23,14 +23,16 @@ public class Test {
 		String une_attaque = attack.split("#")[1];
 		System.out.println(une_attaque);
 				
-		  Gson gson = new Gson();
+		Gson gson = new Gson();
 
-	        BufferedReader br = new BufferedReader(
-	                              new InputStreamReader(Test.class.getClassLoader().getResourceAsStream("pokedex.json")));
-	        //convert the json string back to object
-	        DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
+		BufferedReader br = new BufferedReader(
+				new InputStreamReader(Test.class.getClassLoader().getResourceAsStream("pokedex.json")));
+		//convert the json string back to object
+		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
 
-	        System.out.println(Arrays.toString(obj));
+		System.out.println(Arrays.toString(obj));
+		
+		
 	}
 
 }
