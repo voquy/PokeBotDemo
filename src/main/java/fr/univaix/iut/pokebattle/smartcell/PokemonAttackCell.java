@@ -47,6 +47,8 @@ public class PokemonAttackCell implements SmartCell{
 							+ " @" + question.getScreenName() + " " + juge;
 					*/
 					
+					// Sauvegarde la date-heure de la dernière attaque du pokemon
+					PokeBot.lastAttack = question.getDate();
 					return pokemonVise + " #attack #" + nomAttaque + " /cc "
 							+ dresseurAdverse + " " + "@" + question.getScreenName()
 							+ " " + juge;

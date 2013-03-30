@@ -1,8 +1,10 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 /**

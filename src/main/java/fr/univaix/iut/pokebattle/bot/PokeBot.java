@@ -1,5 +1,9 @@
 package fr.univaix.iut.pokebattle.bot;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import pokebattle.functions.PokemonPerdVie;
 import fr.univaix.iut.pokebattle.smartcell.PokemonAttackCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonCaracCell;
@@ -18,14 +22,15 @@ public class PokeBot implements Bot {
      */
 	public static String vraiNom = "Bulbizarre";
 	public static String owner = null;
-	public static int vie = 20;
 	public static int level = 1;
 	public static int exp = 0;
-	public static int pvRestant = 10;
+	public static int pvRestant = 20;
+	public static int pvRestantLast = 20;
 	public static int pvTotal = 100;
 	public static int ppRestant = 10;
 	public static int ppTotal = 35;
-	
+	public static Date lastAttack = new Date();
+
 	final SmartCell[] smartCells = new SmartCell[]{
             new PokemonOwnerCell(),
             new PokemonPokeballCell(),
@@ -69,14 +74,6 @@ public class PokeBot implements Bot {
 		PokeBot.vraiNom = vraiNom;
 	}
 
-	public static int getVie() {
-		return vie;
-	}
-
-	
-	public static void setVie(int vie) {
-		PokeBot.vie = vie;
-	}
 	
 	public static int getLevel(){
 		return level;
@@ -102,7 +99,15 @@ public class PokeBot implements Bot {
 		 PokeBot.pvRestant= PVRestant;
 	}
 	
-	public static int gePVTotal(){
+	public static int getPVRestantLast(){
+		return pvRestantLast;
+	}
+	
+	public static void setPVRestantLast(int PVRestantLast){
+		 PokeBot.pvRestantLast = PVRestantLast;
+	}
+	
+	public static int getPVTotal(){
 		return pvTotal;
 	}
 	
@@ -118,5 +123,13 @@ public class PokeBot implements Bot {
 		 PokeBot.ppTotal = PPTotal;
 	}
 	
+	
+	public static Date getLastAttack() {
+		return lastAttack;
+	}
+
+	public static void setLastAttack(Date lastAttack) {
+		PokeBot.lastAttack = lastAttack;
+	}
 	
 }
