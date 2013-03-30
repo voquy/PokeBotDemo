@@ -10,7 +10,7 @@ public class PokemonKoCell implements SmartCell{
 		
 		// String owner = "Owner" ;
 
-		if (PokeBot.vie <= 0)
+		if (PokeBot.pvRestant <= 0)
 		{
 			return "#KO /cc " + "@" + question.getScreenName()
 					+ " @dresseurAdv " + question.getText().split(" ")[3];
