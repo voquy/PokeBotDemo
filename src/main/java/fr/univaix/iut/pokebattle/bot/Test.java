@@ -1,53 +1,44 @@
 package fr.univaix.iut.pokebattle.bot;
 
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import fr.univaix.iut.pokebattle.bot.PokeBot;
+import fr.univaix.iut.pokebattle.run.BotRunner;
 
-import com.google.gson.Gson;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-
-import pokebattle.pokedex.json.DataObjectAttack;
-import pokebattle.pokedex.json.DataObjectPokemon;
 
 public class Test {
 
 	/**
 	 * @param args
+	 * @throws InterruptedException 
 	 */
-	public static void main(String[] args) {
-		String text = "@pikachuNyanNian #attack #grumpycat @bulbizare1 /cc @pcreux @viviane";
-		String morceau = text.split("#attack ")[1];
-		System.out.println(morceau);
-		String attack = morceau.split(" ")[0];
-		System.out.println(attack);
-		String une_attaque = attack.split("#")[1];
-		System.out.println(une_attaque);
-				
-		Gson gson = new Gson();
-
-		BufferedReader br = new BufferedReader(
-				new InputStreamReader(Test.class.getClassLoader().getResourceAsStream("pokedex.json")));
-		//convert the json string back to object
-		DataObjectPokemon[] objs = gson.fromJson(br, DataObjectPokemon[].class);
-
-		//System.out.println(Arrays.toString(objs));
+	public static void main(String[] args) throws InterruptedException {
+		//BotRunner.runBot(new PokeBot(), "PkmFantominus.properties");
 		
-		System.out.println(objs[0].getNom());
+		// Suspendu pendant 60 sec
+		/*
+		Thread.sleep(60000);
 		
-		for (int i = 0 ; i<objs.length ; i++)
-		{
-			if (objs[i].getNom().toLowerCase().equals("otaria"))
-			{
-				System.out.println(objs[0].getEspece());
-				for (int j = 0 ; j<objs[0].attaques.length ; j++)
-				{
-					DataObjectAttack[] attaques = objs[i].getAttaques();
-					System.out.println(attaques[1].getNom());
-					System.out.println(attaques[1].getNiveau());
-				}
-			}
-		}
+		Date dateNow = new Date();
+		String sFormat = "dd/MM/yyyy HH:mm";
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");;
+		//String test = sdf2.format(myDate) + " " +  myTime.replace('H', ':');
+		// Date myDateTotale= sdf.parse(test); //marche pas!!
+
+		long diff = dateNow.getTime() - PokeBot.lastAttack.getTime();
+		
+		System.out.println(diff / 1000);
+		System.out.println(sdf1.format(PokeBot.getLastAttack()));
+		System.out.println(PokeBot.getLastAttack().getTime());
+		System.out.println(sdf1.format(dateNow));
+		System.out.println(dateNow.getTime());
+		*/
+		
+		long nombre = 1212;
+		int un = (int) (nombre / 10);
+		System.out.println(un);
 	}
 
 }

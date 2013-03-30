@@ -1,5 +1,6 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import pokebattle.functions.PokemonTempsInactif;
 import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -25,7 +26,22 @@ public class PokemonCaracCell implements SmartCell{
 				else if (Stat.contains("#xp"))
 					return "@" + emetteur +" "+ Stat + "=" + PokeBot.exp;
 				else if (Stat.contains("#pv"))
+				{
+					long temps = PokemonTempsInactif.run(PokeBot.lastAttack);
+					int nbFoisVie = 0;
+					// Si temps d'inactivité supérieur à au moins 1h
+					if (temps > 3600 && (PokeBot.getPVRestant() < PokeBot.getPVTotal()))
+					{
+						nbFoisVie = (int) ((temps)/3600);
+						PokeBot.setPVRestant(PokeBot.getPVRestantLast() + ((PokeBot.getPVTotal()/10) * nbFoisVie));
+						if (PokeBot.getPVRestant() > PokeBot.getPVTotal())
+						{
+							PokeBot.setPVRestant(PokeBot.getPVTotal());
+							PokeBot.setPVRestantLast(PokeBot.getPVTotal());
+						}
+					}
 					return "@" + emetteur +" " + Stat + "=" + PokeBot.pvRestant + "/" + PokeBot.pvTotal;
+				}
 				else if (Stat.contains("#pp"))
 				{
 					String Attaque = question.getText().toLowerCase().split(" ")[3];
