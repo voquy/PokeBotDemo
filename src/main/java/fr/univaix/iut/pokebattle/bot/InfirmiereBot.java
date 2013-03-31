@@ -51,8 +51,9 @@ public class InfirmiereBot implements Bot {
      */
 
 	final SmartCell[] smartCells = new SmartCell[]{
-			new InfirmHealStartCell() ,
-            new InfirmHealCell()
+			new InfirmHealCell(),
+			new InfirmHealStartCell()
+            
     };
 
     /**

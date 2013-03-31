@@ -13,7 +13,7 @@ public class InfirmHealCellTest {
 
     @Test
     public void testHeal() {
-        assertEquals("@bulbizare1 #stat #PV ?",
+        assertEquals("@bulbizare1 #stat #pv ?",
         	cell.ask(new Tweet("pcreux","@JoelleBourgPalet #heal @bulbizare1", null)));
     }
     
