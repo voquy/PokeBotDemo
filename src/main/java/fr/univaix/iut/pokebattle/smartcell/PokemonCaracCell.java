@@ -15,7 +15,8 @@ public class PokemonCaracCell implements SmartCell{
 		
 		if (emetteur.toLowerCase().equals("quynhchee")
 			|| emetteur.toLowerCase().equals("jeremsboot") || emetteur.toLowerCase().equals("dounouw")
-			|| emetteur.toLowerCase().equals("graiig1") || emetteur.toLowerCase().equals("brownrock_"))
+			|| emetteur.toLowerCase().equals("graiig1") || emetteur.toLowerCase().equals("brownrock_")
+			|| emetteur.toLowerCase().equals("joellebpalette") )
 		{
 	
 			if (question.getText().toLowerCase().contains("#stat"))

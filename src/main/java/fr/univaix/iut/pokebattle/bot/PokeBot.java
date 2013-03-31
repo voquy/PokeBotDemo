@@ -6,6 +6,7 @@ import java.util.Date;
 
 import pokebattle.functions.PokemonPerdVie;
 import fr.univaix.iut.pokebattle.smartcell.PokemonAttackCell;
+import fr.univaix.iut.pokebattle.smartcell.PokemonCCenterCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonCaracCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonCriesCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonKoCell;
@@ -24,7 +25,7 @@ public class PokeBot implements Bot {
 	public static String owner = null;
 	public static int level = 1;
 	public static int exp = 0;
-	public static int pvRestant = 20;
+	public static int pvRestant = 80;
 	public static int pvRestantLast = 20;
 	public static int pvTotal = 100;
 	public static int ppRestant = 10;
@@ -32,6 +33,7 @@ public class PokeBot implements Bot {
 	public static Date lastAttack = new Date();
 
 	final SmartCell[] smartCells = new SmartCell[]{
+			new PokemonCCenterCell(),
             new PokemonOwnerCell(),
             new PokemonPokeballCell(),
             new PokemonKoCell(),
