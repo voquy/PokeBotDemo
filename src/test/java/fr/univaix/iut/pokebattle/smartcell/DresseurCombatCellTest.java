@@ -1,11 +1,10 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
-import fr.univaix.iut.pokebattle.smartcell.DresseurCombatCell;
-import fr.univaix.iut.pokebattle.twitter.Tweet;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class DresseurCombatCellTest {
 

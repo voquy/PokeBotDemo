@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import fr.univaix.iut.pokebattle.run.PokemonMain;
-import fr.univaix.iut.pokebattle.twitter.Credentials;
+import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
 public class Main {
@@ -23,7 +23,7 @@ public class Main {
     
         
 
-        Pokemon Fantomiinus = new Pokemon("Fantomiiinus");
+        Pokemon Fantomiinus = new Pokemon("Fantomiinus");
         DAOPokemonJPA dao = new DAOPokemonJPA(em);
        	Fantomiinus.setBaseHP(60);
        	Fantomiinus.setLevel(1);

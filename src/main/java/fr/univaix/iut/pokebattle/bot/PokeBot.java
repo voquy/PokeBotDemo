@@ -4,10 +4,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import pokebattle.functions.PokemonPerdVie;
 import BD.java.fr.univaix.iut.progbd.DAOPokemonJPA;
 import BD.java.fr.univaix.iut.progbd.Pokemon;
-
-import pokebattle.functions.PokemonPerdVie;
 import fr.univaix.iut.pokebattle.smartcell.PokemonAttackCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonCriesCell;
 import fr.univaix.iut.pokebattle.smartcell.PokemonKoCell;
@@ -27,8 +26,8 @@ public class PokeBot implements Bot {
     static DAOPokemonJPA dao = new DAOPokemonJPA(em);
    public static Pokemon Poke = dao.getById("Fantomiinus");
     
-	public static String owner = Poke.getOwner();
-	public static int vie = Poke.getBaseHP();
+	public static String owner = null; //Poke.getOwner();
+	public static int vie =  60; //Poke.getBaseHP();
 	
 	final SmartCell[] smartCells = new SmartCell[]{
             new PokemonOwnerCell(),

@@ -5,12 +5,10 @@ import com.google.common.collect.Lists;
 import java.util.List;
 */
 
+import pokebattle.functions.JugeInitialiseFight;
 import fr.univaix.iut.pokebattle.smartcell.JudgeCombatCell;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
-
-
-import pokebattle.functions.JugeInitialiseFight;
 
 
 public class JudgeBot implements Bot {

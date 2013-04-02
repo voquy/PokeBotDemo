@@ -6,7 +6,6 @@ import javax.persistence.Persistence;
 
 import BD.java.fr.univaix.iut.progbd.DAOPokemonJPA;
 import BD.java.fr.univaix.iut.progbd.Pokemon;
-import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 

@@ -1,9 +1,6 @@
 package fr.univaix.iut.pokebattle.bot;
 
-import fr.univaix.iut.pokebattle.twitter.Tweet;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * Integration tests checking the PokeBot

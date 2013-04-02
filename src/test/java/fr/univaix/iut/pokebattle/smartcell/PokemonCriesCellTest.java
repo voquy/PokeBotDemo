@@ -3,10 +3,6 @@ package fr.univaix.iut.pokebattle.smartcell;
 
 import org.junit.Test;
 
-import fr.univaix.iut.pokebattle.twitter.Tweet;
-
-import static org.junit.Assert.assertEquals;
-
 public class PokemonCriesCellTest {
 
     PokemonCriesCell cell = new PokemonCriesCell();

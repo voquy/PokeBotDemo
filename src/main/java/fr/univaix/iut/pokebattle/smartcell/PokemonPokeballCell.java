@@ -13,7 +13,7 @@ import BD.java.fr.univaix.iut.progbd.DAOPokemonJPA;
 import BD.java.fr.univaix.iut.progbd.Pokemon;
 import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.run.PokemonMain;
-import fr.univaix.iut.pokebattle.twitter.Credentials;
+import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
