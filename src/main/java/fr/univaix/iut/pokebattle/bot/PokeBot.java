@@ -1,7 +1,5 @@
 package fr.univaix.iut.pokebattle.bot;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import pokebattle.functions.PokemonPerdVie;
