@@ -24,4 +24,13 @@ oauth.accessToken=1283340398-FNj8FCV82GdYwMjzEk8RBjri4jhdzbTPbJ8EgUT
 oauth.accessTokenSecret=SwdXrcx7rfYQyL6XOdWFfOaQH5iRaQutOFgPH6fWRYg
 
 
+#JoelleBPalette
+
+debug=true
+oauth.consumerKey=wAY5JPnNRSPh7KzQ5ywvg
+oauth.consumerSecret=w5iPE7uLD5DxZWvhjqDOIY2FmCtOiK7BJyRMDpHyg
+oauth.accessToken=1283476848-GoNO28JzANfQR1V4kLhjeGXU7xjFr0dlwWzfZhJ
+oauth.accessTokenSecret=evLzwlm7jVN7JebFe3JllKKYEBkbWLWcRvzbDLjNz0
+
+
 twitter4j.properties

@@ -17,6 +17,8 @@ import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
+
+
 public class PokemonPokeballCell implements SmartCell {
 	@Override
 	public String ask(Tweet question) {
@@ -25,9 +27,10 @@ public class PokemonPokeballCell implements SmartCell {
 		EntityManager em = emf.createEntityManager();
 
 		DAOPokemonJPA dao = new DAOPokemonJPA(em);
-		Pokemon Fantomiinus = new Pokemon("Fantomiinus");
+		Pokemon Fantomiinus = dao.getById("Fantomiinus");
 		if (question.getText().toLowerCase().contains("pokeball")) {
 			System.out.println(PokeBot.getOwner());
+
 			System.out.println(question.getScreenName());
 
 			if (PokeBot.getOwner() == null) {
@@ -45,6 +48,10 @@ public class PokemonPokeballCell implements SmartCell {
 				InputStream inputStream = getResourceAsStream("PkmFantominus.properties");
 				Credentials credentials = new Credentials();
 
+
+
+	            
+
 				try {
 					credentials = Credentials.loadCredentials(inputStream);
 				} catch (IOException e1) {
@@ -52,6 +59,7 @@ public class PokemonPokeballCell implements SmartCell {
 					e1.printStackTrace();
 				}
 				TwitterBuilder builder = new TwitterBuilder(credentials);
+
 				Twitter twitter = builder.build();
 
 				try {
@@ -66,11 +74,11 @@ public class PokemonPokeballCell implements SmartCell {
 
 			}
 			else if (PokeBot.getOwner().equals(question.getScreenName()))
-				return "@" + PokeBot.getOwner()
+				return "@" +Fantomiinus.getOwner()
 						+ " You Are Already My Owner Bitch";
 		}
 		
-			return "@" + question.getScreenName() + " @" + PokeBot.getOwner()
+			return "@" + question.getScreenName() + " @" + Fantomiinus.getOwner()
 					+ " is My Owner";
 			
 

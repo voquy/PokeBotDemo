@@ -1,11 +1,15 @@
 package BD.java.fr.univaix.iut.progbd;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
@@ -32,6 +36,16 @@ public class Pokemon {
     private int speed;
     private String Owner;
     private int level;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date LastAttack;
+    private String TrueName;
+    private int HPTotal;
+    private int Exp;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date LastImproveCondition;
+    
     public Pokemon() {
 
     }
@@ -157,6 +171,8 @@ public class Pokemon {
                 ", speed=" + speed +
                 ", owner=" + Owner +
                 ", level=" + level +
+                ", LastAttack=" + LastAttack +
+              
                 '}';
     }
 
@@ -174,6 +190,46 @@ public class Pokemon {
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+
+	public Date getLastAttack() {
+		return LastAttack;
+	}
+
+	public void setLastAttack(Date date) {
+		this.LastAttack = date;
+	}
+
+	public String getTrueName() {
+		return TrueName;
+	}
+
+	public void setTrueName(String trueName) {
+		this.TrueName = trueName;
+	}
+
+	public int getHPTotal() {
+		return HPTotal;
+	}
+
+	public void setHPTotal(int hPTotal) {
+		this.HPTotal = hPTotal;
+	}
+
+	public Date getLastImproveCondition() {
+		return LastImproveCondition;
+	}
+
+	public void setLastImproveCondition(Date lastImproveCondition) {
+		this.LastImproveCondition = lastImproveCondition;
+	}
+
+	public int getExp() {
+		return Exp;
+	}
+
+	public void setExp(int exp) {
+		this.Exp = exp;
 	}
 	
 }

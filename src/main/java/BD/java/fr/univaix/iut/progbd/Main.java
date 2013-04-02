@@ -25,9 +25,12 @@ public class Main {
 
         Pokemon Fantomiinus = new Pokemon("Fantomiinus");
         DAOPokemonJPA dao = new DAOPokemonJPA(em);
-       	Fantomiinus.setBaseHP(60);
+       	Fantomiinus.setBaseHP(40);
        	Fantomiinus.setLevel(1);
        	Fantomiinus.setOwner(null);
+       	Fantomiinus.setHPTotal(60);
+       	Fantomiinus.setExp(0);
+       	Fantomiinus.setTrueName("fantominus");
        	dao.insert(Fantomiinus);
         em.persist(Fantomiinus);
         InputStream inputStream = getResourceAsStream("PkmFantominus.properties");
