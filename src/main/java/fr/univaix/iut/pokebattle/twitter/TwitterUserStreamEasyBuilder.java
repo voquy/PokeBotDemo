@@ -48,6 +48,10 @@ public class TwitterUserStreamEasyBuilder {
         if (response != null) {
             twitter.updateStatus(response);
         }
+        else{
+        	logger.info("Answer not found");
+        }
+        	
     }
 
     private boolean isNotANewQuestion(Status status) throws TwitterException {

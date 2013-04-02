@@ -50,7 +50,8 @@ public class PokemonCaracCell implements SmartCell{
 					return "@" + emetteur + " " + Attaque + " " + Stat + "=" + PokeBot.ppRestant + "/" + PokeBot.ppTotal;		
 				}
 					
-			}	
+			}
+			return null;
 		}
 		return null;
     }

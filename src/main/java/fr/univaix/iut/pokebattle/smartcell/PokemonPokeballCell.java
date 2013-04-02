@@ -29,7 +29,8 @@ public class PokemonPokeballCell implements SmartCell {
 	            
 				try {
 					credentials = Credentials.loadCredentials(inputStream);
-				} catch (IOException e1) {
+				} catch (IOException e1)
+				{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -42,20 +43,21 @@ public class PokemonPokeballCell implements SmartCell {
 							+ " #Level: "+ PokeBot.level);
 					return "@" + PokeBot.owner + " You Are My Owner!";
 					
-				} catch (TwitterException e) {
+				} catch (TwitterException e)
+				{
 					e.printStackTrace();
-				  }
+				}
 			}
 				
 			else if (PokeBot.getOwner().equals(question.getScreenName()))
 					return "@" +PokeBot.owner
 					+ " You Are Already My Owner Bitch!";
+			else
+					return "@"+question.getScreenName()+" @" + 
+					PokeBot.getOwner() + " is My Owner";
 			}
-			
-		return "@"+question.getScreenName()+" @" + 
-			PokeBot.getOwner() + " is My Owner";
-
-}
+			return null;
+	}
 	
     static InputStream getResourceAsStream(String fileName) {
         return PokemonMain.class.getClassLoader().getResourceAsStream(fileName);
