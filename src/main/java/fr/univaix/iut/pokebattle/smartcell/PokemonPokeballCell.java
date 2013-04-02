@@ -38,17 +38,22 @@ public class PokemonPokeballCell implements SmartCell {
 	            
 				try {
 					twitter.updateProfile(null, null, null,
-							"#pokebattle - #pokemon - Owner: @" + PokeBot.owner);
-					return "@" + PokeBot.owner + " You Are My Owner";
+							"#pokebattle - #pokemon - Owner: @" + PokeBot.owner
+							+ " #Level: "+ PokeBot.level);
+					return "@" + PokeBot.owner + " You Are My Owner!";
 					
 				} catch (TwitterException e) {
 					e.printStackTrace();
 				  }
+			}
+				
+			else if (PokeBot.getOwner().equals(question.getScreenName()))
+					return "@" +PokeBot.owner
+					+ " You Are Already My Owner Bitch!";
+			}
 			
-		}
-			return "@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner";
-	}
-return null;
+		return "@"+question.getScreenName()+" @" + 
+			PokeBot.getOwner() + " is My Owner";
 
 }
 	
