@@ -23,7 +23,7 @@ public class PokemonCaracCellTest {
     
     @Test
     public void testCarac3() {
-        assertEquals("@jeremsboot #pv=20/100",
+        assertEquals("@jeremsboot #pv=80/100",
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #stat #pv ?",null)));
     }
     
