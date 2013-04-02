@@ -6,12 +6,13 @@ package pokebattle.functions;
  */
 public class JudgeCalculExpWin {
 	
-	public static int fonction(String pkmGagnant, String pkmPerdant) {
+	public static int calculExp (String pkmGagnant, String pkmPerdant) {
 		// Code en dur, besoin de la persitence
 		/*
 		 int expWin = expPkmPerdant * lvlPkmGagnant / 7;
+		 return expWin;
 		 */
-		return 65;
+		return 0;
 	}
 
 }
