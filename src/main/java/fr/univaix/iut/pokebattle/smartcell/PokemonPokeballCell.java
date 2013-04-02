@@ -3,6 +3,7 @@ package fr.univaix.iut.pokebattle.smartcell;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.regex.Pattern;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -17,7 +18,9 @@ public class PokemonPokeballCell implements SmartCell {
 
 	public String ask(Tweet question) {
 		
-		if (question.getText().toLowerCase().contains("pokeball")) {
+		String texte =  question.getText().toLowerCase();  // texte à tester    
+		boolean Pkb = Pattern.matches(".*p.*k.*b.*", texte);
+		if (Pkb) {
 			System.out.println(PokeBot.getOwner());
 
 			if (PokeBot.owner == null) {
@@ -52,11 +55,9 @@ public class PokemonPokeballCell implements SmartCell {
 					+ " You Are Already My Owner Bitch!";
 			}
 			
-		return "@"+question.getScreenName()+" @" + 
-			PokeBot.getOwner() + " is My Owner";
+return null;
 
 }
-	
     static InputStream getResourceAsStream(String fileName) {
         return PokemonMain.class.getClassLoader().getResourceAsStream(fileName);
     }
