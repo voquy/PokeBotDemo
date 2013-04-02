@@ -8,7 +8,7 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.run.PokemonMain;
-import fr.univaix.iut.pokebattle.twitter.Credentials;
+import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
