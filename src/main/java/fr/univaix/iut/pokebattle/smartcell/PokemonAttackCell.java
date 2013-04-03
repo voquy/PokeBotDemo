@@ -1,6 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
 import pokebattle.functions.PokemonAttackValide;
+import fr.univaix.iut.pokebattle.bot.JudgeBot;
 import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -51,7 +52,7 @@ public class PokemonAttackCell implements SmartCell{
 					PokeBot.lastAttack = question.getDate();
 					return pokemonVise + " #attack #" + nomAttaque + " /cc "
 							+ dresseurAdverse + " " + "@" + question.getScreenName()
-							+ " " + juge;
+							+ " " + juge + " #" + JudgeBot.getNumRound();
 				}
 				
 				return "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
