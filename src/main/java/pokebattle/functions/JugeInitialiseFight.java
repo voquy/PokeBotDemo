@@ -22,9 +22,9 @@ public class JugeInitialiseFight implements SmartCell {
 				JudgeBot.setAdversaire2(question.getScreenName());
 				JudgeBot.setPokemonDress2(question.getText().split(" ")[4]);
 				JudgeBot.setNumRound(JudgeBot.getNumRound()+1);
-					return "Round #" + JudgeBot.getNumRound() + " /cc @"+ JudgeBot.getAdversaire1() + " "
-					+ JudgeBot.getPokemonDress1() + " @" + JudgeBot.getAdversaire2() + " "
-					+ JudgeBot.getPokemonDress2();
+					return "Round #" + JudgeBot.getNumRound() + " /cc @"+ JudgeBot.getAdversaire2() + " "
+					+ JudgeBot.getPokemonDress2() + " @" + JudgeBot.getAdversaire1() + " "
+					+ JudgeBot.getPokemonDress1();
 			}
 			
 		}

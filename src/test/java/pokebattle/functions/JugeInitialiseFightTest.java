@@ -16,7 +16,8 @@ public class JugeInitialiseFightTest {
     public void testRound1() {
     	JudgeBot.setAdversaire1("jeremsboot");
     	JudgeBot.setPokemonDress1("@pikachuNyanNian");
-        assertEquals("Round #1 /cc @jeremsboot @pikachuNyanNian @dresseur @bulbizare1",
+    	JudgeBot.setNumRound(0);
+        assertEquals("Round #1 /cc @dresseur @bulbizare1 @jeremsboot @pikachuNyanNian",
         	cell.ask(new Tweet("dresseur","@jeremsboot #fight #ok with @bulbizare1 /cc @jugecordier", null)));
         
     }
