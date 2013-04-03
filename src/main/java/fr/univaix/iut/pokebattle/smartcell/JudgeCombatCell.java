@@ -28,13 +28,21 @@ public class JudgeCombatCell implements SmartCell{
 			return JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp";
 		}
 		
-		if (emetteur.equals("@fantomiinus") || emetteur.equals("@pikachu")) {
+		if (emetteur.equals("@fantomiinus") || emetteur.equals("@pikachu")
+				|| emetteur.equals("@pikachuNyanNian")) {
 		
 			if (question.getText().contains("#attack"))
 			{
 				String pokemonAttaqué = question.getText().split(" ")[0];
 				String dresseur = question.getText().split("/cc")[1];
-				String dresseursubit = dresseur.split(" ")[1];	
+				String dresseursubit = dresseur.split(" ")[1];
+				if (pokemonAttaqué.equals(JudgeBot.getPokemonDress1())) {
+					JudgeBot.setNumRound(JudgeBot.getNumRound()+1);
+					return pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+						+ "Round #" + JudgeBot.getNumRound() + " /cc"
+						+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
+						+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1();
+				}
 				return pokemonAttaqué + " -10pv /cc " + dresseursubit;
 			}
 		}

@@ -6,6 +6,7 @@ import java.util.List;
 */
 
 import fr.univaix.iut.pokebattle.smartcell.JudgeCombatCell;
+import fr.univaix.iut.pokebattle.smartcell.JudgeMonTestCell;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -69,7 +70,8 @@ public class JudgeBot implements Bot {
 
 	final SmartCell[] smartCells = new SmartCell[]{
 			new JugeInitialiseFight(),
-            new JudgeCombatCell() 
+            new JudgeCombatCell(),
+            new JudgeMonTestCell()
     };
 	
     /**

@@ -1,5 +1,6 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import fr.univaix.iut.pokebattle.bot.JudgeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class DresseurCombatCell implements SmartCell{
@@ -37,7 +38,8 @@ public class DresseurCombatCell implements SmartCell{
 				String dresseurAdv = question.getText().split(" ")[5];
 				String pokemonAdv = question.getScreenName();	
 				String juge = question.getText().split(" ")[6];
-				return pokemon + " #attack #roche " + pokemonAdv + " /cc " + dresseurAdv + " " + juge;
+				return pokemon + " #attack #roche " + "@" + pokemonAdv
+					+ " /cc " + dresseurAdv + " " + juge + " #" + JudgeBot.getNumRound();
 			}
 		}
 		return null;

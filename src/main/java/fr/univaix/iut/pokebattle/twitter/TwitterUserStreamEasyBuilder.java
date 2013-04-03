@@ -46,7 +46,14 @@ public class TwitterUserStreamEasyBuilder {
         String response = bot.ask(new Tweet(status.getUser().getScreenName(), status.getText(), status.getCreatedAt()));
 
         if (response != null) {
-            twitter.updateStatus(response);
+        	if (response.contains(";;")) {
+            	String[] tweets = response.split(";;");
+            	for (int i = 0 ; i < tweets.length ; i++)
+            		twitter.updateStatus(tweets[i]);
+        	}
+        	else {
+        		twitter.updateStatus(response);
+        	}
         }
         else{
         	logger.info("Answer not found");
