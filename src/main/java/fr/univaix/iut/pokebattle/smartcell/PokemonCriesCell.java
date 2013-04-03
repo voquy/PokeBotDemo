@@ -14,7 +14,7 @@ public class PokemonCriesCell implements SmartCell {
     public String ask(Tweet question) {
         if (question.getScreenName() != null)
         	return ("@" + question.getScreenName() + " fannntooomiiinuuus"
-        			+ " " + dateFormat.format(question.getDate()));
+        			+ " " + dateFormat.format(question.getDate()) + " #PokeBattle");
         return "fannntooomiiinuuus" + " " + dateFormat.format(question.getDate());
     }
 }

@@ -8,7 +8,6 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 public class PokemonOwnerCell implements SmartCell{
 	
 
-
 	public String ask(Tweet question) {
 		
 		// String owner = "Owner" ;
@@ -18,12 +17,37 @@ public class PokemonOwnerCell implements SmartCell{
 
 		{
 			if (PokeBot.owner == null)
-				return "@" + question.getScreenName() + " No Owner";
+			{
+				//Tweet Pkmn pas own par le dresseur sans #PokeBattle
+				String TweetNO ="@" + question.getScreenName() + " No Owner";
+				
+				//Tweet Pkmn pas own par le dresseur avec #PokeBattle
+				String TweetNOPB ="@" + question.getScreenName() + " No Owner" + " #Pokebattle";
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetNOPB.length() <= 140)
+					return TweetNOPB;
+				else
+					return TweetNO;
+			}
 			else
-				return "@" + question.getScreenName() + " " + "@" + PokeBot.owner + " is My Owner!!!!";
-		}	
+			{
+				//Tweet Pkmn own par le dresseur sans #PokeBattle
+				String TweetO = "@" + question.getScreenName()
+						+ " " + "@" + PokeBot.owner + " is My Owner!!!!";
+				
+				//Tweet Pkmn own par le dresseur avec #PokeBattle
+				String TweetOPB = "@" + question.getScreenName()
+						+ " " + "@" + PokeBot.owner + " is My Owner!!!!" + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetOPB.length() <= 140) 
+					return TweetOPB;
+				else
+					return TweetO;
+		
+			}
+		}
 		return null;
     }
-	
-
 }

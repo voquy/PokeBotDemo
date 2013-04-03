@@ -49,13 +49,38 @@ public class PokemonAttackCell implements SmartCell{
 					
 					// Sauvegarde la date-heure de la dernière attaque du pokemon
 					PokeBot.lastAttack = question.getDate();
-					return pokemonVise + " #attack #" + nomAttaque + " /cc "
+					
+					//Tweet attack Pkmn sans #PokeBattle
+					String TweetA = pokemonVise + " #attack #" + nomAttaque + " /cc "
 							+ dresseurAdverse + " " + "@" + question.getScreenName()
 							+ " " + juge;
+					
+					//Tweet attack Pkmn avec #PokeBattle
+					String TweetAPB = pokemonVise + " #attack #" + nomAttaque + " /cc "
+							+ dresseurAdverse + " " + "@" + question.getScreenName()
+							+ " " + juge + " #PokeBattle"; 
+					
+					//Si le tweet fait moins de 140 caractères
+					if(TweetAPB.length() <= 140) 
+						return TweetAPB;
+					else
+						return TweetA;
 				}
 				
-				return "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
+				//Tweet attack inconnue Pkmn sans #PokeBattle
+				String TweetAI = "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
 						+ " " + juge + " " + pokemonVise;
+				
+				//Tweet attack inconnue Pkmn avec #PokeBattle
+				String TweetAIPB = "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
+						+ " " + juge + " " + pokemonVise + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetAIPB.length() <= 140) 
+					return TweetAIPB;
+				else
+					return TweetAI;
+				
 			}
 		}
 		return null;

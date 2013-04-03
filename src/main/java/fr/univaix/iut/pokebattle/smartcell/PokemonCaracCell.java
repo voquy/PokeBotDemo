@@ -1,10 +1,14 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import pokebattle.functions.PokemonTempsInactif;
 import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonCaracCell implements SmartCell{
+	static DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
 
 	public String ask(Tweet question) {
 		
