@@ -45,11 +45,12 @@ public class BotRunner {
 			twitter.updateProfile(null, null, null,
 					"#pokebattle - #pokemon - #Etat: Sauvage - #Level: "+ PokeBot.level);
 			
-		} catch (TwitterException e) {
+		}
+		catch (TwitterException e) {
 			e.printStackTrace();
-		  }
+		}
 	
-}
+    }
 
     static InputStream getResourceAsStream(String fileName) {
         return PokemonMain.class.getClassLoader().getResourceAsStream(fileName);
