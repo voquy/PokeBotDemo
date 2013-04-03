@@ -60,6 +60,4 @@ public class PokemonAttackCell implements SmartCell{
 		}
 		return null;
     }
-	
-
 }
