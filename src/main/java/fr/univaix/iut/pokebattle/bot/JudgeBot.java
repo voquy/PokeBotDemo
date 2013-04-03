@@ -18,8 +18,17 @@ public class JudgeBot implements Bot {
 	public static String adversaire2;
 	public static String pokemonDress1;
 	public static String pokemonDress2;
+	public static int NumRound = 0;
 	
 	
+	public static int getNumRound() {
+		return NumRound;
+	}
+
+	public static void setNumRound(int numRound) {
+		NumRound = numRound;
+	}
+
 	public static String getAdversaire1() {
 		return adversaire1;
 	}
