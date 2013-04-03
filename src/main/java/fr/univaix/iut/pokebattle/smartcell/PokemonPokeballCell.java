@@ -37,8 +37,7 @@ public class PokemonPokeballCell implements SmartCell {
 
 
 				Fantomiinus.setOwner(question.getScreenName());
-				Fantomiinus.setLevel(1);
-				Fantomiinus.setBaseHP(60);
+				
 				boolean update = dao.update(Fantomiinus);
 				System.out.println(update);
 

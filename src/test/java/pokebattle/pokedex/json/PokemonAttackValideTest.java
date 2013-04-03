@@ -10,7 +10,7 @@ public class PokemonAttackValideTest {
 
     @Test
     public void testAttackValide() {
-    	assertEquals(true, PokemonAttackValide.run("carapuce", "charge", 5));
+    	assertEquals(true, PokemonAttackValide.run("fantominus", "Ténèbres", 5));
     }
     
 

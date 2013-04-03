@@ -29,6 +29,5 @@ public class CredentialsTest {
 
 >>>>>>> master
         */
->>>>>>> master
     }
 }

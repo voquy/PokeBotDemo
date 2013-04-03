@@ -2,6 +2,7 @@ package BD.java.fr.univaix.iut.progbd;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -41,7 +42,8 @@ public class Pokemon {
     private Date LastAttack;
     private String TrueName;
     private int HPTotal;
-    private int Exp;
+    @Column(precision=3,scale=5)
+    private double Exp;
     
     @Temporal(TemporalType.TIMESTAMP)
     private Date LastImproveCondition;
@@ -224,12 +226,12 @@ public class Pokemon {
 		this.LastImproveCondition = lastImproveCondition;
 	}
 
-	public int getExp() {
+	public double getExp() {
 		return Exp;
 	}
 
-	public void setExp(int exp) {
-		this.Exp = exp;
+	public void setExp(double Exp) {
+		this.Exp = Exp;
 	}
 	
 }
