@@ -10,6 +10,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 public class JugeInitialiseFight implements SmartCell {
 
     public String ask(Tweet question) {
+    
     	
 		if (question.getText().toLowerCase().contains("#fight")) {
 			if (question.getText().contains("#fight with")) {
@@ -20,8 +21,12 @@ public class JugeInitialiseFight implements SmartCell {
 			if (question.getText().contains("#fight #ok with")) {
 				JudgeBot.setAdversaire2(question.getScreenName());
 				JudgeBot.setPokemonDress2(question.getText().split(" ")[4]);
+				JudgeBot.setNumRound(JudgeBot.getNumRound()+1);
+					return "Round #" + JudgeBot.getNumRound() + " /cc @"+ JudgeBot.getAdversaire1() + " "
+					+ JudgeBot.getPokemonDress1() + " @" + JudgeBot.getAdversaire2() + " "
+					+ JudgeBot.getPokemonDress2();
 			}
-			return "Combat engagé entre " + JudgeBot.getAdversaire1() + " et " + JudgeBot.getAdversaire2();
+			
 		}
 		return null;
     }
