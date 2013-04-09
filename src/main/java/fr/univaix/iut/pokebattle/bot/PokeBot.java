@@ -33,7 +33,7 @@ public class PokeBot implements Bot {
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
     static EntityManager em = emf.createEntityManager();
     static DAOPokemonJPA dao = new DAOPokemonJPA(em);
-   public static Pokemon Poke = dao.getById("Fantomiinus");
+   public static Pokemon Poke = dao.getById("carapuce_iut");
     
 	public static String owner = Poke.getOwner();
 	public static int vie =  Poke.getBaseHP();
@@ -53,13 +53,13 @@ public class PokeBot implements Bot {
 
 	final SmartCell[] smartCells = new SmartCell[]{
 		//	new PokemonCCenterCell(),
-          //  new PokemonOwnerCell(),
+            new PokemonOwnerCell(),
           //  new PokemonPokeballCell(),
-           new PokemonKoCell(),
-            new PokemonPerdVie(),
-            new PokemonAttackCell(),
+           //new PokemonKoCell(),
+            //new PokemonPerdVie(),
+            //new PokemonAttackCell(),
 
-           new PokemonCaracCell(),
+           //new PokemonCaracCell(),
 
            // new PokemonCriesCell()     
     };

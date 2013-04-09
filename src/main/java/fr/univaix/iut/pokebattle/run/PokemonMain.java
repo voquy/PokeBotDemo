@@ -17,6 +17,7 @@ public class PokemonMain {
 
         BotRunner.runBot(new InfirmiereBot(), "InfJoelle.properties");
         BotRunner.runBot(new PokeBot(), "PkmFantominus.properties");
-
+        BotRunner.runBot(new PokeBot(), "PkmEvoli.properties");
+        
     }
 }

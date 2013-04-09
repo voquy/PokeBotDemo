@@ -19,11 +19,12 @@ public class PokemonKoCell implements SmartCell{
 		EntityManager em = emf.createEntityManager();
 		DAOPokemonJPA dao = new DAOPokemonJPA(em);
 		Pokemon Poke = dao.getById("Fantomiinus");
+		Pokemon PokeAdv = dao.getById("Evoli_iut");
 		int pvRestant = Poke.getBaseHP();    
 		if (pvRestant <= 0)
 		{
 			return "#KO /cc " + "@" + question.getScreenName()
-					+ " @dresseurAdv " + question.getText().split(" ")[3];
+					+ " @" + PokeAdv.getOwner()+ question.getText().split(" ")[3];
 		}	
 		return null;
     }

@@ -22,9 +22,10 @@ public class JudgeCombatCell implements SmartCell{
 		System.out.println("Emetteur : " + emetteur);
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
 	    EntityManager em = emf.createEntityManager();
-	    
+	    String PokeCible=question.getText().split("@")[1];
+		String PokeMonCible=PokeCible.split(" ")[0];
 	    DAOPokemonJPA dao = new DAOPokemonJPA(em);
-	    Pokemon Fantomiinus = dao.getById("Fantomiinus");
+	    Pokemon Fantomiinus = dao.getById(PokeMonCible);
 	    Pokemon Evoli = dao.getById("Evoli_iut");
 		if (question.getText().toLowerCase().contains("#ko")) {
 			// Penser à ajouter l'exp gagné au pokémon vainqueur, faire un set

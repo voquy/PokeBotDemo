@@ -26,14 +26,14 @@ public class Main {
 
         Pokemon Fantomiinus = new Pokemon("Fantomiinus");
         DAOPokemonJPA dao = new DAOPokemonJPA(em);
-        Pokemon Evoli = new Pokemon ("Evoli_iut");
+        Pokemon Evoli = new Pokemon ("carapuce_iut");
         Evoli.setBaseHP(55);
         Evoli.setLevel(1);
         Evoli.setHPTotal(55);
         Evoli.setOwner("jeremsboot");
         Evoli.setExp(1);
-        Evoli.setTrueName("Évoli");
-       	Fantomiinus.setBaseHP(10);
+        Evoli.setTrueName("Carapuce");
+       	Fantomiinus.setBaseHP(60);
        	Fantomiinus.setLevel(1);
        	Fantomiinus.setOwner("graiig1");
        	Fantomiinus.setHPTotal(60);

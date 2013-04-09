@@ -22,12 +22,13 @@ import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 public class PokemonPokeballCell implements SmartCell {
 	@Override
 	public String ask(Tweet question) {
-
+		String PokeCible=question.getText().split("@")[1];
+		String PokeMonCible=PokeCible.split(" ")[0];
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
 		EntityManager em = emf.createEntityManager();
 
 		DAOPokemonJPA dao = new DAOPokemonJPA(em);
-		Pokemon Fantomiinus = dao.getById("Fantomiinus");
+		Pokemon Fantomiinus = dao.getById(PokeMonCible);
 		if (question.getText().toLowerCase().contains("pokeball")) {
 			System.out.println(PokeBot.getOwner());
 

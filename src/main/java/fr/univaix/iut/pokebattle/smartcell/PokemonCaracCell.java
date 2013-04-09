@@ -15,7 +15,8 @@ public class PokemonCaracCell implements SmartCell{
 	public String ask(Tweet question) {
 		
 		String emetteur = question.getScreenName().toLowerCase();
-		
+		String PokeCible=question.getText().split("@")[1];
+		String PokeMonCible=PokeCible.split(" ")[0];
 		System.out.println("Tweet émis : " + question.getText());
 		System.out.println("Emetteur : " + emetteur);
 		
@@ -27,14 +28,19 @@ public class PokemonCaracCell implements SmartCell{
 	
 			if (question.getText().toLowerCase().contains("#stat"))
 			{
+				System.out.println(PokeMonCible);
 				String Stat = question.getText().toLowerCase().split(" ")[2];
 				EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
 			    EntityManager em = emf.createEntityManager();
 			    
 			    DAOPokemonJPA dao = new DAOPokemonJPA(em);
-			    Pokemon Fantomiinus = dao.getById("Fantomiinus");
+			    Pokemon Fantomiinus = dao.getById(PokeMonCible);
 				if (Stat.contains("#level"))
+				{
+					
+				System.out.println("level " + Fantomiinus.getLevel());
 					return "@" + emetteur +" "+ Stat + "=" + Fantomiinus.getLevel();
+				}
 				else if (Stat.contains("#xp"))
 					return "@" + emetteur +" "+ Stat + "=" + Fantomiinus.getExp();
 				else if (Stat.contains("#pv"))
