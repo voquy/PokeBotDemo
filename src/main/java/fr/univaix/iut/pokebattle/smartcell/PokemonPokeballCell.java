@@ -49,7 +49,7 @@ public class PokemonPokeballCell implements SmartCell {
 					String TweetP ="@" + PokeBot.owner + " You Are My Owner!";
 					
 					//Tweet Pokeball avec #PokeBattle
-					String TweetPPB ="@" + PokeBot.owner + " You Are My Owner!" + " #Pokebattle";
+					String TweetPPB ="@" + PokeBot.owner + " You Are My Owner!" + " #PokeBattle";
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPPB.length() <= 140)
@@ -71,7 +71,7 @@ public class PokemonPokeballCell implements SmartCell {
 			
 				//Tweet Pkmn déjà own par le dresseur avec #PokeBattle
 				String TweetPAOwnPB ="@" +PokeBot.owner + 
-						" You Are Already My Owner Bitch!" + " #Pokebattle";
+						" You Are Already My Owner Bitch!" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
 				if(TweetPAOwnPB.length() <= 140)
@@ -86,7 +86,7 @@ public class PokemonPokeballCell implements SmartCell {
 				String TweetPOwn ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner";
 			
 				//Tweet Pkmn own par le dresseur avec #PokeBattle
-				String TweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #Pokebattle";
+				String TweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
 				if(TweetPOwnPB.length() <= 140)

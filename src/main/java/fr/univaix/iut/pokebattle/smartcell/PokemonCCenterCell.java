@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonCCenterCell implements SmartCell{
-	static DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
+	static DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 	
 	public String ask(Tweet question) {
 		
@@ -18,9 +18,20 @@ public class PokemonCCenterCell implements SmartCell{
 		if (emetteur.toLowerCase().equals("joellebpalette"))
 		{
 			if (question.getText().toLowerCase().contains("#pokecenter"))
-			{
-				return "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
+			{	
+				//Tweet pokecenter sans #PokeBattle
+				String TweetP = "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
 						+ "   " + dateFormat.format(question.getDate());
+				
+				//Tweet pokecenter avec #PokeBattle
+				String TweetPPB = "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
+						+ "   " + dateFormat.format(question.getDate()) + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetPPB.length() <= 140) 
+					return TweetPPB;
+				else
+					return TweetP;
 			}	
 		}
 		return null;

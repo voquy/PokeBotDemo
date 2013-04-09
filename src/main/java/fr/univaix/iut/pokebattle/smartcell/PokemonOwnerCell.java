@@ -22,7 +22,7 @@ public class PokemonOwnerCell implements SmartCell{
 				String TweetNO ="@" + question.getScreenName() + " No Owner";
 				
 				//Tweet Pkmn pas own par le dresseur avec #PokeBattle
-				String TweetNOPB ="@" + question.getScreenName() + " No Owner" + " #Pokebattle";
+				String TweetNOPB ="@" + question.getScreenName() + " No Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
 				if(TweetNOPB.length() <= 140)
