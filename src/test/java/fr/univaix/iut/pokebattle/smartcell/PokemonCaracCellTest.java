@@ -33,6 +33,18 @@ public class PokemonCaracCellTest {
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #statAttack #pp #tenebres ?",null)));
     }
     
+    @Test
+    public void testReturnNull() {
+        assertEquals(null,
+        	cell.ask(new Tweet("quynhchee","@Fantomiinus sdklgjdkl", null)));
+    }
+    
+    @Test
+    public void testReturnNull2() {
+        assertEquals(null,
+        	cell.ask(new Tweet("jenesaispasqui","@Fantomiinus sdklgjdkl", null)));
+    }
+    
 }
 
 
