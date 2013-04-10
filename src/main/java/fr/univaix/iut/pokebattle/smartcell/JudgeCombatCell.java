@@ -11,6 +11,7 @@ public class JudgeCombatCell implements SmartCell{
 	public String ask(Tweet question) {
 		
 		String emetteur = "@" +  question.getScreenName().toLowerCase();
+		String emet = question.getScreenName().toLowerCase();
 		
 		System.out.println("Tweet émis : " + question.getText());
 		System.out.println("Emetteur : " + emetteur);
@@ -28,8 +29,8 @@ public class JudgeCombatCell implements SmartCell{
 			return JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp";
 		}
 		
-		if (emetteur.equals("@fantomiinus") || emetteur.equals("@pikachu")
-				|| emetteur.equals("@pikachuNyanNian")) {
+		if (emet.equals("fantomiinus") || emet.equals("pikachu")
+				|| emet.equals("pikachuNyanNian")) {
 		
 			if (question.getText().contains("#attack"))
 			{
