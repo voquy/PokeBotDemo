@@ -25,6 +25,23 @@ public class JudgeCombatCellTest {
         
     }
     
+    @Test
+    public void testViePkmAttaqué() {
+    	JudgeBot.setAdversaire1("jeremsboot");
+    	JudgeBot.setPokemonDress1("@pikachuNyanNian");
+    	JudgeBot.setAdversaire2("quynhchee");
+    	JudgeBot.setPokemonDress2("@fantomiinus");
+    	JudgeBot.setNumRound(1);
+        assertEquals(null,
+        	cell.ask(new Tweet("pikachuNyanNian","@Fantomiinus #attack #charge @pikachuNyanNian /cc @quynhchee @viviane", null)));
+    }
+    
+    @Test
+    public void testReturnNull() {
+        assertEquals(null,
+        	cell.ask(new Tweet("jenesaispasqui","@Fantomiinus sdklgjdkl", null)));
+    }
+    
 
 }
 
