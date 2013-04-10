@@ -24,7 +24,7 @@ public class JudgeCalculExpWin {
 	    
 	    DAOPokemonJPA dao = new DAOPokemonJPA(em);
 	    Pokemon pkWin = dao.getById("Fantomiinus");
-	    Pokemon pkLoose = dao.getById("Evoli_iut");
+	    Pokemon pkLoose = dao.getById("carapuce_iut");
 	    double expWin = pkLoose.getExp() * pkWin.getLevel() / 7 ;
 		return expWin;
 	}

@@ -17,7 +17,7 @@ public class JudgeCombatCell implements SmartCell{
 	public String ask(Tweet question) {
 
 		String emetteur = "@" +  question.getScreenName().toLowerCase();
-
+		System.out.println(question.toString());
 		System.out.println("Tweet émis : " + question.getText());
 		System.out.println("Emetteur : " + emetteur);
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
@@ -25,8 +25,9 @@ public class JudgeCombatCell implements SmartCell{
 	    String PokeCible=question.getText().split("@")[1];
 		String PokeMonCible=PokeCible.split(" ")[0];
 	    DAOPokemonJPA dao = new DAOPokemonJPA(em);
-	    Pokemon Fantomiinus = dao.getById(PokeMonCible);
-	    Pokemon Evoli = dao.getById("Evoli_iut");
+	    System.out.println("Pkemon Cilbe : "+PokeMonCible+" "+question.getScreenName().split("@")[0]);
+	    Pokemon Fantomiinus = dao.getById(question.getScreenName().split("@")[0]);
+	    Pokemon Evoli = dao.getById("carapuce_iut");
 		if (question.getText().toLowerCase().contains("#ko")) {
 			// Penser à ajouter l'exp gagné au pokémon vainqueur, faire un set
 			if(emetteur.toLowerCase().equals(Fantomiinus.getName().toLowerCase()))
@@ -46,7 +47,7 @@ public class JudgeCombatCell implements SmartCell{
 			return Fantomiinus.getName() + " #Win +" + expWin + "xp";
 		}
 
-		if (emetteur.equals("@fantomiinus") || emetteur.equals("@pikachu")) {
+		if (emetteur.equals("@fantomiinus") || emetteur.equals("@carapuce_iut")) {
 
 			if (question.getText().contains("#attack"))
 			{

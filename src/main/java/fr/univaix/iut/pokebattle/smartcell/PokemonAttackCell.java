@@ -1,5 +1,8 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -18,14 +21,17 @@ public class PokemonAttackCell implements SmartCell{
 	    EntityManager em = emf.createEntityManager();
 	    
 	    DAOPokemonJPA dao = new DAOPokemonJPA(em);
-	    Pokemon Fantomiinus = dao.getById("Fantomiinus");
-	    System.out.println(Fantomiinus);
+	  
+	    
 		String emetteur = question.getScreenName().toLowerCase();
-		
+		String PokeCible=question.getText().split("@")[1];
+		String PokeMonCible=PokeCible.split(" ")[0]; 
+	//	Pokemon Fantomiinus = dao.getById(PokeMonCible);
+	//	System.out.println(Fantomiinus);
 		System.out.println("Tweet émis 2: " + question.getText());
 		System.out.println("Emetteur : 2" + emetteur);
 		
-		System.out.println(Fantomiinus);
+	//	System.out.println(Fantomiinus);
 		System.out.println("coucou");
 		
 		if (emetteur.toLowerCase().equals("quynhchee")
@@ -49,12 +55,34 @@ public class PokemonAttackCell implements SmartCell{
 				String pokemonRecoitTweet = question.getText().split(" ")[0];
 				String rien = question.getText().split("@")[3];
 				text = "@" + rien;
-				String dresseurAdverse = text.split(" ")[0];
-				String juge = "@" + question.getText().split("@")[4];
+				
+				Pattern pattern = Pattern.compile("@([^ ]*) #attack #([^ ]*) @([^ ]*) /cc @([^ ]*) @([^ ]*)");
+				Matcher matcher = pattern.matcher(question.getText());
+				String pokemonAttack =new String();
+				String nomAttack = new String();
+				String pokemonVise = new String();
+				String dresseurVise = new String();
+				String juge = new String();
+				if(matcher.matches())
+				{
+					 pokemonAttack = matcher.group(1);
+					 nomAttack = matcher.group(2);
+					 pokemonVise = matcher.group(3);
+					 dresseurVise = matcher.group(4);
+					 juge = matcher.group(5);
+					//
+				}
+				
+				//String juge = "@" + question.getText().split("@")[4];
 				rien = question.getText().split("@")[2];
 				text = "@" + rien;
-				String pokemonVise = text.split(" ")[0];
-				
+				//String pokemonVise = text.split(" ")[0];
+				Pokemon Fantomiinus = dao.getById(pokemonAttack);
+				Pokemon Visee = dao.getById(pokemonVise);
+				String dresseurAdverse = text.split(" ")[0];
+				System.out.println("pokemon recoit tweet" + pokemonRecoitTweet.split("@")[1] + " pokemon visee " +question.getText());
+				System.out.println(Visee);
+				System.out.println(dresseurAdverse + " " + Visee.getOwner());
 				if (PokemonAttackValide.run(Fantomiinus.getTrueName(), nomAttaque, Fantomiinus.getLevel()))
 				{	/*				
 					return pokemonAttaqué + " " + attaque + " " + dresseuradverse
@@ -65,13 +93,13 @@ public class PokemonAttackCell implements SmartCell{
 					Fantomiinus.setLastAttack(question.getDate()) ;
 					dao.update(Fantomiinus);
 					System.out.println(Fantomiinus);
-					return pokemonVise + " #attack #" + nomAttaque + " /cc "
-							+ dresseurAdverse + " " + "@" + question.getScreenName()
-							+ " " + juge;
+					return "@"+Visee.getName() + " #attack #" + nomAttaque + " /cc "
+							+ "@" + Visee.getOwner() + " " + "@" + question.getScreenName()
+							+ " @" + juge;
 				}
 				
 				return "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
-						+ " " + juge + " " + pokemonVise;
+						+ " " + juge + " @" + pokemonVise;
 			}
 		}
 		return null;

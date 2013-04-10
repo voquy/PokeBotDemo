@@ -55,11 +55,11 @@ public class PokeBot implements Bot {
 		//	new PokemonCCenterCell(),
             new PokemonOwnerCell(),
           //  new PokemonPokeballCell(),
-           //new PokemonKoCell(),
-            //new PokemonPerdVie(),
-            //new PokemonAttackCell(),
+           new PokemonKoCell(),
+            new PokemonPerdVie(),
+            new PokemonAttackCell(),
 
-           //new PokemonCaracCell(),
+           new PokemonCaracCell(),
 
            // new PokemonCriesCell()     
     };
