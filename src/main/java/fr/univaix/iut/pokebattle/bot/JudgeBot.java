@@ -6,6 +6,7 @@ import java.util.List;
 */
 
 import fr.univaix.iut.pokebattle.smartcell.JudgeCombatCell;
+//import fr.univaix.iut.pokebattle.smartcell.JudgeMonTestCell;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -18,8 +19,17 @@ public class JudgeBot implements Bot {
 	public static String adversaire2;
 	public static String pokemonDress1;
 	public static String pokemonDress2;
+	public static int NumRound = 0;
 	
 	
+	public static int getNumRound() {
+		return NumRound;
+	}
+
+	public static void setNumRound(int numRound) {
+		NumRound = numRound;
+	}
+
 	public static String getAdversaire1() {
 		return adversaire1;
 	}
@@ -60,7 +70,8 @@ public class JudgeBot implements Bot {
 
 	final SmartCell[] smartCells = new SmartCell[]{
 			new JugeInitialiseFight(),
-            new JudgeCombatCell() 
+            new JudgeCombatCell(),
+            //new JudgeMonTestCell()
     };
 	
     /**

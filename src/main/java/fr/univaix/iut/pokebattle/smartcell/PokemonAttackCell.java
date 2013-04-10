@@ -1,6 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
 import pokebattle.functions.PokemonAttackValide;
+import fr.univaix.iut.pokebattle.bot.JudgeBot;
 import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -52,19 +53,20 @@ public class PokemonAttackCell implements SmartCell{
 					
 					//Tweet attack Pkmn sans #PokeBattle
 					String TweetA = pokemonVise + " #attack #" + nomAttaque + " /cc "
-							+ dresseurAdverse + " " + "@" + question.getScreenName()
-							+ " " + juge;
+							+ dresseurAdverse + " " + "@" + question.getScreenName() 
+							+ " " + juge + " #" + JudgeBot.getNumRound();
 					
 					//Tweet attack Pkmn avec #PokeBattle
 					String TweetAPB = pokemonVise + " #attack #" + nomAttaque + " /cc "
 							+ dresseurAdverse + " " + "@" + question.getScreenName()
-							+ " " + juge + " #PokeBattle"; 
+							+ " " + juge + " #" + JudgeBot.getNumRound() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetAPB.length() <= 140) 
 						return TweetAPB;
 					else
 						return TweetA;
+
 				}
 				
 				//Tweet attack inconnue Pkmn sans #PokeBattle

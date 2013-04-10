@@ -50,14 +50,15 @@ public class JudgeCombatCell implements SmartCell{
 				return TweetCE2;
 		}
 		
-		if (emetteur.equals("@fantomiinus") || emetteur.equals("@pikachu")) {
+		if (emetteur.equals("@fantomiinus") || emetteur.equals("@pikachu")
+				|| emetteur.equals("@pikachuNyanNian")) {
 		
 			if (question.getText().contains("#attack"))
 			{
 				String pokemonAttaqué = question.getText().split(" ")[0];
 				String dresseur = question.getText().split("/cc")[1];
 				String dresseursubit = dresseur.split(" ")[1];	
-				
+				/*
 				//Tweet perte pv sans #PokeBattle
 				String TweetPPV = pokemonAttaqué + " -10pv /cc " + dresseursubit;
 				
@@ -69,6 +70,43 @@ public class JudgeCombatCell implements SmartCell{
 					return TweetPPVPB;
 				else
 					return TweetPPV;
+					*/
+
+				if (pokemonAttaqué.equals(JudgeBot.getPokemonDress1())) {
+					JudgeBot.setNumRound(JudgeBot.getNumRound()+1);
+			
+					//Tweet perte pv juge sans #PokeBattle
+					String TweetPPVJ = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+							+ "Round #" + JudgeBot.getNumRound() + " /cc"
+							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
+							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1();
+					
+					//Tweet perte pv avec juge avec #PokeBattle
+					String TweetPPVJPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+							+ "Round #" + JudgeBot.getNumRound() + " /cc"
+							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
+							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1()
+							+ " #PokeBattle"; 
+					
+					//Si le tweet fait moins de 140 caractères
+					if(TweetPPVJPB.length() <= 140) 
+						return TweetPPVJPB;
+					else
+						return TweetPPVJ;
+				}
+				
+				//Tweet perte pv  sans #PokeBattle
+				String TweetPPV = pokemonAttaqué + " -10pv /cc " + dresseursubit;
+				
+				//Tweet perte pv avec juge avec #PokeBattle
+				String TweetPPVPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetPPVPB.length() <= 140) 
+					return TweetPPVPB;
+				else
+					return TweetPPV;
+			
 			}
 		}
 		return null;

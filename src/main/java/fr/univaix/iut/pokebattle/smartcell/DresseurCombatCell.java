@@ -1,5 +1,6 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import fr.univaix.iut.pokebattle.bot.JudgeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class DresseurCombatCell implements SmartCell{
@@ -52,11 +53,12 @@ public class DresseurCombatCell implements SmartCell{
 				
 				//Tweet déclare attack sans #PokeBattle
 				String TweetDA = pokemon + " #attack #roche " + pokemonAdv 
-						+ " /cc " + dresseurAdv + " " + juge;
+						+ " /cc " + dresseurAdv + " " + juge + " #" + JudgeBot.getNumRound();
 				
 				//Tweet déclare attack avec #PokeBattle
 				String TweetDAPB = pokemon + " #attack #roche " + pokemonAdv
-						+ " /cc " + dresseurAdv + " " + juge + " #PokeBattle"; 
+						+ " /cc " + dresseurAdv + " " + juge + " #"
+						+ JudgeBot.getNumRound() + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
 				if(TweetDAPB.length() <= 140) 

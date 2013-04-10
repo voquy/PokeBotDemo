@@ -1,5 +1,6 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
+import fr.univaix.iut.pokebattle.bot.JudgeBot;
 import fr.univaix.iut.pokebattle.smartcell.PokemonAttackCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -30,7 +31,8 @@ public class PokemonAttackCellTest {
     
     @Test
     public void testAttack3() {
-        assertEquals("@pikachuNyanNian #attack #charge /cc @nedseb @jeremsboot @viviane",
+    	JudgeBot.setNumRound(1);
+        assertEquals("@pikachuNyanNian #attack #charge /cc @nedseb @jeremsboot @viviane #1",
         	cell.ask(new Tweet("jeremsboot","@bulbizare1 #attack #charge @pikachuNyanNian /cc @nedseb @viviane", null)));
     }
     */
