@@ -26,5 +26,11 @@ public class DresseurCombatCellTest {
         			"@onix__ #attack #charge /cc @quynhchee @jeremsboot @viviane #1", null)));
     }
     
+    @Test
+    public void testReturnNull() {
+        assertEquals(null,
+        	cell.ask(new Tweet("bulbizare1","@PierreBPalette sdklgjdkl", null)));
+    }
+    
 
 }
