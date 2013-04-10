@@ -23,4 +23,10 @@ public class InfirmHealCellTest {
         	cell.ask(new Tweet("bulbizare1","@JoelleBourgPalet #PV=20/100", null)));
     }
     
+    @Test
+    public void testReturnNull() {
+        assertEquals(null,
+        	cell.ask(new Tweet("bulbizare1","@JoelleBourgPalet sdklgjdkl", null)));
+    }
+    
 }
