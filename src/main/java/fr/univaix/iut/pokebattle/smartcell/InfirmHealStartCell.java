@@ -32,8 +32,7 @@ public class InfirmHealStartCell implements SmartCell{
 			//Si le tweet fait moins de 140 caractères
 			if(TweetHSPB.length() <= maxCarac) 
 				return TweetHSPB;
-			else
-				return TweetHS;
+			return TweetHS;
 		}
 		return null;
 	}

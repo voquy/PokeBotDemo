@@ -63,8 +63,7 @@ public class PokemonAttackCell implements SmartCell{
 					//Si le tweet fait moins de 140 caractères
 					if(TweetAPB.length() <= maxCarac) 
 						return TweetAPB;
-					else
-						return TweetA;
+					return TweetA;
 
 				}
 				
@@ -79,8 +78,7 @@ public class PokemonAttackCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetAIPB.length() <= maxCarac) 
 					return TweetAIPB;
-				else
-					return TweetAI;
+				return TweetAI;
 				
 			}
 		}

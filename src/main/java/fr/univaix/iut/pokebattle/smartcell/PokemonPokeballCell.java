@@ -54,8 +54,7 @@ public class PokemonPokeballCell implements SmartCell {
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPPB.length() <= maxCarac)
 						return TweetPPB; 
-					else
-						return TweetP;
+					return TweetP;
 					
 				} catch (TwitterException e)
 				{
@@ -76,8 +75,7 @@ public class PokemonPokeballCell implements SmartCell {
 				//Si le tweet fait moins de 140 caractères
 				if(TweetPAOwnPB.length() <= maxCarac)
 					return TweetPAOwnPB;
-				else
-					return TweetPAOwn;
+				return TweetPAOwn;
 			}
 			
 			else
@@ -91,8 +89,7 @@ public class PokemonPokeballCell implements SmartCell {
 				//Si le tweet fait moins de 140 caractères
 				if(TweetPOwnPB.length() <= maxCarac)
 					return TweetPOwnPB;
-				else
-					return TweetPOwn;
+				return TweetPOwn;
 				
 			}
 		}

@@ -28,8 +28,7 @@ public class PokemonCCenterCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetPPB.length() <= maxCarac) 
 					return TweetPPB;
-				else
-					return TweetP;
+				return TweetP;
 			}	
 		}
 		return null;
