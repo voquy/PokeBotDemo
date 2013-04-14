@@ -45,11 +45,11 @@ public class InfirmHealCell implements SmartCell{
 	
 			//Tweet infirmière heal sans #PokeBattle
 			String TweetIH = "@" + question.getScreenName() + " come in the #pokecenter /cc "
-					+ "@" + InfirmiereBot.getPkmSoin();
+					+ "@" + InfirmiereBot.getDrsPkmSoin();
 			
 			//Tweet infirmière heal avec #PokeBattle
 			String TweetIHPB = "@" + question.getScreenName() + " come in the #pokecenter /cc "
-					+ "@" + InfirmiereBot.getPkmSoin() + " #PokeBattle"; 
+					+ "@" + InfirmiereBot.getDrsPkmSoin() + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
 			if(TweetIHPB.length() <= maxCarac) 
