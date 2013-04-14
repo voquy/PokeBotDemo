@@ -22,11 +22,33 @@ public class JudgeCombatCell implements SmartCell{
 			{
 																// PkmGagnant					PkmPerdant
 				int expWin = JudgeCalculExpWin.calculExp(JudgeBot.getPokemonDress2(), JudgeBot.getPokemonDress1());
-				return JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp";
+				
+				//Tweet calcul exp1 sans #PokeBattle
+				String TweetCE1 = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp";
+				
+				//Tweet calcul exp1 avec #PokeBattle
+				String TweetCE1PB = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetCE1PB.length() <= 140) 
+					return TweetCE1PB;
+				else
+					return TweetCE1;			
 			}
 																//	PkmGagnant					PkmPerdant
 			int expWin = JudgeCalculExpWin.calculExp(JudgeBot.getPokemonDress1(), JudgeBot.getPokemonDress2());
-			return JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp";
+			
+			//Tweet calcul exp2 sans #PokeBattle
+			String TweetCE2 = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp";
+			
+			//Tweet calcul exp2 avec #PokeBattle
+			String TweetCE2PB = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
+			
+			//Si le tweet fait moins de 140 caractères
+			if(TweetCE2PB.length() <= 140) 
+				return TweetCE2PB;
+			else
+				return TweetCE2;
 		}
 		
 		if (emet.equals("fantomiinus") || emet.equals("pikachu")
@@ -36,18 +58,58 @@ public class JudgeCombatCell implements SmartCell{
 			{
 				String pokemonAttaqué = question.getText().split(" ")[0];
 				String dresseur = question.getText().split("/cc")[1];
-				String dresseursubit = dresseur.split(" ")[1];
+				String dresseursubit = dresseur.split(" ")[1];	
+				/*
+				//Tweet perte pv sans #PokeBattle
+				String TweetPPV = pokemonAttaqué + " -10pv /cc " + dresseursubit;
+				
+				//Tweet perte pv avec #PokeBattle
+				String TweetPPVPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetPPVPB.length() <= 140) 
+					return TweetPPVPB;
+				else
+					return TweetPPV;
+					*/
+
 				if (pokemonAttaqué.equals(JudgeBot.getPokemonDress1())) {
 					JudgeBot.setNumRound(JudgeBot.getNumRound()+1);
-					return pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
-						+ "Round #" + JudgeBot.getNumRound() + " /cc"
-						+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
-						+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1();
+			
+					//Tweet perte pv juge sans #PokeBattle
+					String TweetPPVJ = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+							+ "Round #" + JudgeBot.getNumRound() + " /cc"
+							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
+							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1();
+					
+					//Tweet perte pv avec juge avec #PokeBattle
+					String TweetPPVJPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+							+ "Round #" + JudgeBot.getNumRound() + " /cc"
+							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
+							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1()
+							+ " #PokeBattle"; 
+					
+					//Si le tweet fait moins de 140 caractères
+					if(TweetPPVJPB.length() <= 140) 
+						return TweetPPVJPB;
+					else
+						return TweetPPVJ;
 				}
-				return pokemonAttaqué + " -10pv /cc " + dresseursubit;
+				
+				//Tweet perte pv  sans #PokeBattle
+				String TweetPPV = pokemonAttaqué + " -10pv /cc " + dresseursubit;
+				
+				//Tweet perte pv avec juge avec #PokeBattle
+				String TweetPPVPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetPPVPB.length() <= 140) 
+					return TweetPPVPB;
+				else
+					return TweetPPV;
+			
 			}
 		}
-		
 		return null;
     }
 	

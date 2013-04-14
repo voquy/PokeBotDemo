@@ -12,6 +12,6 @@ public class PokemonMain {
         BotRunner.runBot(new DresseurBot(), "DrsPierre.properties");
         BotRunner.runBot(new InfirmiereBot(), "InfJoelle.properties");
         BotRunner.runBot(new PokeBot(), "PkmFantominus.properties");
-        BotRunner.runBot(new PokeBot(), "PkmEvoli.properties");
+        //BotRunner.runBot(new PokeBot(), "PkmEvoli.properties");
     }
 }

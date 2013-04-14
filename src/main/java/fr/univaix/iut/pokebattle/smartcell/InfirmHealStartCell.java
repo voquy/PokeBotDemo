@@ -19,7 +19,20 @@ public class InfirmHealStartCell implements SmartCell{
 			}
 			InfirmiereBot.setCCPkm(false);
 			PokeBot.setPVRestant(PokeBot.getPVTotal());
-			return "@" + InfirmiereBot.drsPkmSoin + " @" + InfirmiereBot.pkmSoin + " is restored to full health";
+			
+			//Tweet heal start sans #PokeBattle
+			String TweetHS = "@" + InfirmiereBot.drsPkmSoin + " @" + InfirmiereBot.pkmSoin
+					+ " is restored to full health";
+			
+			//Tweet heal start avec #PokeBattle
+			String TweetHSPB = "@" + InfirmiereBot.drsPkmSoin + " @" + InfirmiereBot.pkmSoin 
+					+ " is restored to full health" + " #PokeBattle"; 
+			
+			//Si le tweet fait moins de 140 caractères
+			if(TweetHSPB.length() <= 140) 
+				return TweetHSPB;
+			else
+				return TweetHS;
 		}
 		return null;
 	}
