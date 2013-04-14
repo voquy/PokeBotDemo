@@ -30,8 +30,7 @@ public class JudgeCombatCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetCE1PB.length() <= maxCarac) 
 					return TweetCE1PB;
-				else
-					return TweetCE1;			
+				return TweetCE1;			
 			}
 																//	PkmGagnant					PkmPerdant
 			int expWin = JudgeCalculExpWin.calculExp(JudgeBot.getPokemonDress1(), JudgeBot.getPokemonDress2());
@@ -45,8 +44,7 @@ public class JudgeCombatCell implements SmartCell{
 			//Si le tweet fait moins de 140 caractères
 			if(TweetCE2PB.length() <= maxCarac) 
 				return TweetCE2PB;
-			else
-				return TweetCE2;
+			return TweetCE2;
 		}
 		
 		if (emet.equals("fantomiinus") || emet.equals("pikachu")
@@ -90,8 +88,7 @@ public class JudgeCombatCell implements SmartCell{
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPPVJPB.length() <= maxCarac) 
 						return TweetPPVJPB;
-					else
-						return TweetPPVJ;
+					return TweetPPVJ;
 				}
 				
 				//Tweet perte pv  sans #PokeBattle
@@ -103,8 +100,7 @@ public class JudgeCombatCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetPPVPB.length() <= maxCarac) 
 					return TweetPPVPB;
-				else
-					return TweetPPV;
+				return TweetPPV;
 			
 			}
 		}

@@ -35,8 +35,7 @@ public class PokemonCaracCell implements SmartCell{
 					//Si le tweet fait moins de 140 caractères
 					if(TweetLPB.length() <= maxCarac) 
 						return TweetLPB;
-					else
-						return TweetL;
+					return TweetL;
 				}	
 				else if (Stat.contains("#xp"))
 				{
@@ -49,8 +48,7 @@ public class PokemonCaracCell implements SmartCell{
 					//Si le tweet fait moins de 140 caractères
 					if(TweetXPPB.length() <= maxCarac) 
 						return TweetXPPB;
-					else
-						return TweetXP;
+					return TweetXP;
 				}
 				else if (Stat.contains("#pv"))
 				{
@@ -79,8 +77,7 @@ public class PokemonCaracCell implements SmartCell{
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPVPB.length() <= maxCarac) 
 						return TweetPVPB;
-					else
-						return TweetPV;	
+					return TweetPV;	
 				}
 				else if (Stat.contains("#pp"))
 				{
@@ -97,8 +94,7 @@ public class PokemonCaracCell implements SmartCell{
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPPPB.length() <= maxCarac) 
 						return TweetPPPB;
-					else
-						return TweetPP;	
+					return TweetPP;	
 				}
 					
 			}

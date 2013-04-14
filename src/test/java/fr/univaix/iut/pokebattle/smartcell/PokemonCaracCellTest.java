@@ -1,6 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcell;
 
 import static org.junit.Assert.*;
+import fr.univaix.iut.pokebattle.bot.PokeBot;
 
 import org.junit.Test;
 
@@ -31,6 +32,12 @@ public class PokemonCaracCellTest {
     public void testCarac4() {
         assertEquals("@jeremsboot #tenebres #pp=10/35 #PokeBattle",
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #statAttack #pp #tenebres ?",null)));
+    }
+    
+    
+    @Test
+    public void testPVRestantsupPVTotal() {
+    	PokeBot.pvRestant = 150;
     }
     
     @Test

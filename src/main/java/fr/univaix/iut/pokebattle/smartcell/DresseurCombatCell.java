@@ -59,8 +59,7 @@ public class DresseurCombatCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetDAPB.length() <= maxCarac) 
 					return TweetDAPB;
-				else
-					return TweetDA;
+				return TweetDA;
 			}
 		}
 		return null;
