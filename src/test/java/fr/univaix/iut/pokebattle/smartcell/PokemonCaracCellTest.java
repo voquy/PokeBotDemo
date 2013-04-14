@@ -11,25 +11,25 @@ public class PokemonCaracCellTest {
 
     @Test
     public void testCarac1() {
-        assertEquals("@jeremsboot #level=1",
+        assertEquals("@jeremsboot #level=1 #PokeBattle",
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #stat #level ?",null)));
     }
     
     @Test
     public void testCarac2() {
-        assertEquals("@jeremsboot #xp=0",
+        assertEquals("@jeremsboot #xp=0 #PokeBattle",
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #stat #xp ?",null)));
     }
     
     @Test
     public void testCarac3() {
-        assertEquals("@jeremsboot #pv=80/100",
+        assertEquals("@jeremsboot #pv=10/100 #PokeBattle",
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #stat #pv ?",null)));
     }
     
     @Test
     public void testCarac4() {
-        assertEquals("@jeremsboot #tenebres #pp=10/35",
+        assertEquals("@jeremsboot #tenebres #pp=10/35 #PokeBattle",
         		cell.ask(new Tweet("jeremsboot","@fantomiinus #statAttack #pp #tenebres ?",null)));
     }
     
