@@ -125,7 +125,8 @@ public class PokeBot implements Bot {
 	
 	
 	public static Date getLastAttack() {
-		return lastAttack;
+		Date theLastAtck = lastAttack;
+		return theLastAtck;
 	}
 
 	public static void setLastAttack(Date lastAttack) {
