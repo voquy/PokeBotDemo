@@ -48,7 +48,7 @@ public class PokemonAttackCell implements SmartCell{
 					*/
 					
 					// Sauvegarde la date-heure de la dernière attaque du pokemon
-					PokeBot.lastAttack = question.getDate();
+					PokeBot.setLastAttack(question.getDate());
 					
 					//Tweet attack Pkmn sans #PokeBattle
 					String TweetA = pokemonVise + " #attack #" + nomAttaque + " /cc "
