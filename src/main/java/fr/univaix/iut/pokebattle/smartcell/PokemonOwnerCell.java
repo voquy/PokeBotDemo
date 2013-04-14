@@ -6,7 +6,7 @@ import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonOwnerCell implements SmartCell{
-	
+	static final int maxCarac = 140;
 
 	public String ask(Tweet question) {
 		
@@ -25,7 +25,7 @@ public class PokemonOwnerCell implements SmartCell{
 				String TweetNOPB ="@" + question.getScreenName() + " No Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetNOPB.length() <= 140)
+				if(TweetNOPB.length() <= maxCarac)
 					return TweetNOPB;
 				else
 					return TweetNO;
@@ -41,7 +41,7 @@ public class PokemonOwnerCell implements SmartCell{
 						+ " " + "@" + PokeBot.owner + " is My Owner!!!!" + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetOPB.length() <= 140) 
+				if(TweetOPB.length() <= maxCarac) 
 					return TweetOPB;
 				else
 					return TweetO;

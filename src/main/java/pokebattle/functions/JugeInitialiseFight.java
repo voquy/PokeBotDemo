@@ -8,7 +8,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
  * Reply to all.
  */
 public class JugeInitialiseFight implements SmartCell {
-
+	static final int maxCarac = 140;
     public String ask(Tweet question) {
     
     	
@@ -28,7 +28,7 @@ public class JugeInitialiseFight implements SmartCell {
 					String tweetRoundPB = "Round #" + JudgeBot.getNumRound() + " /cc @"+ JudgeBot.getAdversaire2() + " "
 							+ JudgeBot.getPokemonDress2() + " @" + JudgeBot.getAdversaire1() + " "
 							+ JudgeBot.getPokemonDress1() + " #PokeBattle";
-					if(tweetRoundPB.length() <= 140) 
+					if(tweetRoundPB.length() <= maxCarac) 
 						return tweetRoundPB;
 					else
 						return tweetRound;

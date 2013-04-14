@@ -5,6 +5,7 @@ import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class InfirmHealStartCell implements SmartCell{
+	static final int maxCarac = 140;
 	
 	public String ask(Tweet question) {
 		if (question.getText().toLowerCase().contains("pokecenter") && InfirmiereBot.CCPkm == true)
@@ -29,7 +30,7 @@ public class InfirmHealStartCell implements SmartCell{
 					+ " is restored to full health" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetHSPB.length() <= 140) 
+			if(TweetHSPB.length() <= maxCarac) 
 				return TweetHSPB;
 			else
 				return TweetHS;

@@ -5,7 +5,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 
 public class PokemonKoCell implements SmartCell{
-	
+	static final int maxCarac = 140;
 	public String ask(Tweet question) {
 		
 		// String owner = "Owner" ;
@@ -21,7 +21,7 @@ public class PokemonKoCell implements SmartCell{
 					+ " @dresseurAdv " + question.getText().split(" ")[3] + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetKOPB.length() <= 140) 
+			if(TweetKOPB.length() <= maxCarac) 
 				return TweetKOPB;
 			else
 				return TweetKO;

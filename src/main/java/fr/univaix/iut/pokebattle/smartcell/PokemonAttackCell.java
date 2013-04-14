@@ -7,7 +7,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 
 public class PokemonAttackCell implements SmartCell{
-	
+	static final int maxCarac = 140;
 	public String ask(Tweet question) {
 		
 		String emetteur = question.getScreenName().toLowerCase();
@@ -62,7 +62,7 @@ public class PokemonAttackCell implements SmartCell{
 							+ " " + juge + " #" + JudgeBot.getNumRound() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetAPB.length() <= 140) 
+					if(TweetAPB.length() <= maxCarac) 
 						return TweetAPB;
 					else
 						return TweetA;
@@ -78,7 +78,7 @@ public class PokemonAttackCell implements SmartCell{
 						+ " " + juge + " " + pokemonVise + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetAIPB.length() <= 140) 
+				if(TweetAIPB.length() <= maxCarac) 
 					return TweetAIPB;
 				else
 					return TweetAI;

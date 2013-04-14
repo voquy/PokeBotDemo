@@ -7,6 +7,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonCCenterCell implements SmartCell{
 	static DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	static final int maxCarac = 140;
 	
 	public String ask(Tweet question) {
 		
@@ -28,7 +29,7 @@ public class PokemonCCenterCell implements SmartCell{
 						+ "   " + dateFormat.format(question.getDate()) + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPPB.length() <= 140) 
+				if(TweetPPB.length() <= maxCarac) 
 					return TweetPPB;
 				else
 					return TweetP;
