@@ -37,7 +37,7 @@ public class PokemonCaracCellTest {
     
     @Test
     public void testPVRestantsupPVTotal() {
-    	PokeBot.pvRestant = 150;
+    	PokeBot.setPvRestant(150);
     }
     
     @Test

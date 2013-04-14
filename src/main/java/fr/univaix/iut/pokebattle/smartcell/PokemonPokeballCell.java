@@ -23,7 +23,7 @@ public class PokemonPokeballCell implements SmartCell {
 		boolean Pkb = Pattern.matches(".*po*ke*ba*ll*.*", texte);
 		if (Pkb) {
 
-			if (PokeBot.owner == null) {
+			if (PokeBot.getOwner() == null) {
 				PokeBot.setOwner(question.getScreenName());
 				System.out.println(PokeBot.getOwner());
 				
@@ -42,14 +42,14 @@ public class PokemonPokeballCell implements SmartCell {
 	            
 				try {
 					twitter.updateProfile(null, null, null,
-							"#pokebattle - #pokemon - Owner: @" + PokeBot.owner
-							+ " #Level: "+ PokeBot.level);
+							"#pokebattle - #pokemon - Owner: @" + PokeBot.getOwner()
+							+ " #Level: "+ PokeBot.getLevel());
 					
 					//Tweet Pokeball sans #PokeBattle
-					String TweetP ="@" + PokeBot.owner + " You Are My Owner!";
+					String TweetP ="@" + PokeBot.getOwner() + " You Are My Owner!";
 					
 					//Tweet Pokeball avec #PokeBattle
-					String TweetPPB ="@" + PokeBot.owner + " You Are My Owner!" + " #PokeBattle";
+					String TweetPPB ="@" + PokeBot.getOwner() + " You Are My Owner!" + " #PokeBattle";
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPPB.length() <= maxCarac)
@@ -65,11 +65,11 @@ public class PokemonPokeballCell implements SmartCell {
 			else if (PokeBot.getOwner().equals(question.getScreenName()))
 			{
 				//Tweet Pkmn déjà own par le dresseur sans #PokeBattle
-				String TweetPAOwn ="@" +PokeBot.owner + 
+				String TweetPAOwn ="@" +PokeBot.getOwner() + 
 						" You Are Already My Owner Bitch!";
 			
 				//Tweet Pkmn déjà own par le dresseur avec #PokeBattle
-				String TweetPAOwnPB ="@" +PokeBot.owner + 
+				String TweetPAOwnPB ="@" +PokeBot.getOwner() + 
 						" You Are Already My Owner Bitch!" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères

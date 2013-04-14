@@ -15,20 +15,22 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 
 public class PokeBot implements Bot {
+	
+	private static String owner = null;
+	private static int level = 1;
+	private static int exp = 0;
+	private static int pvRestant = 10;
+	private static int pvRestantLast = 20;
+	private static int pvTotal = 100;
+	private static int ppRestant = 10;
+	private static int ppTotal = 35;
+	private static Date lastAttack = new Date();
+	
     /**
      * List of smartcell the questions go through to
      * find an answer.
      */
-	public static String vraiNom = "Bulbizarre";
-	public static String owner = null;
-	public static int level = 1;
-	public static int exp = 0;
-	public static int pvRestant = 10;
-	public static int pvRestantLast = 20;
-	public static int pvTotal = 100;
-	public static int ppRestant = 10;
-	public static int ppTotal = 35;
-	public static Date lastAttack = new Date();
+
 
 	final SmartCell[] smartCells = new SmartCell[]{
 			new PokemonCCenterCell(),
@@ -57,15 +59,7 @@ public class PokeBot implements Bot {
         return null;
     }
     
-	public static String getOwner() {
-		return owner;
-	}
-
-	public static void setOwner(String owner) {
-		PokeBot.owner = owner;
-	}
-	
-	
+	private static String vraiNom = "Bulbizarre";
 	public static String getVraiNom() {
 		return vraiNom;
 	}
@@ -74,63 +68,77 @@ public class PokeBot implements Bot {
 		PokeBot.vraiNom = vraiNom;
 	}
 
-	
-	public static int getLevel(){
+	public static String getOwner() {
+		return owner;
+	}
+
+	public static void setOwner(String owner) {
+		PokeBot.owner = owner;
+	}
+
+	public static int getLevel() {
 		return level;
 	}
-	
-	public static void setLevel(int Level){
-		 PokeBot.level = Level;
+
+	public static void setLevel(int level) {
+		PokeBot.level = level;
 	}
-	
-	public static int getEXP(){
+
+	public static int getExp() {
 		return exp;
 	}
-	
-	public static void setEXP(int exp){
-		 PokeBot.exp = exp;
+
+	public static void setExp(int exp) {
+		PokeBot.exp = exp;
 	}
-	
-	public static int getPVRestant(){
+
+	public static int getPvRestant() {
 		return pvRestant;
 	}
-	
-	public static void setPVRestant(int PVRestant){
-		 PokeBot.pvRestant= PVRestant;
+
+	public static void setPvRestant(int pvRestant) {
+		PokeBot.pvRestant = pvRestant;
 	}
-	
-	public static int getPVRestantLast(){
+
+	public static int getPvRestantLast() {
 		return pvRestantLast;
 	}
-	
-	public static void setPVRestantLast(int PVRestantLast){
-		 PokeBot.pvRestantLast = PVRestantLast;
+
+	public static void setPvRestantLast(int pvRestantLast) {
+		PokeBot.pvRestantLast = pvRestantLast;
 	}
-	
-	public static int getPVTotal(){
+
+	public static int getPvTotal() {
 		return pvTotal;
 	}
-	
-	public static void setPVTotal(int PVTotal){
-		 PokeBot.pvTotal = PVTotal;
+
+	public static void setPvTotal(int pvTotal) {
+		PokeBot.pvTotal = pvTotal;
 	}
-	
-	public static int getPPTotal(){
+
+	public static int getPpRestant() {
+		return ppRestant;
+	}
+
+	public static void setPpRestant(int ppRestant) {
+		PokeBot.ppRestant = ppRestant;
+	}
+
+	public static int getPpTotal() {
 		return ppTotal;
 	}
-	
-	public static void setPPTotal(int PPTotal){
-		 PokeBot.ppTotal = PPTotal;
+
+	public static void setPpTotal(int ppTotal) {
+		PokeBot.ppTotal = ppTotal;
 	}
-	
-	
+
 	public static Date getLastAttack() {
-		Date theLastAtck = lastAttack;
-		return theLastAtck;
+		return lastAttack;
 	}
 
 	public static void setLastAttack(Date lastAttack) {
 		PokeBot.lastAttack = lastAttack;
 	}
+
 	
 }

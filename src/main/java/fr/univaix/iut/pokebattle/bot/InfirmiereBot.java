@@ -8,10 +8,10 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class InfirmiereBot implements Bot {
 	
-	public static String drsPkmSoin = null;
-	public static String pkmSoin = null;
-	public static boolean CCPkm = false;
-	public static int tempsNecessaire = 0;
+	private static String drsPkmSoin = null;
+	private static String pkmSoin = null;
+	private static boolean CCPkm = false;
+	private static int tempsNecessaire = 0;
 	
 	public static String getDrsPkmSoin() {
 		return drsPkmSoin;

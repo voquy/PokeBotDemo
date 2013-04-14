@@ -15,21 +15,13 @@ import pokebattle.functions.JugeInitialiseFight;
 
 
 public class JudgeBot implements Bot {
-	public static String adversaire1;
-	public static String adversaire2;
-	public static String pokemonDress1;
-	public static String pokemonDress2;
-	public static int NumRound = 0;
 	
+	private static String adversaire1;
+	private static String adversaire2;
+	private static String pokemonDress1;
+	private static String pokemonDress2;
+	private static int NumRound = 0;
 	
-	public static int getNumRound() {
-		return NumRound;
-	}
-
-	public static void setNumRound(int numRound) {
-		NumRound = numRound;
-	}
-
 	public static String getAdversaire1() {
 		return adversaire1;
 	}
@@ -45,7 +37,7 @@ public class JudgeBot implements Bot {
 	public static void setAdversaire2(String adversaire2) {
 		JudgeBot.adversaire2 = adversaire2;
 	}
-	
+
 	public static String getPokemonDress1() {
 		return pokemonDress1;
 	}
@@ -61,6 +53,19 @@ public class JudgeBot implements Bot {
 	public static void setPokemonDress2(String pokemonDress2) {
 		JudgeBot.pokemonDress2 = pokemonDress2;
 	}
+
+	public static int getNumRound() {
+		return NumRound;
+	}
+
+	public static void setNumRound(int numRound) {
+		NumRound = numRound;
+	}
+
+	
+	
+	
+	
 	
 	/**
      * List of smartcell the questions go through to
