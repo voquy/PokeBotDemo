@@ -21,7 +21,7 @@ public class PokemonPerdVieTest {
 	
 	@Test
 	public void testRéponse() {
-		PokeBot.pvRestant = 10;
+		PokeBot.setPvRestant(10);
 		String dresseur = "@unjourjeserailemeilleurdresseurjemebattraisansrépitjeferaitoutpouretrevainqueuretgagnerlesdéfis";
         assertEquals("#KO /cc @jugecordier @dresseurAdv " + dresseur,
             	cell.ask(new Tweet("jugecordier","@fantomiinus -10pv /cc " + dresseur, null)));

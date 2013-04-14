@@ -14,14 +14,14 @@ public class PokemonOwnerCellTest {
 
     @Test
     public void testOwner() {
-    	PokeBot.owner = "quynhchee";
+    	PokeBot.setOwner("quynhchee");
         assertEquals("@quynhchee @quynhchee is My Owner!!!! #PokeBattle",
         	cell.ask(new Tweet("quynhchee", "Owner ?", null)));
     }
 	
     @Test
     public void testNoOwner() {
-    	PokeBot.owner = null;
+    	PokeBot.setOwner(null);
         assertEquals("@dresseur No Owner #PokeBattle",
         	cell.ask(new Tweet("dresseur", "Owner ?", null)));
     }

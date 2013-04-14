@@ -17,7 +17,7 @@ public class PokemonOwnerCell implements SmartCell{
 		if (b)
 
 		{
-			if (PokeBot.owner == null)
+			if (PokeBot.getOwner() == null)
 			{
 				//Tweet Pkmn pas own par le dresseur sans #PokeBattle
 				String TweetNO ="@" + question.getScreenName() + " No Owner";
@@ -34,11 +34,11 @@ public class PokemonOwnerCell implements SmartCell{
 			{
 				//Tweet Pkmn own par le dresseur sans #PokeBattle
 				String TweetO = "@" + question.getScreenName()
-						+ " " + "@" + PokeBot.owner + " is My Owner!!!!";
+						+ " " + "@" + PokeBot.getOwner() + " is My Owner!!!!";
 				
 				//Tweet Pkmn own par le dresseur avec #PokeBattle
 				String TweetOPB = "@" + question.getScreenName()
-						+ " " + "@" + PokeBot.owner + " is My Owner!!!!" + " #PokeBattle"; 
+						+ " " + "@" + PokeBot.getOwner() + " is My Owner!!!!" + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
 				if(TweetOPB.length() <= maxCarac) 

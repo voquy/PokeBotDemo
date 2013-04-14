@@ -8,25 +8,25 @@ public class InfirmHealStartCell implements SmartCell{
 	static final int maxCarac = 140;
 	
 	public String ask(Tweet question) {
-		if (question.getText().toLowerCase().contains("pokecenter") && InfirmiereBot.CCPkm == true)
+		if (question.getText().toLowerCase().contains("pokecenter") && InfirmiereBot.isCCPkm())
 		{
 			// Suspension temps en millisecondes
-			System.out.println("Soin du pokemon " + InfirmiereBot.pkmSoin + " en cours...");
+			System.out.println("Soin du pokemon " + InfirmiereBot.getPkmSoin() + " en cours...");
 			try {
-				Thread.sleep(InfirmiereBot.tempsNecessaire * 60000);
+				Thread.sleep(InfirmiereBot.getTempsNecessaire() * 60000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			InfirmiereBot.setCCPkm(false);
-			PokeBot.setPVRestant(PokeBot.getPVTotal());
+			PokeBot.setPvRestant(PokeBot.getPvTotal());
 			
 			//Tweet heal start sans #PokeBattle
-			String TweetHS = "@" + InfirmiereBot.drsPkmSoin + " @" + InfirmiereBot.pkmSoin
+			String TweetHS = "@" + InfirmiereBot.getPkmSoin() + " @" + InfirmiereBot.getPkmSoin()
 					+ " is restored to full health";
 			
 			//Tweet heal start avec #PokeBattle
-			String TweetHSPB = "@" + InfirmiereBot.drsPkmSoin + " @" + InfirmiereBot.pkmSoin 
+			String TweetHSPB = "@" + InfirmiereBot.getDrsPkmSoin() + " @" + InfirmiereBot.getPkmSoin() 
 					+ " is restored to full health" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
