@@ -4,6 +4,7 @@ import fr.univaix.iut.pokebattle.bot.JudgeBot;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class DresseurCombatCell implements SmartCell{
+	static final int maxCarac = 140;
 	
 	public String ask(Tweet question) {
 		
@@ -33,7 +34,7 @@ public class DresseurCombatCell implements SmartCell{
 					+ " #fight #ok with " + "@monPokemon" + " /cc " + juge + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetDCPB.length() <= 140) 
+			if(TweetDCPB.length() <= maxCarac) 
 				return TweetDCPB;
 			else
 				return TweetDC;
@@ -61,7 +62,7 @@ public class DresseurCombatCell implements SmartCell{
 						+ JudgeBot.getNumRound() + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetDAPB.length() <= 140) 
+				if(TweetDAPB.length() <= maxCarac) 
 					return TweetDAPB;
 				else
 					return TweetDA;
