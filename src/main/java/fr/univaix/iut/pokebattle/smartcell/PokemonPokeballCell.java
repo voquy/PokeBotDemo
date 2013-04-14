@@ -21,7 +21,6 @@ public class PokemonPokeballCell implements SmartCell {
 		String texte =  question.getText().toLowerCase();  // texte à tester    
 		boolean Pkb = Pattern.matches(".*po*ke*ba*ll*.*", texte);
 		if (Pkb) {
-			System.out.println(PokeBot.getOwner());
 
 			if (PokeBot.owner == null) {
 				PokeBot.setOwner(question.getScreenName());
