@@ -23,7 +23,7 @@ public class PokeBot implements Bot {
 	public static String owner = null;
 	public static int level = 1;
 	public static int exp = 0;
-	public static int pvRestant = 80;
+	public static int pvRestant = 10;
 	public static int pvRestantLast = 20;
 	public static int pvTotal = 100;
 	public static int ppRestant = 10;

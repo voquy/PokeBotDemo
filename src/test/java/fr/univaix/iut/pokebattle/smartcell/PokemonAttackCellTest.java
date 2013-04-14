@@ -23,7 +23,7 @@ public class PokemonAttackCellTest {
         	//	cell.ask(new Tweet("dresseur","@fantomiinus #attack #ténèbres @pikachu /cc @JeremsBoot", null)));
     }
     
-    @Test
+    /*@Test
     public void testAttack2() {
         assertEquals("@jeremsboot o_O ? /cc @pcreux @viviane @bulbizare1",
         	cell.ask(new Tweet("jeremsboot","@pikachuNyanNian #attack #grumpycat @bulbizare1 /cc @pcreux @viviane", null)));
@@ -35,10 +35,16 @@ public class PokemonAttackCellTest {
         assertEquals("@pikachuNyanNian #attack #charge /cc @nedseb @jeremsboot @viviane #1",
         	cell.ask(new Tweet("jeremsboot","@bulbizare1 #attack #charge @pikachuNyanNian /cc @nedseb @viviane", null)));
     }
+
+*/
     
     @Test
     public void testReturnNull() {
         assertEquals(null,
         	cell.ask(new Tweet("bulbizare1","@Fantomiinus sdklgjdkl", null)));
     }
+    
+
 }
+
+    

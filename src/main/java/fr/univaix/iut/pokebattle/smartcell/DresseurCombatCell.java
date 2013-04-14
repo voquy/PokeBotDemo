@@ -24,7 +24,19 @@ public class DresseurCombatCell implements SmartCell{
 		if(question.getText().contains("#fight with @")){
 			String juge = question.getText().split(" ")[5];
 			
-			return "@" + question.getScreenName() + " #fight #ok with " + "@monPokemon" + " /cc " + juge;
+			//Tweet déclaration combat sans #PokeBattle
+			String TweetDC = "@" + question.getScreenName() 
+					+ " #fight #ok with " + "@monPokemon" + " /cc " + juge;
+			
+			//Tweet déclaration combat avec #PokeBattle
+			String TweetDCPB = "@" + question.getScreenName() 
+					+ " #fight #ok with " + "@monPokemon" + " /cc " + juge + " #PokeBattle"; 
+			
+			//Si le tweet fait moins de 140 caractères
+			if(TweetDCPB.length() <= 140) 
+				return TweetDCPB;
+			else
+				return TweetDC;
 		}
 		
 		if (emetteur.equals("fantomiinus") || emetteur.equals("pikachu")) {
@@ -38,12 +50,24 @@ public class DresseurCombatCell implements SmartCell{
 				String dresseurAdv = question.getText().split(" ")[5];
 				String pokemonAdv = question.getScreenName();	
 				String juge = question.getText().split(" ")[6];
-				return pokemon + " #attack #roche " + "@" + pokemonAdv
-					+ " /cc " + dresseurAdv + " " + juge + " #" + JudgeBot.getNumRound();
+				
+				//Tweet déclare attack sans #PokeBattle
+				String TweetDA = pokemon + " #attack #roche " + pokemonAdv 
+						+ " /cc " + dresseurAdv + " " + juge + " #" + JudgeBot.getNumRound();
+				
+				//Tweet déclare attack avec #PokeBattle
+				String TweetDAPB = pokemon + " #attack #roche " + pokemonAdv
+						+ " /cc " + dresseurAdv + " " + juge + " #"
+						+ JudgeBot.getNumRound() + " #PokeBattle"; 
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetDAPB.length() <= 140) 
+					return TweetDAPB;
+				else
+					return TweetDA;
 			}
 		}
 		return null;
     }
 	
-
 }

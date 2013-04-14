@@ -44,7 +44,18 @@ public class PokemonPokeballCell implements SmartCell {
 					twitter.updateProfile(null, null, null,
 							"#pokebattle - #pokemon - Owner: @" + PokeBot.owner
 							+ " #Level: "+ PokeBot.level);
-					return "@" + PokeBot.owner + " You Are My Owner!";
+					
+					//Tweet Pokeball sans #PokeBattle
+					String TweetP ="@" + PokeBot.owner + " You Are My Owner!";
+					
+					//Tweet Pokeball avec #PokeBattle
+					String TweetPPB ="@" + PokeBot.owner + " You Are My Owner!" + " #PokeBattle";
+					
+					//Si le tweet fait moins de 140 caractères
+					if(TweetPPB.length() <= 140)
+						return TweetPPB; 
+					else
+						return TweetP;
 					
 				} catch (TwitterException e)
 				{
@@ -53,11 +64,37 @@ public class PokemonPokeballCell implements SmartCell {
 			}
 				
 			else if (PokeBot.getOwner().equals(question.getScreenName()))
-					return "@" +PokeBot.owner
-					+ " You Are Already My Owner Bitch!";
+			{
+				//Tweet Pkmn déjà own par le dresseur sans #PokeBattle
+				String TweetPAOwn ="@" +PokeBot.owner + 
+						" You Are Already My Owner Bitch!";
+			
+				//Tweet Pkmn déjà own par le dresseur avec #PokeBattle
+				String TweetPAOwnPB ="@" +PokeBot.owner + 
+						" You Are Already My Owner Bitch!" + " #PokeBattle";
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetPAOwnPB.length() <= 140)
+					return TweetPAOwnPB;
+				else
+					return TweetPAOwn;
+			}
+			
 			else
-					return "@"+question.getScreenName()+" @" + 
-					PokeBot.getOwner() + " is My Owner";
+			{
+				//Tweet Pkmn own par le dresseur sans #PokeBattle
+				String TweetPOwn ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner";
+			
+				//Tweet Pkmn own par le dresseur avec #PokeBattle
+				String TweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #PokeBattle";
+				
+				//Si le tweet fait moins de 140 caractères
+				if(TweetPOwnPB.length() <= 140)
+					return TweetPOwnPB;
+				else
+					return TweetPOwn;
+				
+			}
 		}
 
 		return null;
