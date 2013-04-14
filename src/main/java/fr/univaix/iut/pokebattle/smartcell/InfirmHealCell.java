@@ -9,8 +9,6 @@ public class InfirmHealCell implements SmartCell{
 	
 	public String ask(Tweet question) {
 		
-		String emetteur = question.getScreenName().toLowerCase();
-		
 		if (question.getText().toLowerCase().contains("heal"))
 		{
 			InfirmiereBot.pkmSoin = question.getText().split("@")[2];

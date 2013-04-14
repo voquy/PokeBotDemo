@@ -12,16 +12,17 @@ public class PokemonAttackCell implements SmartCell{
 		
 		String emetteur = question.getScreenName().toLowerCase();
 		
-		if (emetteur.toLowerCase().equals("quynhchee")
-			|| emetteur.toLowerCase().equals("jeremsboot") || emetteur.toLowerCase().equals("dounouw")
-			|| emetteur.toLowerCase().equals("graiig1") || emetteur.toLowerCase().equals("brownrock_"))
+		if (emetteur.equals("quynhchee")
+			|| emetteur.equals("jeremsboot") || emetteur.equals("dounouw")
+			|| emetteur.equals("graiig1") || emetteur.equals("brownrock_"))
 		{
 			if (question.getText().toLowerCase().contains("#attack"))
 			{
 				String text = question.getText().toLowerCase().split("#attack ")[1];
 				String ok = text.split("#")[1];
 				String nomAttaque = ok.split(" ")[0];
-		/*
+				
+				/*
 				String dresseuradverse = question.getText().split(" ")[5];
 				String juge = question.getText().split(" ")[6];
 				String attaque = question.getText().split(" ")[1]
@@ -39,7 +40,9 @@ public class PokemonAttackCell implements SmartCell{
 				String pokemonVise = text.split(" ")[0];
 				
 				if (PokemonAttackValide.run(PokeBot.getVraiNom(), nomAttaque, PokeBot.getLevel()))
-				{	/*				
+				{	
+					
+					/*				
 					return pokemonAttaqué + " " + attaque + " " + dresseuradverse
 							+ " @" + question.getScreenName() + " " + juge;
 					*/

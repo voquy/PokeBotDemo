@@ -18,7 +18,8 @@ public class PokemonPokeballCell implements SmartCell {
 	static final int maxCarac = 140;
 	public String ask(Tweet question) {
 		
-		String texte =  question.getText().toLowerCase();  // texte à tester    
+		// texte à tester    
+		String texte =  question.getText().toLowerCase();
 		boolean Pkb = Pattern.matches(".*po*ke*ba*ll*.*", texte);
 		if (Pkb) {
 

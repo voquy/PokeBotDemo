@@ -13,7 +13,7 @@ public class PokemonPerdVie implements SmartCell {
 	static final int maxCarac = 140;
     public String ask(Tweet question) {
 		
-		if (question.getScreenName().toLowerCase().equals("jugecordier")) {
+		if (question.getScreenName().equalsIgnoreCase("jugecordier")) {
 			PokeBot.setPVRestant(PokeBot.getPVRestant() - 10);
 			// Pour avoir une valeur de sauvegarde
 			PokeBot.setPVRestantLast(PokeBot.getPVRestant());

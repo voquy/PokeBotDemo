@@ -11,7 +11,8 @@ public class PokemonOwnerCell implements SmartCell{
 	public String ask(Tweet question) {
 		
 		// String owner = "Owner" ;
-		String texte =  question.getText().toLowerCase();  // texte à tester    
+		// texte à tester  
+		String texte =  question.getText().toLowerCase();  
 		boolean b = Pattern.matches(".*own.*", texte);
 		if (b)
 
