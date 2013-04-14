@@ -12,9 +12,6 @@ public class PokemonAttackCell implements SmartCell{
 		
 		String emetteur = question.getScreenName().toLowerCase();
 		
-		System.out.println("Tweet émis : " + question.getText());
-		System.out.println("Emetteur : " + emetteur);
-		
 		if (emetteur.toLowerCase().equals("quynhchee")
 			|| emetteur.toLowerCase().equals("jeremsboot") || emetteur.toLowerCase().equals("dounouw")
 			|| emetteur.toLowerCase().equals("graiig1") || emetteur.toLowerCase().equals("brownrock_"))
