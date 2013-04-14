@@ -23,8 +23,7 @@ public class PokemonKoCell implements SmartCell{
 			//Si le tweet fait moins de 140 caractères
 			if(TweetKOPB.length() <= maxCarac) 
 				return TweetKOPB;
-			else
-				return TweetKO;
+			return TweetKO;
 	
 		}	
 		return null;

@@ -28,8 +28,7 @@ public class PokemonOwnerCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetNOPB.length() <= maxCarac)
 					return TweetNOPB;
-				else
-					return TweetNO;
+				return TweetNO;
 			}
 			else
 			{
@@ -44,8 +43,7 @@ public class PokemonOwnerCell implements SmartCell{
 				//Si le tweet fait moins de 140 caractères
 				if(TweetOPB.length() <= maxCarac) 
 					return TweetOPB;
-				else
-					return TweetO;
+				return TweetO;
 		
 			}
 		}
