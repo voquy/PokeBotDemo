@@ -83,7 +83,7 @@ public class JudgeCombatCell implements SmartCell{
 							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1();
 					
 					//Tweet perte pv avec juge avec #PokeBattle
-					String TweetPPVJPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+					String TweetPPVJPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle;;"
 							+ "Round #" + JudgeBot.getNumRound() + " /cc"
 							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
 							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1()

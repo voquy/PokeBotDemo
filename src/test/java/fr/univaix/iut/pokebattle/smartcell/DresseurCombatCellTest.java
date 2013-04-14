@@ -14,14 +14,14 @@ public class DresseurCombatCellTest {
 
     @Test
     public void testAttack() {
-        assertEquals("@dresseur #fight #ok with @monPokemon /cc @jugecordier",
+        assertEquals("@dresseur #fight #ok with @monPokemon /cc @jugecordier #PokeBattle",
         	cell.ask(new Tweet("dresseur","@pierrebpalette #fight with @Fantomiinus /cc @jugecordier", null)));
     }
 
     @Test
     public void testAttackRound() {
     	JudgeBot.setNumRound(1);
-        assertEquals("@onix__ #attack #roche @pikachu /cc @jeremsboot @viviane #1",
+        assertEquals("@onix__ #attack #roche @pikachu /cc @jeremsboot @viviane #1 #PokeBattle",
         	cell.ask(new Tweet("pikachu",
         			"@onix__ #attack #charge /cc @quynhchee @jeremsboot @viviane #1", null)));
     }
