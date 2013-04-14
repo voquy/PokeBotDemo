@@ -11,7 +11,7 @@ public class InfirmHealCell implements SmartCell{
 		
 		if (question.getText().toLowerCase().contains("heal"))
 		{
-			InfirmiereBot.pkmSoin = question.getText().split("@")[2];
+			InfirmiereBot.setPkmSoin(question.getText().split("@")[2]);
 			
 			//Tweet question pv sans #PokeBattle
 			String TweetPV = "@" + InfirmiereBot.pkmSoin + " #stat #pv ?";
@@ -39,9 +39,9 @@ public class InfirmHealCell implements SmartCell{
 			// Temps Necessaire en minutes
 			*/
 			int vieARecup = PokeBot.pvTotal - PokeBot.pvRestant;
-			InfirmiereBot.tempsNecessaire = vieARecup/10;
-			InfirmiereBot.CCPkm = true;
-			InfirmiereBot.drsPkmSoin = "pkmOwner";
+			InfirmiereBot.setTempsNecessaire(vieARecup/10);
+			InfirmiereBot.setCCPkm(true);
+			InfirmiereBot.setDrsPkmSoin("pkmOwner");
 	
 			//Tweet infirmière heal sans #PokeBattle
 			String TweetIH = "@" + question.getScreenName() + " come in the #pokecenter /cc "
