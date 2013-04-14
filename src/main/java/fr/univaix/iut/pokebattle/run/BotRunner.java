@@ -43,7 +43,7 @@ public class BotRunner {
         
 		try {
 			twitter.updateProfile(null, null, null,
-					"#pokebattle - #pokemon - #Etat: Sauvage - #Level: "+ PokeBot.level);
+					"#pokebattle - #pokemon - #Etat: Sauvage - #Level: "+ PokeBot.getLevel());
 			
 		}
 		catch (TwitterException e) {

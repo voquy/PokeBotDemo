@@ -13,14 +13,14 @@ public class PokemonKoCellTest {
 
     @Test
     public void testReturnKo() {
-    	PokeBot.setPVRestant(0);
+    	PokeBot.setPvRestant(0);
         assertEquals("#KO /cc @viviane @dresseurAdv @quynhchee #PokeBattle",
         	cell.ask(new Tweet("viviane","@fantomiinus -10pv /cc @quynhchee", null)));
     }
     
     @Test
     public void testReturnNull() {
-    	PokeBot.setPVRestant(50);
+    	PokeBot.setPvRestant(50);
         assertEquals(null,
         	cell.ask(new Tweet("quynhchee","", null)));
     }

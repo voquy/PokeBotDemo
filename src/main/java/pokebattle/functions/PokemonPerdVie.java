@@ -13,11 +13,11 @@ public class PokemonPerdVie implements SmartCell {
     public String ask(Tweet question) {
 		
 		if (question.getScreenName().equalsIgnoreCase("jugecordier")) {
-			PokeBot.setPVRestant(PokeBot.getPVRestant() - 10);
+			PokeBot.setPvRestant(PokeBot.getPvRestant() - 10);
 			// Pour avoir une valeur de sauvegarde
-			PokeBot.setPVRestantLast(PokeBot.getPVRestant());
+			PokeBot.setPvRestantLast(PokeBot.getPvRestant());
 			
-			if (PokeBot.getPVRestant() <= 0)
+			if (PokeBot.getPvRestant() <= 0)
 			{	
 				//Tweet KO sans #PokeBattle
 				String TweetKO = "#KO /cc @" + question.getScreenName() + " @dresseurAdv "
@@ -36,10 +36,10 @@ public class PokemonPerdVie implements SmartCell {
 			}
 			
 			//Tweet vie sans #PokeBattle
-			String TweetV = "Ma vie : " + String.valueOf(PokeBot.getPVRestant());
+			String TweetV = "Ma vie : " + String.valueOf(PokeBot.getPvRestant());
 			
 			//Tweet KO avec #PokeBattle
-			String TweetVPB = "Ma vie : " + String.valueOf(PokeBot.getPVRestant()) + " #PokeBattle"; 
+			String TweetVPB = "Ma vie : " + String.valueOf(PokeBot.getPvRestant()) + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
 			if(TweetVPB.length() <= maxCarac) 

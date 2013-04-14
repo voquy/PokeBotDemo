@@ -27,10 +27,10 @@ public class PokemonCaracCell implements SmartCell{
 				if (Stat.contains("#level"))
 				{
 					//Tweet level sans #PokeBattle
-					String TweetL = "@" + emetteur +" "+ Stat + "=" + PokeBot.level;
+					String TweetL = "@" + emetteur +" "+ Stat + "=" + PokeBot.getLevel();
 					
 					//Tweet level avec #PokeBattle
-					String TweetLPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.level + " #PokeBattle"; 
+					String TweetLPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.getLevel() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetLPB.length() <= maxCarac) 
@@ -40,10 +40,10 @@ public class PokemonCaracCell implements SmartCell{
 				else if (Stat.contains("#xp"))
 				{
 					//Tweet xp sans #PokeBattle
-					String TweetXP = "@" + emetteur +" "+ Stat + "=" + PokeBot.exp;
+					String TweetXP = "@" + emetteur +" "+ Stat + "=" + PokeBot.getExp();
 					
 					//Tweet xp avec #PokeBattle
-					String TweetXPPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.exp + " #PokeBattle"; 
+					String TweetXPPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.getExp()  + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetXPPB.length() <= maxCarac) 
@@ -52,27 +52,27 @@ public class PokemonCaracCell implements SmartCell{
 				}
 				else if (Stat.contains("#pv"))
 				{
-					long temps = PokemonTempsInactif.run(PokeBot.lastAttack);
+					long temps = PokemonTempsInactif.run(PokeBot.getLastAttack());
 					int nbFoisVie = 0;
 					// Si temps d'inactivité supérieur/égal à au moins 1h
-					if (temps >= 3600 && (PokeBot.getPVRestant() < PokeBot.getPVTotal()))
+					if (temps >= 3600 && (PokeBot.getPvRestant() < PokeBot.getPvTotal()))
 					{
 						nbFoisVie = (int) ((temps)/3600);
-						PokeBot.setPVRestant(PokeBot.getPVRestantLast() + ((PokeBot.getPVTotal()/10) * nbFoisVie));
-						if (PokeBot.getPVRestant() >= PokeBot.getPVTotal())
+						PokeBot.setPvRestant(PokeBot.getPvRestantLast() + ((PokeBot.getPvTotal()/10) * nbFoisVie));
+						if (PokeBot.getPvRestant() >= PokeBot.getPvTotal())
 						{
-							PokeBot.setPVRestant(PokeBot.getPVTotal());
-							PokeBot.setPVRestantLast(PokeBot.getPVTotal());
+							PokeBot.setPvRestant(PokeBot.getPvTotal());
+							PokeBot.setPvRestantLast(PokeBot.getPvTotal());
 						}
 					}
 					
 					//Tweet pv sans #PokeBattle
-					String TweetPV = "@" + emetteur +" " + Stat + "=" + PokeBot.pvRestant
-							+ "/" + PokeBot.pvTotal;
+					String TweetPV = "@" + emetteur +" " + Stat + "=" + PokeBot.getPvRestant()
+							+ "/" + PokeBot.getPvTotal();
 					
 					//Tweet pv avec #PokeBattle
-					String TweetPVPB = "@" + emetteur +" " + Stat + "=" + PokeBot.pvRestant
-							+ "/" + PokeBot.pvTotal + " #PokeBattle"; 
+					String TweetPVPB = "@" + emetteur +" " + Stat + "=" + PokeBot.getPvRestant()
+							+ "/" + PokeBot.getPvTotal() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPVPB.length() <= maxCarac) 
@@ -85,11 +85,11 @@ public class PokemonCaracCell implements SmartCell{
 					
 					//Tweet pv sans #PokeBattle
 					String TweetPP = "@" + emetteur + " " + Attaque + " " + Stat
-							+ "=" + PokeBot.ppRestant + "/" + PokeBot.ppTotal;
+							+ "=" + PokeBot.getPpRestant() + "/" + PokeBot.getPpTotal();
 					
 					//Tweet pv avec #PokeBattle
 					String TweetPPPB = "@" + emetteur + " " + Attaque + " " + Stat
-							+ "=" + PokeBot.ppRestant + "/" + PokeBot.ppTotal + " #PokeBattle"; 
+							+ "=" + PokeBot.getPpRestant() + "/" + PokeBot.getPpTotal() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetPPPB.length() <= maxCarac) 

@@ -14,10 +14,10 @@ public class InfirmHealCell implements SmartCell{
 			InfirmiereBot.setPkmSoin(question.getText().split("@")[2]);
 			
 			//Tweet question pv sans #PokeBattle
-			String TweetPV = "@" + InfirmiereBot.pkmSoin + " #stat #pv ?";
+			String TweetPV = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?";
 			
 			//Tweet question pv avec #PokeBattle
-			String TweetPVPB = "@" + InfirmiereBot.pkmSoin + " #stat #pv ?" + " #PokeBattle"; 
+			String TweetPVPB = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
 			if(TweetPVPB.length() <= maxCarac) 
@@ -38,18 +38,18 @@ public class InfirmHealCell implements SmartCell{
 			int vieARecup = vieTot - vieRest;
 			// Temps Necessaire en minutes
 			*/
-			int vieARecup = PokeBot.pvTotal - PokeBot.pvRestant;
+			int vieARecup = PokeBot.getPvTotal() - PokeBot.getPvRestant();
 			InfirmiereBot.setTempsNecessaire(vieARecup/10);
 			InfirmiereBot.setCCPkm(true);
 			InfirmiereBot.setDrsPkmSoin("pkmOwner");
 	
 			//Tweet infirmière heal sans #PokeBattle
 			String TweetIH = "@" + question.getScreenName() + " come in the #pokecenter /cc "
-					+ "@" + InfirmiereBot.drsPkmSoin;
+					+ "@" + InfirmiereBot.getPkmSoin();
 			
 			//Tweet infirmière heal avec #PokeBattle
 			String TweetIHPB = "@" + question.getScreenName() + " come in the #pokecenter /cc "
-					+ "@" + InfirmiereBot.drsPkmSoin + " #PokeBattle"; 
+					+ "@" + InfirmiereBot.getPkmSoin() + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
 			if(TweetIHPB.length() <= maxCarac) 

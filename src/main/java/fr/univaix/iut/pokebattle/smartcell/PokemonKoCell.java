@@ -10,7 +10,7 @@ public class PokemonKoCell implements SmartCell{
 		
 		// String owner = "Owner" ;
 
-		if (PokeBot.pvRestant <= 0)
+		if (PokeBot.getPvRestant() <= 0)
 		{
 			//Tweet Pkmn KO sans #PokeBattle
 			String TweetKO = "#KO /cc " + "@" + question.getScreenName() 
