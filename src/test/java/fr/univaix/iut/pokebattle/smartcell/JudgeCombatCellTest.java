@@ -41,7 +41,7 @@ public class JudgeCombatCellTest {
     }
     
     @Test
-    public void testTailleTweet() {
+    public void testTailleTweet1() {
     	JudgeBot.setAdversaire1("jeremsboot");
     	JudgeBot.setPokemonDress1("@pikachuNyanNianpikachuNyanNianpikachuNyanNian");
     	JudgeBot.setAdversaire2("quynhchee");
@@ -52,6 +52,31 @@ public class JudgeCombatCellTest {
         	cell.ask(new Tweet("fantomiinus",
         			JudgeBot.getPokemonDress1() + " #attack #charge /cc @jeremsboot @quynhchee @judgecordier", null)));
         
+    }
+    
+    @Test
+    public void testTailleTweet2() {
+    	JudgeBot.setAdversaire2("jeremsboot");
+    	JudgeBot.setPokemonDress2("@pikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNian");
+    	JudgeBot.setAdversaire1("quynhchee");
+    	JudgeBot.setPokemonDress1("@fantomiinus");
+    	JudgeBot.setNumRound(1);
+        assertEquals(JudgeBot.getPokemonDress2() + " -10pv /cc @jeremsboot",
+        	cell.ask(new Tweet("fantomiinus",
+        			JudgeBot.getPokemonDress2() + " #attack #charge /cc @jeremsboot @quynhchee @judgecordier", null)));   
+    }
+    
+    @Test
+    public void testTailleTweet3() {
+    	JudgeBot.setAdversaire1("jeremsboot");
+    	JudgeBot.setPokemonDress1("@pikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNianpikachuNyanNian");
+    	JudgeBot.setAdversaire2("quynhchee");
+    	JudgeBot.setPokemonDress2("@fantomiinus");
+    	JudgeBot.setNumRound(1);
+    	int expWin = JudgeCalculExpWin.calculExp(JudgeBot.getPokemonDress2(), JudgeBot.getPokemonDress1());
+    	assertEquals(JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp",
+        	cell.ask(new Tweet("fantomiinus",
+        		"@#KO /cc @jugecordier @jeremsboot @quynhchee", null)));
     }
     
     @Test
