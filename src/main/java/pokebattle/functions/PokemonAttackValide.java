@@ -31,7 +31,8 @@ public class PokemonAttackValide {
 					attaques = objs[i].getAttaques();
 					// System.out.println(attaques[1].getNom());
 				}
-				return attaques;
+				DataObjectAttack[] copy_attaques = attaques;
+				return copy_attaques;
 			}
 		}
 		return null;
