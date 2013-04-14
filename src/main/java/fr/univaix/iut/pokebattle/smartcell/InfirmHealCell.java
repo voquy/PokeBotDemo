@@ -14,16 +14,16 @@ public class InfirmHealCell implements SmartCell{
 			InfirmiereBot.setPkmSoin(question.getText().split("@")[2]);
 			
 			//Tweet question pv sans #PokeBattle
-			String TweetPV = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?";
+			String tweetPv = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?";
 			
 			//Tweet question pv avec #PokeBattle
-			String TweetPVPB = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?" + " #PokeBattle"; 
+			String tweetPvPB = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetPVPB.length() <= maxCarac) 
-				return TweetPVPB;
+			if(tweetPvPB.length() <= maxCarac) 
+				return tweetPvPB;
 			else
-				return TweetPV;
+				return tweetPv;
 		}
 		
 		if (question.getText().toLowerCase().contains("pv"))
