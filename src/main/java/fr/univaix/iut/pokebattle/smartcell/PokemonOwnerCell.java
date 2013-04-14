@@ -20,30 +20,30 @@ public class PokemonOwnerCell implements SmartCell{
 			if (PokeBot.getOwner() == null)
 			{
 				//Tweet Pkmn pas own par le dresseur sans #PokeBattle
-				String TweetNO ="@" + question.getScreenName() + " No Owner";
+				String tweetNo ="@" + question.getScreenName() + " No Owner";
 				
 				//Tweet Pkmn pas own par le dresseur avec #PokeBattle
-				String TweetNOPB ="@" + question.getScreenName() + " No Owner" + " #PokeBattle";
+				String tweetNoPB ="@" + question.getScreenName() + " No Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetNOPB.length() <= maxCarac)
-					return TweetNOPB;
-				return TweetNO;
+				if(tweetNoPB.length() <= maxCarac)
+					return tweetNoPB;
+				return tweetNo;
 			}
 			else
 			{
 				//Tweet Pkmn own par le dresseur sans #PokeBattle
-				String TweetO = "@" + question.getScreenName()
+				String tweetOwn = "@" + question.getScreenName()
 						+ " " + "@" + PokeBot.getOwner() + " is My Owner!!!!";
 				
 				//Tweet Pkmn own par le dresseur avec #PokeBattle
-				String TweetOPB = "@" + question.getScreenName()
+				String tweetOwnPB = "@" + question.getScreenName()
 						+ " " + "@" + PokeBot.getOwner() + " is My Owner!!!!" + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetOPB.length() <= maxCarac) 
-					return TweetOPB;
-				return TweetO;
+				if(tweetOwnPB.length() <= maxCarac) 
+					return tweetOwnPB;
+				return tweetOwn;
 		
 			}
 		}

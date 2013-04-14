@@ -22,17 +22,17 @@ public class InfirmHealStartCell implements SmartCell{
 			PokeBot.setPvRestant(PokeBot.getPvTotal());
 			
 			//Tweet heal start sans #PokeBattle
-			String TweetHS = "@" + InfirmiereBot.getPkmSoin() + " @" + InfirmiereBot.getPkmSoin()
+			String tweetHealStart = "@" + InfirmiereBot.getPkmSoin() + " @" + InfirmiereBot.getPkmSoin()
 					+ " is restored to full health";
 			
 			//Tweet heal start avec #PokeBattle
-			String TweetHSPB = "@" + InfirmiereBot.getDrsPkmSoin() + " @" + InfirmiereBot.getPkmSoin() 
+			String tweetHealStartPB = "@" + InfirmiereBot.getDrsPkmSoin() + " @" + InfirmiereBot.getPkmSoin() 
 					+ " is restored to full health" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetHSPB.length() <= maxCarac) 
-				return TweetHSPB;
-			return TweetHS;
+			if(tweetHealStartPB.length() <= maxCarac) 
+				return tweetHealStartPB;
+			return tweetHealStart;
 		}
 		return null;
 	}

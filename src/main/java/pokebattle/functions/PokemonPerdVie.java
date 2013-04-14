@@ -20,32 +20,32 @@ public class PokemonPerdVie implements SmartCell {
 			if (PokeBot.getPvRestant() <= 0)
 			{	
 				//Tweet KO sans #PokeBattle
-				String TweetKO = "#KO /cc @" + question.getScreenName() + " @dresseurAdv "
+				String tweetKo = "#KO /cc @" + question.getScreenName() + " @dresseurAdv "
 						+ question.getText().split(" ")[3];
 				
 				//Tweet KO avec #PokeBattle
-				String TweetKOPB = "#KO /cc @" + question.getScreenName() + " @dresseurAdv "
+				String tweetKoPB = "#KO /cc @" + question.getScreenName() + " @dresseurAdv "
 						+ question.getText().split(" ")[3] + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetKOPB.length() <= maxCarac) 
-					return TweetKOPB;
+				if(tweetKoPB.length() <= maxCarac) 
+					return tweetKoPB;
 				else
-					return TweetKO;
+					return tweetKo;
 			
 			}
 			
 			//Tweet vie sans #PokeBattle
-			String TweetV = "Ma vie : " + String.valueOf(PokeBot.getPvRestant());
+			String tweetVie = "Ma vie : " + String.valueOf(PokeBot.getPvRestant());
 			
 			//Tweet KO avec #PokeBattle
-			String TweetVPB = "Ma vie : " + String.valueOf(PokeBot.getPvRestant()) + " #PokeBattle"; 
+			String tweetViePB = "Ma vie : " + String.valueOf(PokeBot.getPvRestant()) + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetVPB.length() <= maxCarac) 
-				return TweetVPB;
+			if(tweetViePB.length() <= maxCarac) 
+				return tweetViePB;
 			else
-				return TweetV;	
+				return tweetVie;	
 		}
 		return null;
     }
