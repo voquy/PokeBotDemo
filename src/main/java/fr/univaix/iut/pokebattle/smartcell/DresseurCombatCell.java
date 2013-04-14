@@ -52,11 +52,11 @@ public class DresseurCombatCell implements SmartCell{
 				String juge = question.getText().split(" ")[6];
 				
 				//Tweet déclare attack sans #PokeBattle
-				String TweetDA = pokemon + " #attack #roche " + pokemonAdv 
+				String TweetDA = pokemon + " #attack #roche " + "@" + pokemonAdv 
 						+ " /cc " + dresseurAdv + " " + juge + " #" + JudgeBot.getNumRound();
 				
 				//Tweet déclare attack avec #PokeBattle
-				String TweetDAPB = pokemon + " #attack #roche " + pokemonAdv
+				String TweetDAPB = pokemon + " #attack #roche " + "@" + pokemonAdv
 						+ " /cc " + dresseurAdv + " " + juge + " #"
 						+ JudgeBot.getNumRound() + " #PokeBattle"; 
 				

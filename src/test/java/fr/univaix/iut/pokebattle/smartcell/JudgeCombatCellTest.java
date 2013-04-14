@@ -18,8 +18,8 @@ public class JudgeCombatCellTest {
     	JudgeBot.setAdversaire2("quynhchee");
     	JudgeBot.setPokemonDress2("@fantomiinus");
     	JudgeBot.setNumRound(1);
-        assertEquals("@pikachuNyanNian -10pv /cc @jeremsboot"
-        		+ ";;Round #2 /cc @quynhchee @fantomiinus @jeremsboot @pikachuNyanNian",
+        assertEquals("@pikachuNyanNian -10pv /cc @jeremsboot #PokeBattle"
+        		+ ";;Round #2 /cc @quynhchee @fantomiinus @jeremsboot @pikachuNyanNian #PokeBattle",
         	cell.ask(new Tweet("fantomiinus",
         		"@pikachuNyanNian #attack #charge /cc @jeremsboot @quynhchee @judgecordier", null)));
         
