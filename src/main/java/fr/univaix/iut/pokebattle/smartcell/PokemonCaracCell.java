@@ -9,7 +9,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonCaracCell implements SmartCell{
 	static DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm:ss");
-
+	static final int maxCarac = 140;
 	public String ask(Tweet question) {
 		
 		String emetteur = question.getScreenName().toLowerCase();
@@ -36,7 +36,7 @@ public class PokemonCaracCell implements SmartCell{
 					String TweetLPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.level + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetLPB.length() <= 140) 
+					if(TweetLPB.length() <= maxCarac) 
 						return TweetLPB;
 					else
 						return TweetL;
@@ -50,7 +50,7 @@ public class PokemonCaracCell implements SmartCell{
 					String TweetXPPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.exp + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetXPPB.length() <= 140) 
+					if(TweetXPPB.length() <= maxCarac) 
 						return TweetXPPB;
 					else
 						return TweetXP;
@@ -80,7 +80,7 @@ public class PokemonCaracCell implements SmartCell{
 							+ "/" + PokeBot.pvTotal + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPVPB.length() <= 140) 
+					if(TweetPVPB.length() <= maxCarac) 
 						return TweetPVPB;
 					else
 						return TweetPV;	
@@ -98,7 +98,7 @@ public class PokemonCaracCell implements SmartCell{
 							+ "=" + PokeBot.ppRestant + "/" + PokeBot.ppTotal + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPPPB.length() <= 140) 
+					if(TweetPPPB.length() <= maxCarac) 
 						return TweetPPPB;
 					else
 						return TweetPP;	

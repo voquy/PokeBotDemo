@@ -15,7 +15,7 @@ import fr.univaix.iut.pokebattle.twitter.TwitterBuilder;
 
 
 public class PokemonPokeballCell implements SmartCell {
-
+	static final int maxCarac = 140;
 	public String ask(Tweet question) {
 		
 		String texte =  question.getText().toLowerCase();  // texte à tester    
@@ -52,7 +52,7 @@ public class PokemonPokeballCell implements SmartCell {
 					String TweetPPB ="@" + PokeBot.owner + " You Are My Owner!" + " #PokeBattle";
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPPB.length() <= 140)
+					if(TweetPPB.length() <= maxCarac)
 						return TweetPPB; 
 					else
 						return TweetP;
@@ -74,7 +74,7 @@ public class PokemonPokeballCell implements SmartCell {
 						" You Are Already My Owner Bitch!" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPAOwnPB.length() <= 140)
+				if(TweetPAOwnPB.length() <= maxCarac)
 					return TweetPAOwnPB;
 				else
 					return TweetPAOwn;
@@ -89,7 +89,7 @@ public class PokemonPokeballCell implements SmartCell {
 				String TweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPOwnPB.length() <= 140)
+				if(TweetPOwnPB.length() <= maxCarac)
 					return TweetPOwnPB;
 				else
 					return TweetPOwn;

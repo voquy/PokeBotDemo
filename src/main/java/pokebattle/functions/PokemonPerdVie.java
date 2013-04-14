@@ -10,7 +10,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
  * Reply to all.
  */
 public class PokemonPerdVie implements SmartCell {
-
+	static final int maxCarac = 140;
     public String ask(Tweet question) {
 		
 		if (question.getScreenName().toLowerCase().equals("jugecordier")) {
@@ -29,7 +29,7 @@ public class PokemonPerdVie implements SmartCell {
 						+ question.getText().split(" ")[3] + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetKOPB.length() <= 140) 
+				if(TweetKOPB.length() <= maxCarac) 
 					return TweetKOPB;
 				else
 					return TweetKO;
@@ -43,7 +43,7 @@ public class PokemonPerdVie implements SmartCell {
 			String TweetVPB = "Ma vie : " + String.valueOf(PokeBot.getPVRestant()) + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetVPB.length() <= 140) 
+			if(TweetVPB.length() <= maxCarac) 
 				return TweetVPB;
 			else
 				return TweetV;	

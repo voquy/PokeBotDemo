@@ -7,6 +7,7 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 
 public class JudgeCombatCell implements SmartCell{
+	static final int maxCarac = 140;
 	
 	public String ask(Tweet question) {
 		
@@ -30,7 +31,7 @@ public class JudgeCombatCell implements SmartCell{
 				String TweetCE1PB = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetCE1PB.length() <= 140) 
+				if(TweetCE1PB.length() <= maxCarac) 
 					return TweetCE1PB;
 				else
 					return TweetCE1;			
@@ -45,7 +46,7 @@ public class JudgeCombatCell implements SmartCell{
 			String TweetCE2PB = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetCE2PB.length() <= 140) 
+			if(TweetCE2PB.length() <= maxCarac) 
 				return TweetCE2PB;
 			else
 				return TweetCE2;
@@ -67,7 +68,7 @@ public class JudgeCombatCell implements SmartCell{
 				String TweetPPVPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPPVPB.length() <= 140) 
+				if(TweetPPVPB.length() <= maxCarac) 
 					return TweetPPVPB;
 				else
 					return TweetPPV;
@@ -90,7 +91,7 @@ public class JudgeCombatCell implements SmartCell{
 							+ " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPPVJPB.length() <= 140) 
+					if(TweetPPVJPB.length() <= maxCarac) 
 						return TweetPPVJPB;
 					else
 						return TweetPPVJ;
@@ -103,7 +104,7 @@ public class JudgeCombatCell implements SmartCell{
 				String TweetPPVPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPPVPB.length() <= 140) 
+				if(TweetPPVPB.length() <= maxCarac) 
 					return TweetPPVPB;
 				else
 					return TweetPPV;
