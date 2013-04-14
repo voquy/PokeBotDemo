@@ -10,8 +10,6 @@ public class InfirmHealCell implements SmartCell{
 	public String ask(Tweet question) {
 		
 		String emetteur = question.getScreenName().toLowerCase();
-		System.out.println("Tweet émis : " + question.getText());
-		System.out.println("Emetteur : " + emetteur);
 		
 		if (question.getText().toLowerCase().contains("heal"))
 		{

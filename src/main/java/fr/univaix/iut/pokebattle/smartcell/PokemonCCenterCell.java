@@ -13,9 +13,6 @@ public class PokemonCCenterCell implements SmartCell{
 		
 		String emetteur = question.getScreenName().toLowerCase();
 		
-		System.out.println("Tweet émis : " + question.getText());
-		System.out.println("Emetteur : " + emetteur);
-		
 		if (emetteur.toLowerCase().equals("joellebpalette"))
 		{
 			if (question.getText().toLowerCase().contains("#pokecenter"))

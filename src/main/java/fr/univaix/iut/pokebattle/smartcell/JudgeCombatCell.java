@@ -13,10 +13,7 @@ public class JudgeCombatCell implements SmartCell{
 		
 		String emetteur = "@" +  question.getScreenName().toLowerCase();
 		String emet = question.getScreenName().toLowerCase();
-		
-		System.out.println("Tweet émis : " + question.getText());
-		System.out.println("Emetteur : " + emetteur);
-		
+
 		if (question.getText().toLowerCase().contains("#ko")) {
 			// Penser à ajouter l'exp gagné au pokémon vainqueur, faire un set
 			if(emetteur.toLowerCase().equals(JudgeBot.getPokemonDress1().toLowerCase()))
