@@ -15,7 +15,18 @@ public class InfirmHealCell implements SmartCell{
 		if (question.getText().toLowerCase().contains("heal"))
 		{
 			InfirmiereBot.pkmSoin = question.getText().split("@")[2];
-			return "@" + InfirmiereBot.pkmSoin + " #stat #pv ?";
+			
+			//Tweet question pv sans #PokeBattle
+			String TweetPV = "@" + InfirmiereBot.pkmSoin + " #stat #pv ?";
+			
+			//Tweet question pv avec #PokeBattle
+			String TweetPVPB = "@" + InfirmiereBot.pkmSoin + " #stat #pv ?" + " #PokeBattle"; 
+			
+			//Si le tweet fait moins de 140 caractères
+			if(TweetPVPB.length() <= 140) 
+				return TweetPVPB;
+			else
+				return TweetPV;
 		}
 		
 		if (question.getText().toLowerCase().contains("pv"))
@@ -34,8 +45,20 @@ public class InfirmHealCell implements SmartCell{
 			InfirmiereBot.tempsNecessaire = vieARecup/10;
 			InfirmiereBot.CCPkm = true;
 			InfirmiereBot.drsPkmSoin = "pkmOwner";
-			return "@" + question.getScreenName() + " come in the #pokecenter /cc "
+	
+			//Tweet infirmière heal sans #PokeBattle
+			String TweetIH = "@" + question.getScreenName() + " come in the #pokecenter /cc "
 					+ "@" + InfirmiereBot.drsPkmSoin;
+			
+			//Tweet infirmière heal avec #PokeBattle
+			String TweetIHPB = "@" + question.getScreenName() + " come in the #pokecenter /cc "
+					+ "@" + InfirmiereBot.drsPkmSoin + " #PokeBattle"; 
+			
+			//Si le tweet fait moins de 140 caractères
+			if(TweetIHPB.length() <= 140) 
+				return TweetIHPB;
+			else
+				return TweetIH;
 		}
 		return null;
     }

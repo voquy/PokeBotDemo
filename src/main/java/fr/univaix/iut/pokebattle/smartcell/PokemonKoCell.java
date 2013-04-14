@@ -12,8 +12,20 @@ public class PokemonKoCell implements SmartCell{
 
 		if (PokeBot.pvRestant <= 0)
 		{
-			return "#KO /cc " + "@" + question.getScreenName()
+			//Tweet Pkmn KO sans #PokeBattle
+			String TweetKO = "#KO /cc " + "@" + question.getScreenName() 
 					+ " @dresseurAdv " + question.getText().split(" ")[3];
+			
+			//Tweet Pkmn KO avec #PokeBattle
+			String TweetKOPB = "#KO /cc " + "@" + question.getScreenName()
+					+ " @dresseurAdv " + question.getText().split(" ")[3] + " #PokeBattle"; 
+			
+			//Si le tweet fait moins de 140 caractères
+			if(TweetKOPB.length() <= 140) 
+				return TweetKOPB;
+			else
+				return TweetKO;
+	
 		}	
 		return null;
     }
