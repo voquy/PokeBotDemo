@@ -18,5 +18,20 @@ public class PokemonPokeballCellTest {
     			cell.ask(new Tweet("dresseur1","Pokeball !", null)));
     }
     
+    @Test
+    public void testPokeballSonProprePkm() {
+    	PokeBot.owner = "quynhchee";
+    	assertEquals("@quynhchee You Are Already My Owner Bitch! #PokeBattle",
+    			cell.ask(new Tweet("quynhchee","Pokeball !", null)));
+    }
+    
+    @Test
+    public void testPokeballSonProprePkm_PB() {
+    	String the_owner = "quynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhcheequynhchee";
+    	PokeBot.owner = the_owner;
+    	assertEquals("@" + the_owner + " You Are Already My Owner Bitch!",
+    			cell.ask(new Tweet(the_owner,"Pokeball !", null)));
+    }
+    
 
 }
