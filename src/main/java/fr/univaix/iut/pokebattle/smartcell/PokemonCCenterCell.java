@@ -26,8 +26,9 @@ public class PokemonCCenterCell implements SmartCell{
 						+ "   " + dateFormat.format(question.getDate()) + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(tweetPCenterPB.length() <= maxCarac) 
+				if(tweetPCenterPB.length() <= maxCarac) {
 					return tweetPCenterPB;
+				}
 				return tweetPCenter;
 			}	
 		}

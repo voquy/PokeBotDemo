@@ -33,8 +33,9 @@ public class PokemonCaracCell implements SmartCell{
 					String tweetLvlPB = "@" + emetteur +" "+ stats + "=" + PokeBot.getLevel() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(tweetLvlPB.length() <= maxCarac) 
+					if(tweetLvlPB.length() <= maxCarac) {
 						return tweetLvlPB;
+					}
 					return tweetLvl;
 				}	
 				else if (stats.contains("#xp"))
@@ -46,8 +47,9 @@ public class PokemonCaracCell implements SmartCell{
 					String TweetXPPB = "@" + emetteur +" "+ stats + "=" + PokeBot.getExp()  + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetXPPB.length() <= maxCarac) 
+					if(TweetXPPB.length() <= maxCarac) {
 						return TweetXPPB;
+					}
 					return TweetXP;
 				}
 				else if (stats.contains("#pv"))
@@ -75,8 +77,9 @@ public class PokemonCaracCell implements SmartCell{
 							+ "/" + PokeBot.getPvTotal() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(tweetPvPB.length() <= maxCarac) 
+					if(tweetPvPB.length() <= maxCarac) {
 						return tweetPvPB;
+					}
 					return tweetPv;	
 				}
 				else if (stats.contains("#pp"))
@@ -92,8 +95,9 @@ public class PokemonCaracCell implements SmartCell{
 							+ "=" + PokeBot.getPpRestant() + "/" + PokeBot.getPpTotal() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(tweetPpPB.length() <= maxCarac) 
+					if(tweetPpPB.length() <= maxCarac) {
 						return tweetPpPB;
+					}
 					return tweetPp;	
 				}
 					

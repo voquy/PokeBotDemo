@@ -30,8 +30,9 @@ public class InfirmHealStartCell implements SmartCell{
 					+ " is restored to full health" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(tweetHealStartPB.length() <= maxCarac) 
+			if(tweetHealStartPB.length() <= maxCarac) {
 				return tweetHealStartPB;
+			}
 			return tweetHealStart;
 		}
 		return null;

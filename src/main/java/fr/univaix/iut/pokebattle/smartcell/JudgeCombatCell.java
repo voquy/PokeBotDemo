@@ -42,8 +42,9 @@ public class JudgeCombatCell implements SmartCell{
 			String tweetCExp2PB = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(tweetCExp2PB.length() <= maxCarac) 
+			if(tweetCExp2PB.length() <= maxCarac) {
 				return tweetCExp2PB;
+			}
 			return tweetCExp2;
 		}
 		
