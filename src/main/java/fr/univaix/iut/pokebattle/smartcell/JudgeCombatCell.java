@@ -22,29 +22,29 @@ public class JudgeCombatCell implements SmartCell{
 				int expWin = JudgeCalculExpWin.calculExp(JudgeBot.getPokemonDress2(), JudgeBot.getPokemonDress1());
 				
 				//Tweet calcul exp1 sans #PokeBattle
-				String TweetCE1 = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp";
+				String tweetCExp1 = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp";
 				
 				//Tweet calcul exp1 avec #PokeBattle
-				String TweetCE1PB = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
+				String tweetCExp1PB = JudgeBot.getPokemonDress2() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetCE1PB.length() <= maxCarac) 
-					return TweetCE1PB;
-				return TweetCE1;			
+				if(tweetCExp1PB.length() <= maxCarac) 
+					return tweetCExp1PB;
+				return tweetCExp1;			
 			}
 																//	PkmGagnant					PkmPerdant
 			int expWin = JudgeCalculExpWin.calculExp(JudgeBot.getPokemonDress1(), JudgeBot.getPokemonDress2());
 			
 			//Tweet calcul exp2 sans #PokeBattle
-			String TweetCE2 = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp";
+			String tweetCExp2 = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp";
 			
 			//Tweet calcul exp2 avec #PokeBattle
-			String TweetCE2PB = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
+			String tweetCExp2PB = JudgeBot.getPokemonDress1() + " #Win +" + expWin + "xp" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(TweetCE2PB.length() <= maxCarac) 
-				return TweetCE2PB;
-			return TweetCE2;
+			if(tweetCExp2PB.length() <= maxCarac) 
+				return tweetCExp2PB;
+			return tweetCExp2;
 		}
 		
 		if (emet.equals("fantomiinus") || emet.equals("pikachu")
@@ -73,34 +73,34 @@ public class JudgeCombatCell implements SmartCell{
 					JudgeBot.setNumRound(JudgeBot.getNumRound()+1);
 			
 					//Tweet perte pv juge sans #PokeBattle
-					String TweetPPVJ = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
+					String tweetPertePv = pokemonAttaqué + " -10pv /cc " + dresseursubit + ";;"
 							+ "Round #" + JudgeBot.getNumRound() + " /cc"
 							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
 							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1();
 					
 					//Tweet perte pv avec juge avec #PokeBattle
-					String TweetPPVJPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle;;"
+					String tweetPertePvPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle;;"
 							+ "Round #" + JudgeBot.getNumRound() + " /cc"
 							+ " @" + JudgeBot.getAdversaire2() + " " + JudgeBot.getPokemonDress2()
 							+ " @" + JudgeBot.getAdversaire1() + " " + JudgeBot.getPokemonDress1()
 							+ " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPPVJPB.length() <= maxCarac) 
-						return TweetPPVJPB;
-					return TweetPPVJ;
+					if(tweetPertePvPB.length() <= maxCarac) 
+						return tweetPertePvPB;
+					return tweetPertePv;
 				}
 				
 				//Tweet perte pv  sans #PokeBattle
-				String TweetPPV = pokemonAttaqué + " -10pv /cc " + dresseursubit;
+				String tweetPertePv = pokemonAttaqué + " -10pv /cc " + dresseursubit;
 				
 				//Tweet perte pv avec juge avec #PokeBattle
-				String TweetPPVPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
+				String tweetPertePvPB = pokemonAttaqué + " -10pv /cc " + dresseursubit + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPPVPB.length() <= maxCarac) 
-					return TweetPPVPB;
-				return TweetPPV;
+				if(tweetPertePvPB.length() <= maxCarac) 
+					return tweetPertePvPB;
+				return tweetPertePv;
 			
 			}
 		}

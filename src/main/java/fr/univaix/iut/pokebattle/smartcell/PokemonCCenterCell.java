@@ -18,17 +18,17 @@ public class PokemonCCenterCell implements SmartCell{
 			if (question.getText().toLowerCase().contains("#pokecenter"))
 			{	
 				//Tweet pokecenter sans #PokeBattle
-				String TweetP = "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
+				String tweetPCenter = "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
 						+ "   " + dateFormat.format(question.getDate());
 				
 				//Tweet pokecenter avec #PokeBattle
-				String TweetPPB = "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
+				String tweetPCenterPB = "@" + question.getScreenName() + " fannntooomiiinuuus #pokecenter"
 						+ "   " + dateFormat.format(question.getDate()) + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPPB.length() <= maxCarac) 
-					return TweetPPB;
-				return TweetP;
+				if(tweetPCenterPB.length() <= maxCarac) 
+					return tweetPCenterPB;
+				return tweetPCenter;
 			}	
 		}
 		return null;

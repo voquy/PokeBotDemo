@@ -20,8 +20,8 @@ public class PokemonPokeballCell implements SmartCell {
 		
 		// texte à tester    
 		String texte =  question.getText().toLowerCase();
-		boolean Pkb = Pattern.matches(".*po*ke*ba*ll*.*", texte);
-		if (Pkb) {
+		boolean pokeBall = Pattern.matches(".*po*ke*ba*ll*.*", texte);
+		if (pokeBall) {
 
 			if (PokeBot.getOwner() == null) {
 				PokeBot.setOwner(question.getScreenName());
@@ -46,15 +46,15 @@ public class PokemonPokeballCell implements SmartCell {
 							+ " #Level: "+ PokeBot.getLevel());
 					
 					//Tweet Pokeball sans #PokeBattle
-					String TweetP ="@" + PokeBot.getOwner() + " You Are My Owner!";
+					String tweetPkb ="@" + PokeBot.getOwner() + " You Are My Owner!";
 					
 					//Tweet Pokeball avec #PokeBattle
-					String TweetPPB ="@" + PokeBot.getOwner() + " You Are My Owner!" + " #PokeBattle";
+					String tweetPkbPB ="@" + PokeBot.getOwner() + " You Are My Owner!" + " #PokeBattle";
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPPB.length() <= maxCarac)
-						return TweetPPB; 
-					return TweetP;
+					if(tweetPkbPB.length() <= maxCarac)
+						return tweetPkbPB; 
+					return tweetPkb;
 					
 				} catch (TwitterException e)
 				{
@@ -65,31 +65,31 @@ public class PokemonPokeballCell implements SmartCell {
 			else if (PokeBot.getOwner().equals(question.getScreenName()))
 			{
 				//Tweet Pkmn déjà own par le dresseur sans #PokeBattle
-				String TweetPAOwn ="@" +PokeBot.getOwner() + 
+				String tweetPkbByOwn ="@" +PokeBot.getOwner() + 
 						" You Are Already My Owner Bitch!";
 			
 				//Tweet Pkmn déjà own par le dresseur avec #PokeBattle
-				String TweetPAOwnPB ="@" +PokeBot.getOwner() + 
+				String tweetPkbByOwnPB ="@" +PokeBot.getOwner() + 
 						" You Are Already My Owner Bitch!" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPAOwnPB.length() <= maxCarac)
-					return TweetPAOwnPB;
-				return TweetPAOwn;
+				if(tweetPkbByOwnPB.length() <= maxCarac)
+					return tweetPkbByOwnPB;
+				return tweetPkbByOwn;
 			}
 			
 			else
 			{
 				//Tweet Pkmn own par le dresseur sans #PokeBattle
-				String TweetPOwn ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner";
+				String tweetPOwn ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner";
 			
 				//Tweet Pkmn own par le dresseur avec #PokeBattle
-				String TweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #PokeBattle";
+				String tweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetPOwnPB.length() <= maxCarac)
-					return TweetPOwnPB;
-				return TweetPOwn;
+				if(tweetPOwnPB.length() <= maxCarac)
+					return tweetPOwnPB;
+				return tweetPOwn;
 				
 			}
 		}

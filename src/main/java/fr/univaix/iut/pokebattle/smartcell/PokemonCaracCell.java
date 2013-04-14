@@ -22,35 +22,35 @@ public class PokemonCaracCell implements SmartCell{
 	
 			if (question.getText().toLowerCase().contains("#stat"))
 			{
-				String Stat = question.getText().toLowerCase().split(" ")[2];
+				String stats = question.getText().toLowerCase().split(" ")[2];
 				
-				if (Stat.contains("#level"))
+				if (stats.contains("#level"))
 				{
 					//Tweet level sans #PokeBattle
-					String TweetL = "@" + emetteur +" "+ Stat + "=" + PokeBot.getLevel();
+					String tweetLvl = "@" + emetteur +" "+ stats + "=" + PokeBot.getLevel();
 					
 					//Tweet level avec #PokeBattle
-					String TweetLPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.getLevel() + " #PokeBattle"; 
+					String tweetLvlPB = "@" + emetteur +" "+ stats + "=" + PokeBot.getLevel() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetLPB.length() <= maxCarac) 
-						return TweetLPB;
-					return TweetL;
+					if(tweetLvlPB.length() <= maxCarac) 
+						return tweetLvlPB;
+					return tweetLvl;
 				}	
-				else if (Stat.contains("#xp"))
+				else if (stats.contains("#xp"))
 				{
 					//Tweet xp sans #PokeBattle
-					String TweetXP = "@" + emetteur +" "+ Stat + "=" + PokeBot.getExp();
+					String TweetXP = "@" + emetteur +" "+ stats + "=" + PokeBot.getExp();
 					
 					//Tweet xp avec #PokeBattle
-					String TweetXPPB = "@" + emetteur +" "+ Stat + "=" + PokeBot.getExp()  + " #PokeBattle"; 
+					String TweetXPPB = "@" + emetteur +" "+ stats + "=" + PokeBot.getExp()  + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
 					if(TweetXPPB.length() <= maxCarac) 
 						return TweetXPPB;
 					return TweetXP;
 				}
-				else if (Stat.contains("#pv"))
+				else if (stats.contains("#pv"))
 				{
 					long temps = PokemonTempsInactif.run(PokeBot.getLastAttack());
 					int nbFoisVie = 0;
@@ -67,34 +67,34 @@ public class PokemonCaracCell implements SmartCell{
 					}
 					
 					//Tweet pv sans #PokeBattle
-					String TweetPV = "@" + emetteur +" " + Stat + "=" + PokeBot.getPvRestant()
+					String tweetPv = "@" + emetteur +" " + stats + "=" + PokeBot.getPvRestant()
 							+ "/" + PokeBot.getPvTotal();
 					
 					//Tweet pv avec #PokeBattle
-					String TweetPVPB = "@" + emetteur +" " + Stat + "=" + PokeBot.getPvRestant()
+					String tweetPvPB = "@" + emetteur +" " + stats + "=" + PokeBot.getPvRestant()
 							+ "/" + PokeBot.getPvTotal() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPVPB.length() <= maxCarac) 
-						return TweetPVPB;
-					return TweetPV;	
+					if(tweetPvPB.length() <= maxCarac) 
+						return tweetPvPB;
+					return tweetPv;	
 				}
-				else if (Stat.contains("#pp"))
+				else if (stats.contains("#pp"))
 				{
-					String Attaque = question.getText().toLowerCase().split(" ")[3];			
+					String attaque = question.getText().toLowerCase().split(" ")[3];			
 					
 					//Tweet pv sans #PokeBattle
-					String TweetPP = "@" + emetteur + " " + Attaque + " " + Stat
+					String tweetPp = "@" + emetteur + " " + attaque + " " + stats
 							+ "=" + PokeBot.getPpRestant() + "/" + PokeBot.getPpTotal();
 					
 					//Tweet pv avec #PokeBattle
-					String TweetPPPB = "@" + emetteur + " " + Attaque + " " + Stat
+					String tweetPpPB = "@" + emetteur + " " + attaque + " " + stats
 							+ "=" + PokeBot.getPpRestant() + "/" + PokeBot.getPpTotal() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetPPPB.length() <= maxCarac) 
-						return TweetPPPB;
-					return TweetPP;	
+					if(tweetPpPB.length() <= maxCarac) 
+						return tweetPpPB;
+					return tweetPp;	
 				}
 					
 			}

@@ -51,34 +51,34 @@ public class PokemonAttackCell implements SmartCell{
 					PokeBot.setLastAttack(question.getDate());
 					
 					//Tweet attack Pkmn sans #PokeBattle
-					String TweetA = pokemonVise + " #attack #" + nomAttaque + " /cc "
+					String tweetAtk = pokemonVise + " #attack #" + nomAttaque + " /cc "
 							+ dresseurAdverse + " " + "@" + question.getScreenName() 
 							+ " " + juge + " #" + JudgeBot.getNumRound();
 					
 					//Tweet attack Pkmn avec #PokeBattle
-					String TweetAPB = pokemonVise + " #attack #" + nomAttaque + " /cc "
+					String tweetAtkPB = pokemonVise + " #attack #" + nomAttaque + " /cc "
 							+ dresseurAdverse + " " + "@" + question.getScreenName()
 							+ " " + juge + " #" + JudgeBot.getNumRound() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(TweetAPB.length() <= maxCarac) 
-						return TweetAPB;
-					return TweetA;
+					if(tweetAtkPB.length() <= maxCarac) 
+						return tweetAtkPB;
+					return tweetAtk;
 
 				}
 				
 				//Tweet attack inconnue Pkmn sans #PokeBattle
-				String TweetAI = "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
+				String tweetAtkInc = "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
 						+ " " + juge + " " + pokemonVise;
 				
 				//Tweet attack inconnue Pkmn avec #PokeBattle
-				String TweetAIPB = "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
+				String tweetAtkIncPB = "@" + question.getScreenName() + " o_O ? /cc " + dresseurAdverse
 						+ " " + juge + " " + pokemonVise + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(TweetAIPB.length() <= maxCarac) 
-					return TweetAIPB;
-				return TweetAI;
+				if(tweetAtkIncPB.length() <= maxCarac) 
+					return tweetAtkIncPB;
+				return tweetAtkInc;
 				
 			}
 		}
