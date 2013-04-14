@@ -61,8 +61,9 @@ public class PokemonAttackCell implements SmartCell{
 							+ " " + juge + " #" + JudgeBot.getNumRound() + " #PokeBattle"; 
 					
 					//Si le tweet fait moins de 140 caractères
-					if(tweetAtkPB.length() <= maxCarac) 
+					if(tweetAtkPB.length() <= maxCarac) {
 						return tweetAtkPB;
+					}
 					return tweetAtk;
 
 				}

@@ -32,10 +32,11 @@ public class DresseurCombatCell implements SmartCell{
 					+ " #fight #ok with " + "@monPokemon" + " /cc " + juge + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(tweetDcPB.length() <= maxCarac) 
+			if(tweetDcPB.length() <= maxCarac){
 				return tweetDcPB;
-			else
-				return tweetDc;
+			}
+			return tweetDc;
+			
 		}
 		
 		if (emetteur.equals("fantomiinus") || emetteur.equals("pikachu")) {
@@ -57,8 +58,9 @@ public class DresseurCombatCell implements SmartCell{
 						+ JudgeBot.getNumRound() + " #PokeBattle"; 
 				
 				//Si le tweet fait moins de 140 caractères
-				if(tweetDaPB.length() <= maxCarac) 
+				if(tweetDaPB.length() <= maxCarac) {
 					return tweetDaPB;
+				}
 				return tweetDa;
 			}
 		}

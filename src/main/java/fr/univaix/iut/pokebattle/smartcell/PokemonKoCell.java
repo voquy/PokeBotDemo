@@ -21,8 +21,9 @@ public class PokemonKoCell implements SmartCell{
 					+ " @dresseurAdv " + question.getText().split(" ")[3] + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(tweetKoPB.length() <= maxCarac) 
+			if(tweetKoPB.length() <= maxCarac) {
 				return tweetKoPB;
+			}
 			return tweetKo;
 	
 		}	

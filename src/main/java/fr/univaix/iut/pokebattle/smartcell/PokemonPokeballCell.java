@@ -52,8 +52,9 @@ public class PokemonPokeballCell implements SmartCell {
 					String tweetPkbPB ="@" + PokeBot.getOwner() + " You Are My Owner!" + " #PokeBattle";
 					
 					//Si le tweet fait moins de 140 caractères
-					if(tweetPkbPB.length() <= maxCarac)
+					if(tweetPkbPB.length() <= maxCarac) {
 						return tweetPkbPB; 
+					}
 					return tweetPkb;
 					
 				} catch (TwitterException e)
@@ -73,8 +74,9 @@ public class PokemonPokeballCell implements SmartCell {
 						" You Are Already My Owner Bitch!" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(tweetPkbByOwnPB.length() <= maxCarac)
+				if(tweetPkbByOwnPB.length() <= maxCarac){
 					return tweetPkbByOwnPB;
+				}
 				return tweetPkbByOwn;
 			}
 			
@@ -87,8 +89,9 @@ public class PokemonPokeballCell implements SmartCell {
 				String tweetPOwnPB ="@"+question.getScreenName()+" @" + PokeBot.getOwner() + " is My Owner" + " #PokeBattle";
 				
 				//Si le tweet fait moins de 140 caractères
-				if(tweetPOwnPB.length() <= maxCarac)
+				if(tweetPOwnPB.length() <= maxCarac){
 					return tweetPOwnPB;
+				}
 				return tweetPOwn;
 				
 			}
