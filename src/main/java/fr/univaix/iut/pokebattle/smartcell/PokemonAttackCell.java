@@ -31,9 +31,8 @@ public class PokemonAttackCell implements SmartCell{
 								+ " " + question.getText().split(" ")[2]
 								+ " " + question.getText().split(" ")[4];
 				String pokemonAttaqué = question.getText().split(" ")[3];
-		*/
-				
 				String pokemonRecoitTweet = question.getText().split(" ")[0];
+				*/
 				String rien = question.getText().split("@")[3];
 				text = "@" + rien;
 				String dresseurAdverse = text.split(" ")[0];
