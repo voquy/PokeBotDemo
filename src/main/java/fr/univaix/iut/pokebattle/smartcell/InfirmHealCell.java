@@ -20,10 +20,10 @@ public class InfirmHealCell implements SmartCell{
 			String tweetPvPB = "@" + InfirmiereBot.getPkmSoin() + " #stat #pv ?" + " #PokeBattle"; 
 			
 			//Si le tweet fait moins de 140 caractères
-			if(tweetPvPB.length() <= maxCarac) 
+			if(tweetPvPB.length() <= maxCarac) {
 				return tweetPvPB;
-			else
-				return tweetPv;
+			}
+			return tweetPv;
 		}
 		
 		if (question.getText().toLowerCase().contains("pv"))
