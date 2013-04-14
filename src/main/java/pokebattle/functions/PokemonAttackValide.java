@@ -23,7 +23,7 @@ public class PokemonAttackValide {
 		
 		for (int i = 0 ; i<objs.length ; i++)
 		{
-			if (objs[i].getNom().toLowerCase().equals(nomPkm.toLowerCase()))
+			if (objs[i].getNom().equalsIgnoreCase(nomPkm))
 			{
 				System.out.println(objs[0].getEspece());
 				for (int j = 0 ; j<objs[0].attaques.length ; j++)

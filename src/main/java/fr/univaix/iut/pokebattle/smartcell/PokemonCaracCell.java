@@ -14,10 +14,10 @@ public class PokemonCaracCell implements SmartCell{
 		
 		String emetteur = question.getScreenName().toLowerCase();
 		
-		if (emetteur.toLowerCase().equals("quynhchee")
-			|| emetteur.toLowerCase().equals("jeremsboot") || emetteur.toLowerCase().equals("dounouw")
-			|| emetteur.toLowerCase().equals("graiig1") || emetteur.toLowerCase().equals("brownrock_")
-			|| emetteur.toLowerCase().equals("joellebpalette") )
+		if (emetteur.equals("quynhchee")
+			|| emetteur.equals("jeremsboot") || emetteur.equals("dounouw")
+			|| emetteur.equals("graiig1") || emetteur.equals("brownrock_")
+			|| emetteur.equals("joellebpalette") )
 		{
 	
 			if (question.getText().toLowerCase().contains("#stat"))
